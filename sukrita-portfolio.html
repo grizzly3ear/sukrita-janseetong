@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sukrita Janseetong — UX/UI Designer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#09090E; --bg-card:#15151F;
+  --lime:#BEFF00; --coral:#FF5C3E; --lavender:#9D8EFF;
+  --cream:#EFECE5; --muted:#68687E; --border:rgba(239,236,229,0.08);
+  --fd:'Syne',sans-serif; --fb:'DM Sans',sans-serif;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--cream);font-family:var(--fb);line-height:1.7;overflow-x:hidden;cursor:none;}
+a,button{cursor:none;}
+
+/* ── CURSOR ── */
+#cursor-ring{position:fixed;top:0;left:0;width:36px;height:36px;border:1.5px solid rgba(190,255,0,.55);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .25s,height .25s,border-color .25s,background .25s;mix-blend-mode:difference;}
+#cursor-dot{position:fixed;top:0;left:0;width:6px;height:6px;background:var(--lime);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);}
+body.cursor-hover #cursor-ring{width:54px;height:54px;border-color:rgba(190,255,0,.9);background:rgba(190,255,0,.06);}
+body.cursor-hover #cursor-dot{background:#fff;}
+
+/* ── COSMOS ── */
+.cosmos{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;}
+.cosmos-orb{position:absolute;border-radius:50%;filter:blur(90px);opacity:.6;animation:cosmosFloat linear infinite;}
+@keyframes cosmosFloat{0%{transform:translateY(0) scale(1);}50%{transform:translateY(-30px) scale(1.04);}100%{transform:translateY(0) scale(1);}}
+
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:300;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1.2rem 4rem;
+  background:rgba(9,9,14,.88);
+  backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);
+  border-bottom:1px solid var(--border);
+  transition:all .4s cubic-bezier(.25,.46,.45,.94);
+}
+/* Scrolled: shrink to centered glass pill */
+nav.scrolled{
+  top:14px;
+  left:50%;right:auto;
+  transform:translateX(-50%);
+  width:max-content;
+  padding:.65rem 2rem;
+  gap:2rem;
+  border-radius:50px;
+  background:rgba(21,21,31,.78);
+  backdrop-filter:blur(28px);-webkit-backdrop-filter:blur(28px);
+  border:1px solid rgba(239,236,229,.1);
+  box-shadow:0 8px 32px rgba(0,0,0,.45),0 0 0 1px rgba(190,255,0,.04);
+  white-space:nowrap;
+}
+.nav-logo{font-family:var(--fd);font-weight:800;font-size:1.1rem;color:var(--cream);text-decoration:none;letter-spacing:-.02em;}
+.nav-logo span{color:var(--lime);}
+.nav-links{display:flex;gap:2rem;list-style:none;}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:.83rem;letter-spacing:.04em;transition:color .2s;}
+.nav-links a:hover{color:var(--cream);}
+.nav-cta{background:var(--lime);color:#09090E;padding:.55rem 1.2rem;border-radius:2rem;font-size:.82rem;font-weight:500;text-decoration:none;transition:transform .2s,box-shadow .2s;white-space:nowrap;}
+.nav-cta:hover{transform:scale(1.04);box-shadow:0 6px 22px rgba(190,255,0,.28);}
+.burger{display:none;flex-direction:column;gap:5px;background:none;border:none;padding:4px;}
+.burger span{display:block;width:22px;height:1.5px;background:var(--cream);}
+.mob-nav{display:none;position:fixed;inset:0;background:rgba(9,9,14,.97);z-index:290;flex-direction:column;align-items:center;justify-content:center;gap:2rem;}
+.mob-nav.open{display:flex;}
+.mob-nav a{font-family:var(--fd);font-size:2rem;font-weight:800;color:var(--cream);text-decoration:none;}
+.mob-nav a:hover{color:var(--lime);}
+.mob-close{position:absolute;top:1.5rem;right:2rem;font-size:1.75rem;background:none;border:none;color:var(--cream);}
+
+
+/* ── HERO ── */
+.hero{min-height:100vh;display:grid;grid-template-columns:1.1fr 0.9fr;gap:5rem;align-items:center;padding:9rem 4rem 5rem;position:relative;z-index:1;overflow:hidden;}
+.hero::before{content:'';position:absolute;top:10%;right:-8%;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(190,255,0,.05) 0%,transparent 70%);pointer-events:none;}
+.hero::after{content:'';position:absolute;bottom:8%;left:5%;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(255,92,62,.04) 0%,transparent 70%);pointer-events:none;}
+
+/* 大 watermark wrapper */
+.hero-title-wrap{position:relative;}
+.hero-da{
+  position:absolute;
+  font-family:var(--fd);
+  font-size:clamp(9rem,22vw,18rem);
+  font-weight:800;
+  color:var(--lime);
+  opacity:.055;
+  line-height:1;
+  top:-.15em;
+  left:-.06em;
+  pointer-events:none;
+  user-select:none;
+  z-index:0;
+  letter-spacing:-.04em;
+}
+.hero-title{position:relative;z-index:1;}
+
+.eyebrow{display:inline-flex;align-items:center;gap:.6rem;font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--lime);font-weight:500;margin-bottom:1.75rem;}
+.eyebrow::before{content:'';width:26px;height:1px;background:var(--lime);}
+h1.hero-title{font-family:var(--fd);font-size:clamp(2.6rem,6vw,5.4rem);font-weight:800;line-height:1.04;letter-spacing:-.035em;margin-bottom:1.5rem;}
+h1.hero-title .lime{color:var(--lime);}
+h1.hero-title .coral{color:var(--coral);}
+.hero-desc{font-size:1rem;color:var(--muted);font-weight:300;line-height:1.8;max-width:50ch;margin-bottom:2rem;}
+.hero-btns{display:flex;gap:.875rem;flex-wrap:wrap;}
+.btn-p{background:var(--lime);color:#09090E;padding:.85rem 1.875rem;border-radius:2rem;font-weight:500;font-size:.88rem;text-decoration:none;transition:transform .2s,box-shadow .2s;display:inline-block;}
+.btn-p:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(190,255,0,.32);}
+.btn-g{color:var(--cream);padding:.85rem 1.875rem;border-radius:2rem;font-size:.88rem;text-decoration:none;border:1px solid rgba(239,236,229,.15);transition:border-color .2s;display:inline-block;}
+.btn-g:hover{border-color:var(--muted);}
+
+/* ── BINGO ── */
+.bingo-wrap{padding-top:1rem;}
+.bingo-label{font-family:var(--fd);font-size:1rem;font-weight:700;line-height:1.35;margin-bottom:1.25rem;color:var(--cream);}
+.bingo-label em{color:var(--coral);font-style:normal;}
+.bingo-board{display:grid;grid-template-columns:repeat(5,1fr);gap:5px;max-width:420px;}
+.bc{aspect-ratio:1;display:flex;align-items:center;justify-content:center;text-align:center;padding:4px;font-size:.58rem;font-weight:500;line-height:1.25;color:var(--muted);background:var(--bg-card);border:1px solid var(--border);border-radius:7px;transition:all .18s;user-select:none;}
+.bc:not(.free):hover{border-color:var(--lime);color:var(--cream);transform:scale(1.06);}
+.bc.marked{background:var(--lime);border-color:var(--lime);color:#09090E;font-weight:700;}
+.bc.free{background:linear-gradient(145deg,#FF5C3E,#FF8C6B);border-color:var(--coral);color:#fff;font-weight:700;font-size:.55rem;}
+.bc.win-row{background:var(--lavender);border-color:var(--lavender);color:#fff;animation:pop .4s ease;}
+@keyframes pop{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
+.bingo-msg{margin-top:.875rem;font-size:.78rem;color:var(--muted);min-height:1.4rem;}
+.bingo-msg.win{color:var(--lime);font-weight:500;}
+
+.scroll-hint{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:6px;color:var(--muted);font-size:.62rem;letter-spacing:.15em;text-transform:uppercase;animation:sbounce 2.4s ease-in-out infinite;}
+@keyframes sbounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(7px)}}
+
+/* ── SECTIONS ── */
+.sec{padding:7.5rem 4rem;border-top:1px solid var(--border);position:relative;z-index:1;}
+.sec-eye{font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--lime);font-weight:500;margin-bottom:.75rem;}
+.sec-title{font-family:var(--fd);font-size:clamp(2rem,4vw,3rem);font-weight:800;letter-spacing:-.025em;line-height:1.08;margin-bottom:3.5rem;}
+
+/* ── STATS ── */
+.stats-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;}
+.stat-card{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:1.5rem;}
+.stat-n{font-family:var(--fd);font-size:2.4rem;font-weight:800;letter-spacing:-.04em;color:var(--lime);}
+.stat-l{font-size:.8rem;color:var(--muted);margin-top:.25rem;line-height:1.5;}
+
+/* ── PROJECTS ── */
+.proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;}
+.proj-card{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;overflow:hidden;transition:border-color .25s,transform .25s;}
+.proj-card:hover{border-color:rgba(190,255,0,.32);transform:translateY(-5px);}
+.proj-thumb{height:155px;display:flex;align-items:center;justify-content:center;font-family:var(--fd);font-size:1.5rem;font-weight:800;position:relative;overflow:hidden;}
+.proj-hover-label{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0);color:transparent;font-family:var(--fb);font-size:.8rem;font-weight:500;letter-spacing:.05em;transition:background .25s,color .25s;}
+.proj-card:hover .proj-hover-label{background:rgba(0,0,0,.52);color:#fff;}
+.proj-body{padding:1.1rem 1.2rem;}
+.proj-num{font-size:.62rem;color:var(--muted);letter-spacing:.1em;margin-bottom:.25rem;}
+.proj-name{font-family:var(--fd);font-size:1rem;font-weight:700;margin-bottom:.375rem;}
+.proj-blurb{font-size:.78rem;color:var(--muted);line-height:1.6;margin-bottom:.625rem;}
+.proj-impact{font-size:.72rem;color:var(--lime);font-weight:500;line-height:1.5;margin-bottom:.75rem;}
+.proj-tags{display:flex;flex-wrap:wrap;gap:.3rem;}
+.proj-tag{font-size:.62rem;padding:.2rem .55rem;border-radius:20px;background:rgba(239,236,229,.05);color:var(--muted);border:1px solid var(--border);}
+
+/* ── MODAL ── */
+.modal-bg{display:none;position:fixed;inset:0;background:rgba(0,0,0,.87);z-index:500;overflow-y:auto;padding:2rem 1.5rem;align-items:flex-start;justify-content:center;}
+.modal-bg.open{display:flex;}
+.modal-box{background:var(--bg-card);border:1px solid rgba(239,236,229,.13);border-radius:18px;width:100%;max-width:700px;padding:2.5rem;position:relative;margin:auto;}
+.modal-x{position:absolute;top:1.25rem;right:1.25rem;width:36px;height:36px;border-radius:50%;border:none;background:rgba(239,236,229,.08);color:var(--cream);font-size:1rem;display:flex;align-items:center;justify-content:center;transition:background .2s;}
+.modal-x:hover{background:rgba(239,236,229,.16);}
+.m-num{font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem;}
+.m-title{font-family:var(--fd);font-size:1.75rem;font-weight:800;letter-spacing:-.025em;margin-bottom:1rem;}
+.m-tags{display:flex;flex-wrap:wrap;gap:.375rem;margin-bottom:1.5rem;}
+.m-tag{font-size:.68rem;padding:.25rem .7rem;border-radius:20px;background:rgba(190,255,0,.08);color:var(--lime);border:1px solid rgba(190,255,0,.2);}
+.m-meta{display:flex;gap:2rem;flex-wrap:wrap;margin-bottom:1.75rem;}
+.m-meta-item label{display:block;font-size:.62rem;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin-bottom:.2rem;}
+.m-meta-item span{font-size:.85rem;}
+.m-hr{border:none;border-top:1px solid var(--border);margin:1.5rem 0;}
+.m-section{margin-bottom:1.5rem;}
+.m-section h4{font-family:var(--fd);font-size:.8rem;font-weight:700;color:var(--lime);text-transform:uppercase;letter-spacing:.05em;margin-bottom:.5rem;}
+/* ── modal text lighter for readability ── */
+.m-section p{font-size:.875rem;color:#9191aa;line-height:1.8;}
+.m-section ul{padding-left:1.2rem;}
+.m-section ul li{font-size:.875rem;color:#9191aa;line-height:1.8;margin-bottom:.25rem;}
+.m-award-badge{display:inline-block;margin-top:.5rem;font-size:.75rem;color:var(--lime);border:1px solid rgba(190,255,0,.3);border-radius:4px;padding:.25rem .75rem;margin-right:.5rem;margin-bottom:.375rem;}
+
+/* ── ABOUT ── */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;}
+.about-sticky{position:sticky;top:5rem;}
+.about-eye{font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--lime);font-weight:500;margin-bottom:.75rem;}
+.about-head{font-family:var(--fd);font-size:clamp(2rem,4vw,3rem);font-weight:800;letter-spacing:-.025em;line-height:1.08;margin-bottom:2rem;}
+.about-p{font-size:.97rem;color:var(--cream);line-height:1.85;font-weight:300;margin-bottom:1.25rem;}
+.about-p strong{font-weight:700;}
+.cta-green{font-size:.92rem;font-weight:500;color:var(--lime);margin-top:.5rem;}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:2rem;}
+.chip{padding:.35rem .875rem;border-radius:2rem;font-size:.75rem;border:1px solid var(--border);color:var(--muted);transition:border-color .2s,color .2s;}
+.chip:hover{border-color:var(--lime);color:var(--lime);}
+.chip.on{background:rgba(190,255,0,.08);border-color:rgba(190,255,0,.28);color:var(--lime);}
+
+/* ── TIMELINE ── */
+.tl{display:flex;flex-direction:column;gap:2.5rem;border-left:1px solid var(--border);padding-left:2.5rem;}
+.tl-item{position:relative;}
+.tl-item::before{content:'';position:absolute;left:-2.625rem;top:.4rem;width:8px;height:8px;border-radius:50%;background:var(--lime);}
+.tl-date{font-size:.67rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.2rem;}
+.tl-role{font-family:var(--fd);font-size:.95rem;font-weight:700;margin-bottom:.15rem;}
+.tl-co{font-size:.82rem;color:var(--lavender);margin-bottom:.625rem;}
+.tl-li{list-style:none;display:flex;flex-direction:column;gap:.3rem;}
+.tl-li li{font-size:.8rem;color:var(--muted);padding-left:1rem;position:relative;line-height:1.6;}
+.tl-li li::before{content:'→';position:absolute;left:0;color:var(--lime);font-size:.68rem;}
+
+/* ── CONTACT ── */
+.contact{text-align:center;padding:7.5rem 2rem;border-top:1px solid var(--border);position:relative;z-index:1;}
+.contact h2{font-family:var(--fd);font-size:clamp(2.4rem,6vw,4.5rem);font-weight:800;letter-spacing:-.035em;line-height:1.08;margin-bottom:1.25rem;}
+.contact h2 em{color:var(--lime);font-style:normal;}
+.contact p{color:var(--muted);max-width:48ch;margin:0 auto 2.5rem;font-weight:300;}
+.contact-links{display:flex;justify-content:center;gap:2rem;margin-top:3rem;flex-wrap:wrap;}
+.contact-links a{color:var(--muted);text-decoration:none;font-size:.875rem;transition:color .2s;}
+.contact-links a:hover{color:var(--lime);}
+
+/* ── FOOTER ── */
+footer{padding:2rem 4rem;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;position:relative;z-index:1;}
+.foot-logo{font-family:var(--fd);font-size:1rem;font-weight:800;letter-spacing:-.02em;}
+.foot-logo span{color:var(--lime);}
+.foot-r{font-size:.8rem;color:var(--muted);display:flex;gap:2rem;flex-wrap:wrap;}
+.foot-r a{color:var(--muted);text-decoration:none;transition:color .2s;}
+.foot-r a:hover{color:var(--lime);}
+
+/* ── IMAGE GALLERY in modal ── */
+.m-gallery-wrap{margin-top:1.5rem;}
+.m-gallery-wrap h4{font-family:var(--fd);font-size:.8rem;font-weight:700;color:var(--lime);text-transform:uppercase;letter-spacing:.05em;margin-bottom:.875rem;}
+.m-gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;}
+.m-gallery-item{
+  aspect-ratio:4/3;border-radius:8px;overflow:hidden;
+  cursor:pointer;position:relative;
+  background:rgba(239,236,229,.04);border:1px solid var(--border);
+  transition:transform .2s,border-color .2s;
+}
+.m-gallery-item:hover{transform:scale(1.02);border-color:rgba(190,255,0,.25);}
+.m-gallery-item img{width:100%;height:100%;object-fit:cover;display:block;}
+.m-gallery-item .m-img-placeholder{
+  width:100%;height:100%;display:flex;align-items:center;justify-content:center;
+  font-size:.7rem;color:var(--muted);text-align:center;padding:.5rem;line-height:1.4;
+}
+/* Lightbox */
+#imgLb{
+  display:none;position:fixed;inset:0;z-index:999;
+  background:rgba(0,0,0,.93);
+  align-items:center;justify-content:center;
+  padding:2rem;
+}
+#imgLb.open{display:flex;}
+.lb-wrap{position:relative;max-width:820px;width:100%;text-align:center;}
+#lbImg{
+  max-width:100%;max-height:80vh;border-radius:10px;
+  object-fit:contain;display:block;margin:0 auto;
+}
+.lb-placeholder{
+  width:100%;height:360px;border-radius:10px;
+  background:var(--bg-card);border:1px solid var(--border);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--muted);font-size:.85rem;
+}
+.lb-nav{display:flex;justify-content:space-between;align-items:center;margin-top:1rem;}
+.lb-btn{background:rgba(239,236,229,.1);border:none;color:var(--cream);padding:.5rem 1.25rem;border-radius:20px;font-size:.82rem;cursor:pointer;transition:background .2s;}
+.lb-btn:hover{background:rgba(239,236,229,.18);}
+#lbCounter{font-size:.78rem;color:var(--muted);}
+.lb-close{position:absolute;top:-2.5rem;right:0;background:none;border:none;color:var(--muted);font-size:1.4rem;cursor:pointer;transition:color .2s;}
+.lb-close:hover{color:var(--cream);}
+
+/* Bingo refresh button */
+.bingo-footer{display:flex;align-items:center;justify-content:space-between;margin-top:.625rem;gap:.5rem;}
+.bingo-refresh{
+  display:inline-flex;align-items:center;gap:.375rem;flex-shrink:0;
+  background:none;border:1px solid var(--border);
+  color:var(--muted);font-size:.7rem;padding:.3rem .75rem;
+  border-radius:20px;cursor:pointer;transition:all .2s;font-family:var(--fb);
+}
+.bingo-refresh:hover{border-color:var(--lime);color:var(--lime);}
+.fade{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease;}
+.fade.in{opacity:1;transform:none;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.a1{opacity:0;animation:fadeUp .6s .1s ease forwards;}
+.a2{opacity:0;animation:fadeUp .65s .22s ease forwards;}
+.a3{opacity:0;animation:fadeUp .65s .36s ease forwards;}
+.a4{opacity:0;animation:fadeUp .65s .5s ease forwards;}
+
+/* ── MOBILE FAB ── */
+.mob-fab{
+  display:none;
+  position:fixed;bottom:1.75rem;right:1.75rem;z-index:280;
+  background:var(--lime);color:#09090E;
+  padding:.875rem 1.25rem;border-radius:50px;
+  font-family:var(--fb);font-size:.82rem;font-weight:600;
+  text-decoration:none;letter-spacing:.01em;
+  box-shadow:0 8px 28px rgba(190,255,0,.38),0 2px 8px rgba(0,0,0,.4);
+  transition:transform .2s,box-shadow .2s;
+  white-space:nowrap;align-items:center;gap:.5rem;
+}
+.mob-fab:hover{transform:scale(1.06) translateY(-2px);box-shadow:0 14px 36px rgba(190,255,0,.45);}
+
+/* ── RESPONSIVE ── */
+@media(max-width:960px){
+  nav{padding:1rem 2rem;} .nav-links{display:none;} .burger{display:flex;}
+  .nav-cta{display:none;}
+  .mob-fab{display:flex;}
+  .hero{grid-template-columns:1fr;gap:3rem;padding:8rem 2rem 5rem;}
+  .proj-grid{grid-template-columns:repeat(2,1fr);}
+  .stats-row{grid-template-columns:repeat(2,1fr);}
+  .stats-row .stat-card:last-child{grid-column:1/-1;}
+  .about-grid{grid-template-columns:1fr;gap:3rem;} .about-sticky{position:static;}
+  .sec{padding:5rem 2rem;} footer{padding:1.5rem 2rem;}
+}
+@media(max-width:600px){
+  nav{padding:1rem 1.25rem;}
+  .hero{padding:7rem 1.25rem 4rem;}
+  .proj-grid{grid-template-columns:1fr;} .stats-row{grid-template-columns:1fr;}
+  .contact{padding:5rem 1.25rem;} .contact-links{gap:1.25rem;}
+  footer{flex-direction:column;align-items:flex-start;gap:.75rem;}
+  .modal-box{padding:1.75rem;}
+  body{cursor:auto;} #cursor-ring,#cursor-dot{display:none;}
+  nav.scrolled{min-width:calc(100vw - 2.5rem);top:10px;}
+}
+</style>
+</head>
+<body>
+
+<div id="cursor-ring"></div>
+<div id="cursor-dot"></div>
+
+<!-- COSMOS -->
+<div class="cosmos" aria-hidden="true">
+  <div class="cosmos-orb" style="width:500px;height:500px;top:-80px;right:-100px;background:radial-gradient(circle,rgba(190,255,0,.07) 0%,transparent 70%);animation-duration:18s;"></div>
+  <div class="cosmos-orb" style="width:380px;height:380px;top:35%;left:-80px;background:radial-gradient(circle,rgba(255,92,62,.05) 0%,transparent 70%);animation-duration:22s;animation-delay:-8s;"></div>
+  <div class="cosmos-orb" style="width:420px;height:420px;bottom:5%;right:8%;background:radial-gradient(circle,rgba(157,142,255,.06) 0%,transparent 70%);animation-duration:26s;animation-delay:-4s;"></div>
+  <div class="cosmos-orb" style="width:280px;height:280px;top:60%;left:40%;background:radial-gradient(circle,rgba(0,229,204,.035) 0%,transparent 70%);animation-duration:30s;animation-delay:-14s;"></div>
+  <div class="cosmos-orb" style="width:240px;height:240px;bottom:20%;left:15%;background:radial-gradient(circle,rgba(255,78,205,.03) 0%,transparent 70%);animation-duration:20s;animation-delay:-10s;"></div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#home">Sukrita<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#about">About</a></li>
+  </ul>
+  <a class="nav-cta" href="#contact">Let's work together ↗</a>
+  <button class="burger" id="burgerBtn" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mob-nav" id="mobNav">
+  <button class="mob-close" id="mobClose">✕</button>
+  <a href="#home"     onclick="closeMob()">Home</a>
+  <a href="#projects" onclick="closeMob()">Projects</a>
+  <a href="#about"    onclick="closeMob()">About</a>
+  <a href="#contact"  onclick="closeMob()" style="color:var(--lime)">Let's Talk ↗</a>
+</div>
+
+<!-- MOBILE FAB -->
+<a class="mob-fab" href="#contact">
+  <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M8 2l5 5-5 5" stroke="#09090E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  Let's work together!
+</a>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div>
+    <div class="eyebrow a1">UX/UI Designer &nbsp;·&nbsp; FinTech &nbsp;·&nbsp; EdTech &nbsp;·&nbsp; Gaming</div>
+    <div class="hero-title-wrap">
+      <div class="hero-da" aria-hidden="true">大</div>
+      <h1 class="hero-title a2">
+        Every Screen Is<br>a <span class="lime">Destination.</span>
+      </h1>
+    </div>
+    <p class="hero-desc a3">Hi, I'm Sukrita — I craft intuitive, data-driven experiences that people actually enjoy using. My work spans financial platforms, learning products, and gaming interfaces across Thailand's leading companies.</p>
+    <div class="hero-btns a4">
+      <a class="btn-p" href="#projects">See My Work →</a>
+      <a class="btn-g" href="#about">About Me</a>
+    </div>
+  </div>
+
+  <div class="bingo-wrap a3">
+    <div class="bingo-label">SKILL <em>BINGO</em><br>Find the skills we bring together.</div>
+    <div class="bingo-board" id="bingoBoard"></div>
+    <div class="bingo-footer">
+      <p class="bingo-msg" id="bingoMsg">Click the skills that matter to you ↑</p>
+      <button class="bingo-refresh" id="bingoRefresh">
+        <svg width="11" height="11" viewBox="0 0 11 11" fill="none">
+          <path d="M9.5 5.5A4 4 0 1 1 5.5 1.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+          <path d="M9.5 1.5v4h-4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Refresh
+      </button>
+    </div>
+  </div>
+
+  <div class="scroll-hint">
+    <span>Scroll</span>
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+      <path d="M7 2v10M3 8l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="sec" style="padding-top:4.5rem;padding-bottom:4.5rem;">
+  <div class="stats-row fade">
+    <div class="stat-card">
+      <div class="stat-n">7</div>
+      <div class="stat-l">End-to-end products shipped across 3 industries</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-n">100%</div>
+      <div class="stat-l">Project delivery rate — every brief taken from discovery to final launch</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-n">1+</div>
+      <div class="stat-l">Year as sole designer with PM, Dev, BA &amp; QA</div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="sec" id="projects">
+  <p class="sec-eye fade">Selected Work</p>
+  <h2 class="sec-title fade">7 Projects.<br>3 Industries. 1 Through-Line.</h2>
+  <div class="proj-grid fade" id="projGrid"></div>
+</section>
+
+<!-- ABOUT -->
+<section class="sec" id="about">
+  <div class="about-grid">
+    <div class="about-sticky fade">
+      <p class="about-eye">About Me</p>
+      <h2 class="about-head">The Designer<br>Behind the Work.</h2>
+      <p class="about-p">I'm <strong>Sukrita Janseetong</strong>, a UX/UI Designer with over a year of experience turning complex problems into seamless digital experiences. I thrive at the intersection of research and creativity — grounded in data, moved by empathy, and always chasing that quiet 'aha' moment when design just clicks.</p>
+      <p class="about-p">My work spans FinTech platforms, EdTech products, and gaming interfaces. As the sole designer collaborating with PMs, Developers, BAs, and QA teams, I've built the habit of asking the right questions early so solutions hold up long after handoff.</p>
+      <p class="cta-green">→ Ready to create something new and make it remarkable.</p>
+      <div class="chips">
+        <span class="chip on">User Research</span><span class="chip on">Figma</span>
+        <span class="chip on">Design Systems</span><span class="chip">Wireframing</span>
+        <span class="chip">Prototyping</span><span class="chip">Usability Testing</span>
+        <span class="chip">Information Architecture</span><span class="chip">UI Animation</span>
+        <span class="chip">Responsive Design</span><span class="chip">HTML · CSS</span>
+        <span class="chip">FinTech</span><span class="chip">EdTech</span>
+        <span class="chip">Gaming UX</span><span class="chip on">AI</span>
+      </div>
+    </div>
+
+    <div class="fade">
+      <p style="font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--lime);font-weight:500;margin-bottom:1.5rem;">Experience Timeline</p>
+      <div class="tl">
+        <div class="tl-item">
+          <div class="tl-date">Nov 2024 – Nov 2025</div>
+          <div class="tl-role">UX/UI Designer</div>
+          <div class="tl-co">Codediva Co., Ltd.</div>
+          <ul class="tl-li">
+            <li>End-to-end UI/UX for web &amp; mobile — finance and service platforms</li>
+            <li>Led design on Principal TH, Eastspring M Choice, Fluidra &amp; Tonson</li>
+            <li>Maintained and evolved design systems across multiple product versions</li>
+            <li>Collaborated daily with PM, Dev, BA, QA for pixel-accurate implementation</li>
+          </ul>
+        </div>
+        <div class="tl-item">
+          <div class="tl-date">Nov 2024 – Apr 2025</div>
+          <div class="tl-role">UX/UI Designer (Volunteer)</div>
+          <div class="tl-co">Saturday School – OpenEdu Platform</div>
+          <ul class="tl-li">
+            <li>User interviews &amp; usability testing for volunteer screening flows</li>
+            <li>Redesigned back-office system to eliminate data inconsistency issues</li>
+          </ul>
+        </div>
+        <div class="tl-item">
+          <div class="tl-date">Feb 2025 – Present</div>
+          <div class="tl-role">UX/UI Designer</div>
+          <div class="tl-co">Sumeeper — MeDream Studio</div>
+          <ul class="tl-li">
+            <li>Designed HUD, menus, and interaction flows to improve player onboarding</li>
+            <li>Conducted real-player usability testing at game events — iterated from live feedback</li>
+          </ul>
+        </div>
+        <div class="tl-item">
+          <div class="tl-date">Jan 2025 – Mar 2026</div>
+          <div class="tl-role">UX/UI Designer</div>
+          <div class="tl-co">Jumsup — English Learning App (DEPA Program) · MeDream Studio</div>
+          <ul class="tl-li">
+            <li>Designed UX/UI and high-fidelity prototype for a gamified English learning app</li>
+            <li>Selected for DEPA Digital Startup Fund 2025 &amp; Hatch Incubation Program #Gen9</li>
+          </ul>
+        </div>
+        <div class="tl-item">
+          <div class="tl-date">Aug – Dec 2022</div>
+          <div class="tl-role">UX/UI Designer (Intern)</div>
+          <div class="tl-co">Tomato Ideas Co., Ltd.</div>
+          <ul class="tl-li">
+            <li>Delivered client-facing web templates and UI solutions</li>
+            <li>Front-end basics (HTML, CSS) for smoother developer handoff</li>
+          </ul>
+        </div>
+        <div class="tl-item">
+          <div class="tl-date">2019 – 2022</div>
+          <div class="tl-role">B.Sc. Media Technology — Second Class Honours</div>
+          <div class="tl-co">King Mongkut's University of Technology Thonburi (KMUTT)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<div class="contact" id="contact">
+  <h2 class="fade">Let's Build<br>Something <em>Great.</em></h2>
+  <p class="fade">Got a product that deserves better design? A challenge worth solving together? I'm open to opportunities, freelance projects, and creative collaborations — let's talk.</p>
+  <a class="btn-p fade" href="mailto:sukrita.iam@gmail.com" style="font-size:1rem;padding:1rem 2.5rem;">Say Hello ↗</a>
+  <div class="contact-links fade">
+    <a href="mailto:sukrita.iam@gmail.com">sukrita.iam@gmail.com</a>
+    <a href="tel:+66814567580">081-456-7580</a>
+    <a href="https://www.linkedin.com/in/sukrita-janseetong-5bb515286/" target="_blank" rel="noopener">LinkedIn ↗</a>
+    <a href="https://drive.google.com/file/d/1sUyWNSTIYyQpJWOD4EZ8wrMdxdjwItbg/view?usp=sharing" target="_blank" rel="noopener">View Resume ↗</a>
+  </div>
+</div>
+
+<footer>
+  <div class="foot-logo">Sukrita<span>.</span></div>
+  <div class="foot-r">
+    <a href="mailto:sukrita.iam@gmail.com">sukrita.iam@gmail.com</a>
+    <a href="tel:+66814567580">081-456-7580</a>
+    <span style="color:rgba(104,104,126,.4)">© 2025 Sukrita Janseetong</span>
+  </div>
+</footer>
+
+<!-- MODAL -->
+<div class="modal-bg" id="modalBg">
+  <div class="modal-box">
+    <button class="modal-x" id="modalX">✕</button>
+    <div class="m-num"   id="mNum"></div>
+    <div class="m-title" id="mTitle"></div>
+    <div class="m-tags"  id="mTags"></div>
+    <div class="m-meta"  id="mMeta"></div>
+    <hr class="m-hr">
+    <div class="m-section"><h4>About the Project</h4><p id="mAbout"></p></div>
+    <div class="m-section"><h4>The Problem</h4><p id="mProb"></p></div>
+    <div class="m-section"><h4>How I Solved It</h4><p id="mSol"></p></div>
+    <div class="m-section"><h4>Process</h4><ul id="mProc"></ul></div>
+    <div class="m-section"><h4>What I Learned</h4><p id="mLearn"></p></div>
+    <div class="m-section" id="mAwardsWrap" style="display:none">
+      <h4>Recognition &amp; Awards</h4>
+      <div id="mAwards"></div>
+    </div>
+    <div class="m-section" id="mFutureWrap" style="display:none">
+      <h4>Future Opportunities for Improvement</h4>
+      <p id="mFuture"></p>
+    </div>
+    <!-- Image Gallery -->
+    <div class="m-gallery-wrap" id="mGalleryWrap" style="display:none">
+      <h4>Project Gallery</h4>
+      <div class="m-gallery" id="mGallery"></div>
+    </div>
+  </div>
+</div>
+
+<!-- LIGHTBOX -->
+<div id="imgLb">
+  <div class="lb-wrap">
+    <button class="lb-close" id="lbClose">✕</button>
+    <img id="lbImg" src="" alt="" style="display:none">
+    <div class="lb-placeholder" id="lbPlaceholder" style="display:none">Image placeholder — replace src with real image path</div>
+    <div class="lb-nav">
+      <button class="lb-btn" id="lbPrev">← Prev</button>
+      <span id="lbCounter"></span>
+      <button class="lb-btn" id="lbNext">Next →</button>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ── CURSOR ── */
+const ring=document.getElementById('cursor-ring'),dot=document.getElementById('cursor-dot');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;dot.style.left=mx+'px';dot.style.top=my+'px';});
+(function animRing(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(animRing);})();
+document.querySelectorAll('a,button,.proj-card,.bc').forEach(el=>{
+  el.addEventListener('mouseenter',()=>document.body.classList.add('cursor-hover'));
+  el.addEventListener('mouseleave',()=>document.body.classList.remove('cursor-hover'));
+});
+
+/* ── SCROLL NAV ── */
+const navEl=document.querySelector('nav');
+window.addEventListener('scroll',()=>{
+  if(window.scrollY>80){navEl.classList.add('scrolled');}
+  else{navEl.classList.remove('scrolled');}
+},{passive:true});
+
+/* ── MOBILE NAV ── */
+document.getElementById('burgerBtn').onclick=()=>document.getElementById('mobNav').classList.add('open');
+document.getElementById('mobClose').onclick=closeMob;
+function closeMob(){document.getElementById('mobNav').classList.remove('open');}
+
+/* ── BINGO ── */
+const SKILLS=[
+  'User Research','Figma','Design Systems','Prototyping','FinTech',
+  'Wireframing','UI Animation','Usability Testing','EdTech','A/B Testing',
+  'User Flows','Visual Design','★ FREE ★','Gaming UX','AI',
+  'Info. Arch.','Responsive','Data Analysis','Interaction','Typography',
+  'Persona','Journey Map','Card Sorting','Heuristics','Accessibility'
+];
+const FREE_IDX=12;
+const LINES=[[0,1,2,3,4],[5,6,7,8,9],[10,11,12,13,14],[15,16,17,18,19],[20,21,22,23,24],[0,5,10,15,20],[1,6,11,16,21],[2,7,12,17,22],[3,8,13,18,23],[4,9,14,19,24],[0,6,12,18,24],[4,8,12,16,20]];
+const bState=Array(25).fill(false);
+bState[FREE_IDX]=true;
+function winLines(){return LINES.filter(l=>l.every(i=>bState[i]));}
+function buildBingo(){
+  const board=document.getElementById('bingoBoard');
+  board.innerHTML='';
+  const wins=winLines();
+  const winSet=new Set(wins.flatMap(l=>l));
+  SKILLS.forEach((s,i)=>{
+    const cell=document.createElement('div');
+    cell.className='bc';
+    cell.textContent=s;
+    if(i===FREE_IDX){cell.classList.add('free');}
+    else{
+      if(bState[i]&&winSet.has(i))cell.classList.add('win-row');
+      else if(bState[i])cell.classList.add('marked');
+      cell.addEventListener('click',()=>{
+        bState[i]=!bState[i];
+        const count=bState.filter(Boolean).length-1;
+        const msg=document.getElementById('bingoMsg');
+        if(winLines().length){msg.textContent="🎉 BINGO! We've got what you need.";msg.className='bingo-msg win';}
+        else{msg.textContent=count>0?count+' skill'+(count>1?'s':'')+' matched — keep going!':'Click the skills that matter to you ↑';msg.className='bingo-msg';}
+        buildBingo();
+      });
+    }
+    board.appendChild(cell);
+  });
+}
+buildBingo();
+
+/* Bingo refresh */
+document.getElementById('bingoRefresh').addEventListener('click',()=>{
+  bState.fill(false);
+  bState[FREE_IDX]=true;
+  const msg=document.getElementById('bingoMsg');
+  msg.textContent='Click the skills that matter to you ↑';
+  msg.className='bingo-msg';
+  buildBingo();
+});
+
+/* ── LIGHTBOX ── */
+let lbImages=[],lbIdx=0;
+function openLb(imgs,idx){
+  lbImages=imgs;lbIdx=idx;
+  renderLb();
+  document.getElementById('imgLb').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeLb(){
+  document.getElementById('imgLb').classList.remove('open');
+  document.body.style.overflow='';
+}
+function renderLb(){
+  const img=lbImages[lbIdx];
+  const el=document.getElementById('lbImg');
+  const ph=document.getElementById('lbPlaceholder');
+  if(img.src){
+    el.src=img.src;el.alt=img.label||'';
+    el.style.display='block';ph.style.display='none';
+  } else {
+    el.style.display='none';
+    ph.style.display='flex';
+    ph.textContent=img.label+' — Add image: images/'+img.file;
+  }
+  document.getElementById('lbCounter').textContent=(lbIdx+1)+' / '+lbImages.length;
+}
+document.getElementById('lbClose').onclick=closeLb;
+document.getElementById('lbPrev').onclick=()=>{lbIdx=(lbIdx-1+lbImages.length)%lbImages.length;renderLb();};
+document.getElementById('lbNext').onclick=()=>{lbIdx=(lbIdx+1)%lbImages.length;renderLb();};
+document.getElementById('imgLb').addEventListener('click',e=>{if(e.target.id==='imgLb')closeLb();});
+document.addEventListener('keydown',e=>{
+  if(document.getElementById('imgLb').classList.contains('open')){
+    if(e.key==='Escape')closeLb();
+    if(e.key==='ArrowLeft'){lbIdx=(lbIdx-1+lbImages.length)%lbImages.length;renderLb();}
+    if(e.key==='ArrowRight'){lbIdx=(lbIdx+1)%lbImages.length;renderLb();}
+  }
+});
+
+/* ── PROJECT DATA ── */
+const PROJECTS=[
+  {
+    num:'01',name:'Principal TH',cover:'images/Principal-cover.png',
+    blurb:"Redesigned Auto-Approval & PinCode flows for a provident fund app — eliminating the frozen state where users couldn't invest pending manual KYC.",
+    impact:'Higher initial transaction rates · Reduced CS manual workload',
+    tags:['FinTech','Mobile App','OCR Integration','Design System'],
+    bg:'#0D2744',fg:'#4A9EFF',duration:'Nov 2024 – Nov 2025',tools:'Figma',
+    about:'Principal Asset Management (partnered with CIMB Bank in Thailand) is a leading global investment firm. The project focused on redesigning the mobile provident fund app — specifically the Auto Approve and PinCode flows to enhance security and user autonomy during financial transactions.',
+    prob:"Users were left in a 'frozen state' — unable to invest until a human agent manually approved their account. The bottleneck was e-KYC: users frequently uploaded blurry ID photos the system couldn't verify automatically, forcing CS to call every single user to request new documents.",
+    sol:'Implemented an Auto-Approval engine powered by OCR technology. The system checks image quality in real-time and provides immediate feedback. Clear photo → auto-approved within 5 minutes, allowing users to start buying funds immediately. Blurry photo → the app coaches the user to retake it on the spot, eliminating the dead-end wait.',
+    proc:[
+      'Attended weekly client-facing meetings alongside PM to stay aligned with shifting priorities',
+      'Made on-the-spot design adjustments when PM and client agreed on changes during meetings',
+      'Surfaced ambiguous requirements to PM with clear questions to prevent late-stage rework',
+      'Partnered with the development team throughout implementation to validate UI behavior — ensuring edge cases, micro-interactions, and error states matched design intent precisely',
+      'Collaborated with QA to ensure every error state had clear, empathetic visual cues'
+    ],
+    learn:'Working across PM, Dev, QA, and client teams on a live FinTech product taught me that great design isn\'t just what\'s on screen — it\'s knowing when to raise a flag, who to raise it to, and how fast. Proactive communication at the right moment prevents late-stage rework more than any revision cycle ever could.',
+    images:[{src:'images/Principal-01.png',label:'Principal TH — Screen 1'},{src:'images/Principal-02.png',label:'Principal TH — Screen 2'}]
+  },
+  {
+    num:'02',name:'Eastspring M Choice TH',cover:'images/Eastspring-cover.png',
+    blurb:'Designed the digital Membership Termination flow for a corporate provident fund platform — replacing multi-day paper workflows with a guided, e-Signature system for 3 user roles.',
+    impact:'Entire fund termination process digitized · Zero manual data entry errors',
+    tags:['FinTech','Web + Mobile','3 User Roles'],
+    bg:'#1C1A00',fg:'#D4B800',duration:'Jan – May 2025',tools:'Figma',
+    about:"Eastspring Investments (part of the Prudential group) offers the M Choice platform for corporate provident funds. I designed the 'Membership Termination' flow — a collaborative digital process replacing manual paperwork with a real-time system for Employees, Employers, and Fund Committees.",
+    prob:'Manual paper forms led to missing information and illegible handwriting, causing frequent data entry errors. Users had to print and physically deliver documents, meaning updates were never real-time. Physical filing made it nearly impossible to track the current status of a request.',
+    sol:'Transformed the complex, multi-condition termination form into a guided Step-by-Step Flow with integrated e-Signatures — reducing cognitive load and ensuring instant legal verification. Designed dynamic conditional logic that shows only the fields relevant to each termination reason, preventing information overwhelm.',
+    proc:[
+      'Conducted Business Process Analysis and workshops with BA, PM, and stakeholders',
+      'Architected a unified ecosystem — Mobile for Employees, Web for Employers, Hybrid for Fund Committees',
+      'Maintained a consistent Design System across platforms for a cohesive, cross-role experience',
+      'Built high-fidelity Interactive Prototypes and User Flows as shared maps for developers and clients'
+    ],
+    learn:"Shifted my perspective from designing individual screens to architecting a cohesive multi-role ecosystem. Learned that delivery above design perfection — letting go of the 'ideal' solution to ship and iterate was often the right call.",
+    images:[{src:'images/Eastspring-01.png',label:'Eastspring M Choice TH — Screen 1'},{src:'images/Eastspring-02.png',label:'Eastspring M Choice TH — Screen 2'}]
+  },
+  {
+    num:'03',name:'Tonson LINE OA + CMS',cover:'images/Tonson-cover.png',
+    blurb:'Built a B2B digital ecosystem from scratch — connecting Merchants (LINE LIFF), Salesmen, and Admins into one real-time order tracking and sales management platform.',
+    impact:'100% manual → unified digital · Single source of truth for 20+ stores',
+    tags:['B2B','LINE OA/LIFF','CMS','Product Design'],
+    bg:'#2A0A00',fg:'#FF7A50',duration:'Oct – Nov 2025',tools:'Figma, LINE Business',
+    about:"Tonson Family is a premium vermicelli brand under Sithinnan Co., Ltd. I built their B2B digital ecosystem from scratch — designing seamless interfaces for Merchants (LINE LIFF), Salesmen, and Admins to ensure transparent, real-time sales tracking nationwide.",
+    prob:"The existing process was 100% manual workflows impacting three groups: Merchants could only order via Salesmen with no order tracking; Salesmen were managing 20+ stores via paper and personal chats, causing payment confusion and data loss; Admins had no CMS for sales analysis, resulting in slow, inefficient decision-making.",
+    sol:"Designed a multi-role system (Merchant, Salesman, Admin) integrated within LINE OA/LIFF. This lowered the barrier to technology adoption for field users while establishing the CMS as a Single Source of Truth for the entire business.",
+    proc:[
+      "Conducted deep Business Process Analysis and workshops with BA, PM, and stakeholders",
+      "Identified the biggest gap as Data Fragmentation — no bird's-eye view for Admins, coordination overload for Salesmen",
+      "Designed the LINE LIFF merchant interface for radical simplicity and the Admin CMS for data clarity",
+      "Iterated based on BA feedback and stakeholder walkthroughs throughout the sprint"
+    ],
+    learn:'This project stretched my thinking from UX design into product strategy — understanding how a digital tool can reshape an entire business operation. Building for non-tech-savvy field users reinforced the value of radical simplicity above all else.',
+    images:[{src:'images/Tonson-01.png',label:'Tonson LINE OA + CMS — Screen 1'},{src:'images/Tonson-02.png',label:'Tonson LINE OA + CMS — Screen 2'}]
+  },
+  {
+    num:'04',name:'Sumeeper',cover:'images/Sumeeper-cover.png',
+    blurb:'Redesigned the UX of a Minesweeper-inspired game — transforming instant-failure frustration into an engaging roguelike battle experience.',
+    impact:'Real-player usability testing at live events · Feedback-driven iteration',
+    tags:['Gaming','Mobile','Game UX','Roguelike'],
+    bg:'#0A2A1C',fg:'#2FD48A',duration:'Feb 2025 – Present',tools:'Figma',
+    about:'Sumeeper is a game developed by MeDream Studio. I serve as the UX/UI Designer responsible for the full player-facing interface — from onboarding flows and HUD design to menu architecture and interaction feedback.',
+    prob:"Sumeeper was born from a shared frustration between friends. One of us loved Minesweeper — another refused to play it. The reason was simple: one misclick and the game ends instantly. That unforgiving mechanic left players feeling cheated rather than challenged, turning a potentially fun experience into something to avoid. We wanted to change that.",
+    sol:"We reimagined the Minesweeper formula into something more forgiving and engaging. Instead of instant death when hitting a bomb, players enter a battle against a monster — blending classic grid-deduction mechanics with roguelike progression elements. My role was to design the complete game UX: player flows, HUD architecture, menu systems, and onboarding — ensuring that even first-time players could jump in without friction.",
+    proc:[
+      'Mapped the full player journey from first launch to first successful game session',
+      'Redesigned HUD hierarchy to reduce visual noise and surface only critical in-game information',
+      'Applied progressive disclosure for secondary mechanics — keeping the first experience clean',
+      'Created interactive Figma prototypes to test menu flows and onboarding before development',
+      'Attended live game events, observed real player behavior, and iterated directly from on-the-ground feedback'
+    ],
+    learn:'Watching real players struggle with something I designed was the most humbling and valuable feedback loop I have experienced. No internal review replaces five minutes of watching an actual user play — it changed how I approach every design decision since.'
+  },
+  {
+    num:'05',name:'OpenEdu',cover:'images/OpenEdu-cover.png',
+    blurb:'Volunteer UX/UI for an open-source education platform. Identified a data inconsistency crisis in HR workflows and designed a centralized back-office management system from scratch.',
+    impact:'Eliminated shared Google Sheet chaos · Centralized candidate lifecycle management',
+    tags:['EdTech','Platform','User Interviews','Back-office System'],
+    bg:'#15002A',fg:'#B87FFF',duration:'Nov 2024 – Apr 2025',tools:'Figma',
+    about:"Saturday School is a volunteer-run organization providing free education. I volunteered as UX/UI Designer for the OpenEdu Platform — designing interfaces that support teachers and volunteers in delivering accessible education at scale.",
+    prob:"The HR team was struggling with Data Inconsistency. Working together on a single Google Sheet caused frequent data overlaps, missing records, and a lack of version control — making it nearly impossible to manage the growing pool of volunteer applicants reliably.",
+    sol:"I conducted direct interviews with the HR team to map their exact pain points and daily workflow. Based on these insights, I designed a dedicated back-office management system — built from scratch, as none existed before. The system centralized the entire candidate lifecycle in one place: creating interview slots, sending invitation emails, scoring applicants, and tracking each stage of the selection process — eliminating the chaos of a shared Google Sheet.",
+    proc:[
+      'Conducted direct interviews with the HR team to identify pain points in their volunteer screening workflow',
+      'Mapped the existing process and pinpointed key friction points around data overlap and version control',
+      'Facilitated ideation sessions with the cross-functional team to define system requirements',
+      'Designed wireframes and prototypes for the back-office management system',
+      'Validated designs with actual HR users through usability testing sessions',
+      'Iterated based on user feedback before handing off to the development team'
+    ],
+    learn:"Volunteering opened doors to working with an entirely new team of people I had never met before — yet we shared a single purpose: building something that genuinely helps users. Despite the non-commercial nature of the project, the commitment was the same as any professional engagement. Listening to users' feelings about the design provided deep insights that no assumption could replace, and continuously refining the experience based on their feedback allowed us to meaningfully elevate the product before launch.",
+    images:[{src:'images/OpenEdu-01.png',label:'OpenEdu — Screen 1'},{src:'images/OpenEdu-02.png',label:'OpenEdu — Screen 2'}]
+  },
+  {
+    num:'06',name:'Jumsup',cover:'images/Jumsup-cover.png',
+    blurb:'Designed UX/UI and a high-fidelity prototype for a gamified English learning app — awarded by DEPA Digital Startup Fund 2025 and Hatch Incubation Program #Gen9.',
+    impact:'DEPA Digital Startup Fund 2025 · Hatch Incubation #Gen9',
+    tags:['EdTech','Mobile','Gamification','DEPA Program'],
+    bg:'#1A001A',fg:'#FF6DC8',duration:'Jan 2025 – Mar 2026',tools:'Figma',
+    about:"Jumsup is a gamified English learning app developed under the DEPA program by MeDream Studio. The goal was to make English learning engaging and accessible through game mechanics and social features for Thai learners.",
+    prob:'Existing English learning apps felt like homework — low engagement, no sense of progression, and high abandonment rates. Thai learners needed an experience that felt rewarding and social, not academic and isolating.',
+    sol:"Designed a gamified learning system with streak mechanics, level progression, and bite-sized lesson cards. What sets Jumsup apart is its combination of game-based learning with a virtual pet system and a social feed — creating multiple engagement loops that motivate learners to return daily, not just to study, but to connect, care for their pet, and share progress with friends.",
+    proc:[
+      'Defined user personas based on Thai learner behavior patterns and motivations',
+      'Mapped the core learning loop — lesson → reward → pet growth → social sharing',
+      'Designed mobile-first UI with high contrast, large tap targets, and clear visual feedback',
+      'Built high-fidelity interactive prototype in Figma for DEPA pitch presentation',
+      'Presented product concept to DEPA panel — focused on accessibility, engagement, and retention'
+    ],
+    learn:"Pitching to a government panel taught me how to translate UX rationale into business value — connecting design decisions directly to engagement metrics and policy goals. A great prototype communicates the vision even when you can't be in the room to explain it.",
+    awards:`<span class="m-award-badge">🏆 DEPA Digital Startup Fund 2025</span><span class="m-award-badge">🏅 Hatch Incubation Program #Gen9</span><br><br>Jumsup was selected for the DEPA (Digital Economy Promotion Agency) Digital Startup Fund 2025 — a national program supporting high-potential digital startups in Thailand. The project was also recognized with the Hatch Incubation Program Award #Gen9, validating the product's potential for real market impact.`,
+    images:[{src:'images/Jumsup-01.png',label:'Jumsup — Screen 1'},{src:'images/Jumsup-02.png',label:'Jumsup — Screen 2'}]
+  },
+  {
+    num:'07',name:'Fluidra',cover:'images/Fluidra-cover.png',
+    blurb:"Redesigned Fluidra Thailand's website — transforming an outdated catalog into a high-trust, premium B2B platform that reflects global standards.",
+    impact:'Outdated catalog → premium B2B platform · Aligned with global brand CI',
+    tags:['Website','B2C / B2B','Brand Design'],
+    bg:'#001A2A',fg:'#00C8FF',duration:'Aug 2025 – Nov 2025',tools:'Figma',
+    about:"Fluidra is a Spanish multinational and global leader in pool and spa equipment. I redesigned their Thailand website, transforming an outdated, text-only catalog into a high-trust, premium platform that reflects global standards and effectively showcases project references to B2B clients.",
+    prob:"The existing website felt misaligned with Fluidra's premium global positioning. Product information was hard to navigate, the visual language was inconsistent with the international brand, and the user journey from awareness to inquiry was unclear — failing to build trust with B2B clients.",
+    sol:"Redesigned the site with a clean, modern visual system that reflects Fluidra's premium quality and meets the brand's specific requirements. Restructured the information architecture to guide B2B clients from product discovery to inquiry with minimal friction — ensuring every design decision served both the user's needs and the brand's global identity standards.",
+    proc:[
+      'Reviewed the existing site against Fluidra global brand guidelines and competitor benchmarks',
+      'Restructured information architecture to improve product discovery and showcase project references',
+      'Designed a new visual language fully aligned with Fluidra global brand CI standards',
+      'Built high-fidelity page designs and interactive states in Figma',
+      'Delivered in close collaboration with the development team, PM, and the client\'s marketing team — aligning technical implementation with brand and business goals'
+    ],
+    learn:"With no dedicated user testing group available, I facilitated weekly iterative feedback loops with both the internal team and clients — treating stakeholders as 'Proxy Users' during review sessions. This ensured every design iteration was validated against technical requirements and met the client's visual expectations. Working within a Global CI framework taught me how to wield color, space, and typography to project 'International Standard' and build brand trust at a glance. The most impactful lesson: in UX, the biggest wins often come from turning invisible data into visible value.",
+    images:[{src:'images/Fluidra-01.png',label:'Fluidra — Screen 1'},{src:'images/Fluidra-02.png',label:'Fluidra — Screen 2'}]
+  }
+];
+
+/* ── RENDER CARDS ── */
+const grid=document.getElementById('projGrid');
+PROJECTS.forEach((p,i)=>{
+  const card=document.createElement('div');
+  card.className='proj-card';
+  card.innerHTML=`
+    <div class="proj-thumb" style="background:${p.bg};">
+      <img src="${p.cover}" alt="${p.name}" style="width:100%;height:100%;object-fit:cover;display:block;">
+      <div class="proj-hover-label">View Case Study</div>
+    </div>
+    <div class="proj-body">
+      <div class="proj-num">${p.num} /</div>
+      <div class="proj-name">${p.name}</div>
+      <div class="proj-blurb">${p.blurb}</div>
+      <div class="proj-impact">→ ${p.impact}</div>
+      <div class="proj-tags">${p.tags.map(t=>`<span class="proj-tag">${t}</span>`).join('')}</div>
+    </div>`;
+  card.addEventListener('click',()=>openModal(i));
+  grid.appendChild(card);
+});
+
+/* ── MODAL ── */
+function openModal(i){
+  const p=PROJECTS[i];
+  document.getElementById('mNum').textContent=p.num+' /';
+  document.getElementById('mTitle').textContent=p.name;
+  document.getElementById('mTags').innerHTML=p.tags.map(t=>`<span class="m-tag">${t}</span>`).join('');
+  document.getElementById('mMeta').innerHTML=`
+    <div class="m-meta-item"><label>Duration</label><span>${p.duration}</span></div>
+    <div class="m-meta-item"><label>Tools</label><span>${p.tools}</span></div>
+    <div class="m-meta-item"><label>Role</label><span>UX/UI Designer</span></div>`;
+  document.getElementById('mAbout').textContent=p.about;
+  document.getElementById('mProb').textContent=p.prob;
+  document.getElementById('mSol').textContent=p.sol;
+  document.getElementById('mProc').innerHTML=p.proc.map(s=>`<li>${s}</li>`).join('');
+  document.getElementById('mLearn').textContent=p.learn;
+
+  const awardsWrap=document.getElementById('mAwardsWrap');
+  if(p.awards){awardsWrap.style.display='block';document.getElementById('mAwards').innerHTML=p.awards;}
+  else{awardsWrap.style.display='none';}
+
+  const futureWrap=document.getElementById('mFutureWrap');
+  if(p.future){futureWrap.style.display='block';document.getElementById('mFuture').textContent=p.future;}
+  else{futureWrap.style.display='none';}
+
+  /* Gallery */
+  const gWrap=document.getElementById('mGalleryWrap');
+  const gGrid=document.getElementById('mGallery');
+  const imgs=p.images||[];
+  if(imgs.length){
+    gWrap.style.display='block';
+    gGrid.innerHTML='';
+    imgs.forEach((img,idx)=>{
+      const item=document.createElement('div');
+      item.className='m-gallery-item';
+      if(img.src){
+        item.innerHTML=`<img src="${img.src}" alt="${img.label||''}">`;
+      } else {
+        item.innerHTML=`<div class="m-img-placeholder">📷 ${img.label||'Image '+(idx+1)}<br><span style="font-size:.62rem;opacity:.6">${img.file||''}</span></div>`;
+      }
+      item.addEventListener('click',()=>openLb(imgs,idx));
+      gGrid.appendChild(item);
+    });
+  } else {
+    gWrap.style.display='none';
+  }
+
+  /* scroll modal to top */
+  document.getElementById('modalBg').scrollTop=0;
+  document.getElementById('modalBg').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeModal(){
+  document.getElementById('modalBg').classList.remove('open');
+  document.body.style.overflow='';
+}
+document.getElementById('modalX').onclick=closeModal;
+document.getElementById('modalBg').addEventListener('click',e=>{if(e.target.id==='modalBg')closeModal();});
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape'){
+    if(document.getElementById('imgLb').classList.contains('open'))closeLb();
+    else closeModal();
+  }
+});
+
+/* ── SCROLL FADE ── */
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in');});
+},{threshold:.08});
+document.querySelectorAll('.fade').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
