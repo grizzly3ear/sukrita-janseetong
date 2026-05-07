@@ -314,15 +314,16 @@ footer{padding:2rem 4rem;border-top:1px solid var(--border);display:flex;justify
 
 /* ── MODAL SCROLL INDICATOR ── */
 .modal-scroll-track{
-  position:absolute;right:6px;top:1.5rem;bottom:1.5rem;
-  width:3px;border-radius:3px;background:rgba(239,236,229,.06);
+  position:fixed;right:10px;top:2rem;bottom:2rem;
+  width:3px;border-radius:3px;background:rgba(239,236,229,.07);
   pointer-events:none;overflow:hidden;
+  opacity:0;transition:opacity .3s;z-index:510;
 }
+#modalScrollTrack.visible{opacity:1;}
 .modal-scroll-thumb{
   position:absolute;top:0;left:0;width:100%;
   background:var(--lime);border-radius:3px;
-  opacity:.55;transition:height .1s,top .1s;
-  min-height:24px;
+  opacity:.7;min-height:28px;
 }
 
 /* ── GALLERY CTA ── */
@@ -585,10 +586,10 @@ footer{padding:2rem 4rem;border-top:1px solid var(--border);display:flex;justify
 </footer>
 
 <!-- MODAL -->
+<!-- Scroll indicator (fixed, outside modal-box so it doesn't scroll with content) -->
+<div class="modal-scroll-track" id="modalScrollTrack"><div class="modal-scroll-thumb" id="modalScrollThumb"></div></div>
 <div class="modal-bg" id="modalBg">
   <div class="modal-box">
-    <!-- Scroll indicator -->
-    <div class="modal-scroll-track"><div class="modal-scroll-thumb" id="modalScrollThumb"></div></div>
     <button class="modal-x" id="modalX">✕</button>
     <div class="m-num"   id="mNum"></div>
     <div class="m-title" id="mTitle"></div>
@@ -967,11 +968,13 @@ function openModal(i){
   const modalBg=document.getElementById('modalBg');
   modalBg.scrollTop=0;
   modalBg.classList.add('open');
+  document.getElementById('modalScrollTrack').classList.add('visible');
   document.body.style.overflow='hidden';
-  updateScrollThumb();
+  setTimeout(updateScrollThumb,50);
 }
 function closeModal(){
   document.getElementById('modalBg').classList.remove('open');
+  document.getElementById('modalScrollTrack').classList.remove('visible');
   document.body.style.overflow='';
 }
 document.getElementById('modalX').onclick=closeModal;
@@ -986,18 +989,19 @@ document.addEventListener('keydown',e=>{
 /* ── MODAL SCROLL INDICATOR ── */
 function updateScrollThumb(){
   const bg=document.getElementById('modalBg');
+  const track=document.getElementById('modalScrollTrack');
   const thumb=document.getElementById('modalScrollThumb');
-  if(!bg||!thumb)return;
+  if(!bg||!track||!thumb)return;
   const scrollable=bg.scrollHeight-bg.clientHeight;
   if(scrollable<=0){thumb.style.height='100%';thumb.style.top='0';return;}
-  const ratio=bg.scrollTop/scrollable;
-  const trackH=bg.clientHeight-48; /* approx track height */
-  const thumbH=Math.max(24,bg.clientHeight/bg.scrollHeight*trackH);
-  const thumbTop=ratio*(trackH-thumbH);
+  const trackH=track.clientHeight;
+  const thumbH=Math.max(28,bg.clientHeight/bg.scrollHeight*trackH);
+  const thumbTop=(bg.scrollTop/scrollable)*(trackH-thumbH);
   thumb.style.height=thumbH+'px';
   thumb.style.top=thumbTop+'px';
 }
-document.getElementById('modalBg').addEventListener('scroll',updateScrollThumb,{passive:true});
+const modalBgEl=document.getElementById('modalBg');
+modalBgEl.addEventListener('scroll',updateScrollThumb,{passive:true});
 
 /* ── SCROLL FADE ── */
 const obs=new IntersectionObserver(entries=>{
