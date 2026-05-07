@@ -300,6 +300,22 @@ footer{padding:2rem 4rem;border-top:1px solid var(--border);display:flex;justify
 }
 @keyframes availPulse{0%,100%{box-shadow:0 0 0 0 rgba(9,9,14,.5)}50%{box-shadow:0 0 0 4px rgba(9,9,14,0)}}
 
+/* ── MODAL COVER IMAGE ── */
+.m-cover-wrap{
+  margin:-2.5rem -2.5rem 1.75rem -2.5rem;
+  height:210px;overflow:hidden;
+  border-radius:18px 18px 0 0;
+  position:relative;
+}
+.m-cover{width:100%;height:100%;object-fit:cover;display:block;}
+.m-cover-wrap::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(to bottom,transparent 40%,rgba(21,21,31,.85) 100%);
+}
+@media(max-width:600px){
+  .m-cover-wrap{margin:-1.75rem -1.75rem 1.5rem -1.75rem;height:160px;}
+}
+
 /* ── TL;DR in modal ── */
 .m-tldr{
   background:rgba(190,255,0,.06);border:1px solid rgba(190,255,0,.18);
@@ -596,7 +612,10 @@ footer{padding:2rem 4rem;border-top:1px solid var(--border);display:flex;justify
 <div class="modal-scroll-track" id="modalScrollTrack"><div class="modal-scroll-thumb" id="modalScrollThumb"></div></div>
 <div class="modal-bg" id="modalBg">
   <div class="modal-box">
-    <button class="modal-x" id="modalX">✕</button>
+    <button class="modal-x" id="modalX" style="z-index:2;">✕</button>
+    <div class="m-cover-wrap">
+      <img id="mCoverImg" class="m-cover" src="" alt="">
+    </div>
     <div class="m-num"   id="mNum"></div>
     <div class="m-title" id="mTitle"></div>
     <div class="m-tags"  id="mTags"></div>
@@ -926,6 +945,8 @@ PROJECTS.forEach((p,i)=>{
 /* ── MODAL ── */
 function openModal(i){
   const p=PROJECTS[i];
+  document.getElementById('mCoverImg').src=p.cover||'';
+  document.getElementById('mCoverImg').alt=p.name;
   document.getElementById('mNum').textContent=p.num+' /';
   document.getElementById('mTitle').textContent=p.name;
   document.getElementById('mTags').innerHTML=p.tags.map(t=>`<span class="m-tag">${t}</span>`).join('');
