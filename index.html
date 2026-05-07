@@ -314,7 +314,10 @@ footer{padding:2rem 4rem;border-top:1px solid var(--border);display:flex;justify
 
 /* ── MODAL SCROLL INDICATOR ── */
 .modal-scroll-track{
-  position:fixed;right:10px;top:2rem;bottom:2rem;
+  position:fixed;
+  /* ชิดขอบขวาใน modal-box (max-width 700px, padding modal-bg 1.5rem) */
+  right:max(calc(1.5rem + 5px), calc(50vw - 346px));
+  top:2.5rem;bottom:2.5rem;
   width:3px;border-radius:3px;background:rgba(239,236,229,.07);
   pointer-events:none;overflow:hidden;
   opacity:0;transition:opacity .3s;z-index:510;
@@ -324,6 +327,9 @@ footer{padding:2rem 4rem;border-top:1px solid var(--border);display:flex;justify
   position:absolute;top:0;left:0;width:100%;
   background:var(--lime);border-radius:3px;
   opacity:.7;min-height:28px;
+}
+@media(max-width:600px){
+  .modal-scroll-track{right:calc(1.5rem - 2px);}
 }
 
 /* ── GALLERY CTA ── */
