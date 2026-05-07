@@ -4,6 +4,21 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sukrita Janseetong — UX/UI Designer</title>
+<!-- Favicon -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%2309090E'/><text y='.9em' font-size='72' x='50%' dominant-baseline='middle' text-anchor='middle' fill='%23BEFF00' font-family='sans-serif' font-weight='900'>S</text></svg>">
+<link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%2309090E'/><text y='.9em' font-size='72' x='50%' dominant-baseline='middle' text-anchor='middle' fill='%23BEFF00' font-family='sans-serif' font-weight='900'>S</text></svg>">
+<!-- Open Graph -->
+<meta property="og:title" content="Sukrita Janseetong — UX/UI Designer">
+<meta property="og:description" content="UX/UI Designer crafting intuitive experiences across FinTech, EdTech, and Gaming. 7 products shipped · 3 industries · 100% delivery rate.">
+<meta property="og:image" content="images/Principal-cover.png">
+<meta property="og:image:width" content="800">
+<meta property="og:image:height" content="450">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://sukrita-janseetong.vercel.app">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sukrita Janseetong — UX/UI Designer">
+<meta name="twitter:description" content="UX/UI Designer · FinTech · EdTech · Gaming · 7 products shipped">
+<meta name="twitter:image" content="images/Principal-cover.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -271,6 +286,56 @@ footer{padding:2rem 4rem;border-top:1px solid var(--border);display:flex;justify
 .a3{opacity:0;animation:fadeUp .65s .36s ease forwards;}
 .a4{opacity:0;animation:fadeUp .65s .5s ease forwards;}
 
+/* ── AVAILABLE BADGE ── */
+.avail-badge{
+  display:inline-flex;align-items:center;gap:.45rem;
+  font-size:.68rem;font-weight:500;letter-spacing:.04em;
+  color:#09090E;background:var(--lime);
+  padding:.3rem .75rem .3rem .5rem;border-radius:2rem;
+  margin-bottom:1.25rem;
+}
+.avail-badge::before{
+  content:'';width:7px;height:7px;border-radius:50%;background:#09090E;opacity:.5;
+  animation:availPulse 2s ease-in-out infinite;
+}
+@keyframes availPulse{0%,100%{box-shadow:0 0 0 0 rgba(9,9,14,.5)}50%{box-shadow:0 0 0 4px rgba(9,9,14,0)}}
+
+/* ── TL;DR in modal ── */
+.m-tldr{
+  background:rgba(190,255,0,.06);border:1px solid rgba(190,255,0,.18);
+  border-radius:10px;padding:.875rem 1.1rem;margin-bottom:1.5rem;
+}
+.m-tldr-label{font-size:.6rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--lime);margin-bottom:.3rem;}
+.m-tldr-text{font-size:.875rem;color:var(--cream);line-height:1.7;font-weight:400;}
+
+/* ── TAP LABEL (mobile cards) ── */
+.proj-tap{display:none;font-size:.68rem;color:var(--muted);margin-top:.375rem;letter-spacing:.03em;}
+@media(max-width:960px){.proj-tap{display:block;}}
+
+/* ── MODAL SCROLL INDICATOR ── */
+.modal-scroll-track{
+  position:absolute;right:6px;top:1.5rem;bottom:1.5rem;
+  width:3px;border-radius:3px;background:rgba(239,236,229,.06);
+  pointer-events:none;overflow:hidden;
+}
+.modal-scroll-thumb{
+  position:absolute;top:0;left:0;width:100%;
+  background:var(--lime);border-radius:3px;
+  opacity:.55;transition:height .1s,top .1s;
+  min-height:24px;
+}
+
+/* ── GALLERY CTA ── */
+.m-gallery-cta{
+  display:block;text-align:center;margin-top:1.5rem;
+  padding:.8rem 1.5rem;border-radius:2rem;
+  background:var(--lime);color:#09090E;
+  font-size:.85rem;font-weight:600;text-decoration:none;
+  transition:transform .2s,box-shadow .2s;cursor:pointer;border:none;
+  font-family:var(--fb);width:100%;
+}
+.m-gallery-cta:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(190,255,0,.3);}
+
 /* ── MOBILE FAB ── */
 .mob-fab{
   display:none;
@@ -354,6 +419,7 @@ footer{padding:2rem 4rem;border-top:1px solid var(--border);display:flex;justify
 <!-- HERO -->
 <section class="hero" id="home">
   <div>
+    <div class="avail-badge a1">Available for opportunities</div>
     <div class="eyebrow a1">UX/UI Designer &nbsp;·&nbsp; FinTech &nbsp;·&nbsp; EdTech &nbsp;·&nbsp; Gaming</div>
     <div class="hero-title-wrap">
       <div class="hero-da" aria-hidden="true">大</div>
@@ -514,18 +580,25 @@ footer{padding:2rem 4rem;border-top:1px solid var(--border);display:flex;justify
   <div class="foot-r">
     <a href="mailto:sukrita.iam@gmail.com">sukrita.iam@gmail.com</a>
     <a href="tel:+66814567580">081-456-7580</a>
-    <span style="color:rgba(104,104,126,.4)">© 2025 Sukrita Janseetong</span>
+    <span style="color:rgba(104,104,126,.4)">© 2026 Sukrita Janseetong</span>
   </div>
 </footer>
 
 <!-- MODAL -->
 <div class="modal-bg" id="modalBg">
   <div class="modal-box">
+    <!-- Scroll indicator -->
+    <div class="modal-scroll-track"><div class="modal-scroll-thumb" id="modalScrollThumb"></div></div>
     <button class="modal-x" id="modalX">✕</button>
     <div class="m-num"   id="mNum"></div>
     <div class="m-title" id="mTitle"></div>
     <div class="m-tags"  id="mTags"></div>
     <div class="m-meta"  id="mMeta"></div>
+    <!-- TL;DR -->
+    <div class="m-tldr" id="mTldrWrap">
+      <div class="m-tldr-label">TL;DR</div>
+      <div class="m-tldr-text" id="mTldr"></div>
+    </div>
     <hr class="m-hr">
     <div class="m-section"><h4>About the Project</h4><p id="mAbout"></p></div>
     <div class="m-section"><h4>The Problem</h4><p id="mProb"></p></div>
@@ -545,6 +618,10 @@ footer{padding:2rem 4rem;border-top:1px solid var(--border);display:flex;justify
       <h4>Project Gallery</h4>
       <div class="m-gallery" id="mGallery"></div>
     </div>
+    <!-- Gallery CTA -->
+    <button class="m-gallery-cta" id="mContactCta" onclick="closeModal();setTimeout(()=>document.getElementById('contact').scrollIntoView({behavior:'smooth'}),120);">
+      Like what you see? Let's work together →
+    </button>
   </div>
 </div>
 
@@ -677,6 +754,7 @@ document.addEventListener('keydown',e=>{
 const PROJECTS=[
   {
     num:'01',name:'Principal TH',cover:'images/Principal-cover.png',
+    tldr:'OCR-powered auto-approval turned a manual KYC bottleneck into a 5-minute self-service flow — letting users invest immediately instead of waiting for a CS call.',
     blurb:"Redesigned Auto-Approval & PinCode flows for a provident fund app — eliminating the frozen state where users couldn't invest pending manual KYC.",
     impact:'Higher initial transaction rates · Reduced CS manual workload',
     tags:['FinTech','Mobile App','OCR Integration','Design System'],
@@ -696,6 +774,7 @@ const PROJECTS=[
   },
   {
     num:'02',name:'Eastspring M Choice TH',cover:'images/Eastspring-cover.png',
+    tldr:'Digitized a multi-day paper fund termination process into a guided e-Signature flow across 3 user roles — zero manual data entry errors.',
     blurb:'Designed the digital Membership Termination flow for a corporate provident fund platform — replacing multi-day paper workflows with a guided, e-Signature system for 3 user roles.',
     impact:'Entire fund termination process digitized · Zero manual data entry errors',
     tags:['FinTech','Web + Mobile','3 User Roles'],
@@ -714,6 +793,7 @@ const PROJECTS=[
   },
   {
     num:'03',name:'Tonson LINE OA + CMS',cover:'images/Tonson-cover.png',
+    tldr:'Built a full B2B order management ecosystem on LINE — eliminating 100% manual workflows and giving 20+ stores a single source of truth in real time.',
     blurb:'Built a B2B digital ecosystem from scratch — connecting Merchants (LINE LIFF), Salesmen, and Admins into one real-time order tracking and sales management platform.',
     impact:'100% manual → unified digital · Single source of truth for 20+ stores',
     tags:['B2B','LINE OA/LIFF','CMS','Product Design'],
@@ -732,6 +812,7 @@ const PROJECTS=[
   },
   {
     num:'04',name:'Sumeeper',cover:'images/Sumeeper-cover.png',
+    tldr:"Redesigned Minesweeper's instant-death mechanic into a forgiving roguelike battle experience — iterated live at real game events with actual player feedback.",
     blurb:'Redesigned the UX of a Minesweeper-inspired game — transforming instant-failure frustration into an engaging roguelike battle experience.',
     impact:'Real-player usability testing at live events · Feedback-driven iteration',
     tags:['Gaming','Mobile','Game UX','Roguelike'],
@@ -751,6 +832,7 @@ const PROJECTS=[
   },
   {
     num:'05',name:'OpenEdu',cover:'images/OpenEdu-cover.png',
+    tldr:'Replaced a chaotic shared Google Sheet with a centralized back-office system — covering interview slots, candidate scoring, and full lifecycle tracking for volunteer applicants.',
     blurb:'Volunteer UX/UI for an open-source education platform. Identified a data inconsistency crisis in HR workflows and designed a centralized back-office management system from scratch.',
     impact:'Eliminated shared Google Sheet chaos · Centralized candidate lifecycle management',
     tags:['EdTech','Platform','User Interviews','Back-office System'],
@@ -771,6 +853,7 @@ const PROJECTS=[
   },
   {
     num:'06',name:'Jumsup',cover:'images/Jumsup-cover.png',
+    tldr:'Gamified English learning app with virtual pet + social feed — selected by DEPA Digital Startup Fund 2025 and Hatch Incubation Program #Gen9.',
     blurb:'Designed UX/UI and a high-fidelity prototype for a gamified English learning app — awarded by DEPA Digital Startup Fund 2025 and Hatch Incubation Program #Gen9.',
     impact:'DEPA Digital Startup Fund 2025 · Hatch Incubation #Gen9',
     tags:['EdTech','Mobile','Gamification','DEPA Program'],
@@ -791,6 +874,7 @@ const PROJECTS=[
   },
   {
     num:'07',name:'Fluidra',cover:'images/Fluidra-cover.png',
+    tldr:'Transformed an outdated product catalog into a premium B2B trust-building platform — fully aligned with global CI standards and restructured for frictionless inquiry.',
     blurb:"Redesigned Fluidra Thailand's website — transforming an outdated catalog into a high-trust, premium B2B platform that reflects global standards.",
     impact:'Outdated catalog → premium B2B platform · Aligned with global brand CI',
     tags:['Website','B2C / B2B','Brand Design'],
@@ -825,6 +909,7 @@ PROJECTS.forEach((p,i)=>{
       <div class="proj-name">${p.name}</div>
       <div class="proj-blurb">${p.blurb}</div>
       <div class="proj-impact">→ ${p.impact}</div>
+      <div class="proj-tap">Tap to view →</div>
       <div class="proj-tags">${p.tags.map(t=>`<span class="proj-tag">${t}</span>`).join('')}</div>
     </div>`;
   card.addEventListener('click',()=>openModal(i));
@@ -841,6 +926,7 @@ function openModal(i){
     <div class="m-meta-item"><label>Duration</label><span>${p.duration}</span></div>
     <div class="m-meta-item"><label>Tools</label><span>${p.tools}</span></div>
     <div class="m-meta-item"><label>Role</label><span>UX/UI Designer</span></div>`;
+  document.getElementById('mTldr').textContent=p.tldr||'';
   document.getElementById('mAbout').textContent=p.about;
   document.getElementById('mProb').textContent=p.prob;
   document.getElementById('mSol').textContent=p.sol;
@@ -877,10 +963,12 @@ function openModal(i){
     gWrap.style.display='none';
   }
 
-  /* scroll modal to top */
-  document.getElementById('modalBg').scrollTop=0;
-  document.getElementById('modalBg').classList.add('open');
+  /* scroll modal to top + reset scroll indicator */
+  const modalBg=document.getElementById('modalBg');
+  modalBg.scrollTop=0;
+  modalBg.classList.add('open');
   document.body.style.overflow='hidden';
+  updateScrollThumb();
 }
 function closeModal(){
   document.getElementById('modalBg').classList.remove('open');
@@ -894,6 +982,22 @@ document.addEventListener('keydown',e=>{
     else closeModal();
   }
 });
+
+/* ── MODAL SCROLL INDICATOR ── */
+function updateScrollThumb(){
+  const bg=document.getElementById('modalBg');
+  const thumb=document.getElementById('modalScrollThumb');
+  if(!bg||!thumb)return;
+  const scrollable=bg.scrollHeight-bg.clientHeight;
+  if(scrollable<=0){thumb.style.height='100%';thumb.style.top='0';return;}
+  const ratio=bg.scrollTop/scrollable;
+  const trackH=bg.clientHeight-48; /* approx track height */
+  const thumbH=Math.max(24,bg.clientHeight/bg.scrollHeight*trackH);
+  const thumbTop=ratio*(trackH-thumbH);
+  thumb.style.height=thumbH+'px';
+  thumb.style.top=thumbTop+'px';
+}
+document.getElementById('modalBg').addEventListener('scroll',updateScrollThumb,{passive:true});
 
 /* ── SCROLL FADE ── */
 const obs=new IntersectionObserver(entries=>{
