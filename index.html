@@ -357,6 +357,23 @@ footer{padding:2rem 4rem;border-top:1px solid var(--border);display:flex;justify
 }
 .mob-fab:hover{transform:scale(1.06) translateY(-2px);box-shadow:0 14px 36px rgba(190,255,0,.45);}
 
+/* ── BACK TO TOP ── */
+.back-to-top{
+  position:fixed;bottom:1.75rem;right:1.75rem;z-index:279;
+  width:42px;height:42px;border-radius:50%;
+  background:rgba(21,21,31,.92);border:1.5px solid rgba(190,255,0,.35);
+  display:flex;align-items:center;justify-content:center;
+  opacity:0;pointer-events:none;
+  transition:opacity .3s,transform .2s,border-color .2s,box-shadow .2s;
+  cursor:pointer;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  box-shadow:0 4px 16px rgba(0,0,0,.4);
+}
+.back-to-top.visible{opacity:1;pointer-events:auto;}
+.back-to-top:hover{transform:scale(1.12) translateY(-2px);border-color:rgba(190,255,0,.75);box-shadow:0 6px 22px rgba(190,255,0,.22);}
+@media(max-width:960px){
+  .back-to-top{bottom:5.75rem;}
+}
+
 /* ── RESPONSIVE ── */
 @media(max-width:960px){
   nav{padding:1rem 2rem;} .nav-links{display:none;} .burger{display:flex;}
@@ -422,6 +439,11 @@ footer{padding:2rem 4rem;border-top:1px solid var(--border);display:flex;justify
   <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M8 2l5 5-5 5" stroke="#09090E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
   Let's work together!
 </a>
+
+<!-- BACK TO TOP -->
+<button class="back-to-top" id="backToTop" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 12V2M2 7l5-5 5 5" stroke="#BEFF00" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</button>
 
 <!-- HERO -->
 <section class="hero" id="home">
@@ -659,9 +681,12 @@ document.querySelectorAll('a,button,.proj-card,.bc').forEach(el=>{
 
 /* ── SCROLL NAV ── */
 const navEl=document.querySelector('nav');
+const bttBtn=document.getElementById('backToTop');
 window.addEventListener('scroll',()=>{
   if(window.scrollY>80){navEl.classList.add('scrolled');}
   else{navEl.classList.remove('scrolled');}
+  if(window.scrollY>300){bttBtn.classList.add('visible');}
+  else{bttBtn.classList.remove('visible');}
 },{passive:true});
 
 /* ── MOBILE NAV ── */
@@ -799,23 +824,23 @@ const PROJECTS=[
     images:[{src:'images/Eastspring-01.png',label:'Eastspring M Choice TH — Screen 1'},{src:'images/Eastspring-02.png',label:'Eastspring M Choice TH — Screen 2'}]
   },
   {
-    num:'03',name:'Tonson LINE OA + CMS',cover:'images/Tonson-cover.png',
-    tldr:'Architected a complete B2B digital ecosystem for Tonson Family, connecting Merchants, Salesmen, and Admins through a unified LINE OA + CMS platform. By migrating from fragmented paper records to a 100% digital workflow, the project established a "Single Source of Truth" for nationwide sales. The interface was specifically optimized for high-speed field usage on mobile, enabling real-time order tracking and reducing operational coordination overhead.',
+    num:'03',name:'Tonson LINE OA + CRM',cover:'images/Tonson-cover.png',
+    tldr:'Architected a complete B2B digital ecosystem for Tonson Family, connecting Merchants, Salesmen, and Admins through a unified LINE OA + CRM platform. By migrating from fragmented paper records to a 100% digital workflow, the project established a "Single Source of Truth" for nationwide sales. The interface was specifically optimized for high-speed field usage on mobile, enabling real-time order tracking and reducing operational coordination overhead.',
     blurb:'Built a B2B digital ecosystem from scratch — connecting Merchants (LINE LIFF), Salesmen, and Admins into one real-time order tracking and sales management platform.',
     impact:'100% manual → unified digital · Single source of truth for 20+ stores',
-    tags:['B2B','LINE OA/LIFF','CMS','Product Design'],
+    tags:['B2B','LINE OA/LIFF','CRM','Product Design'],
     bg:'#2A0A00',fg:'#FF7A50',duration:'Oct – Nov 2025',tools:'Figma, LINE Business',
     about:"Tonson Family is a premium vermicelli brand under Sithinnan Co., Ltd. I built their B2B digital ecosystem from scratch — designing seamless interfaces for Merchants (LINE LIFF), Salesmen, and Admins to ensure transparent, real-time sales tracking nationwide.",
-    prob:"The existing process was 100% manual workflows impacting three groups: Merchants could only order via Salesmen with no order tracking; Salesmen were managing 20+ stores via paper and personal chats, causing payment confusion and data loss; Admins had no CMS for sales analysis, resulting in slow, inefficient decision-making.",
-    sol:"Designed a multi-role system (Merchant, Salesman, Admin) integrated within LINE OA/LIFF. This lowered the barrier to technology adoption for field users while establishing the CMS as a Single Source of Truth for the entire business.",
+    prob:"The existing process was 100% manual workflows impacting three groups: Merchants could only order via Salesmen with no order tracking; Salesmen were managing 20+ stores via paper and personal chats, causing payment confusion and data loss; Admins had no CRM for sales analysis, resulting in slow, inefficient decision-making.",
+    sol:"Designed a multi-role system (Merchant, Salesman, Admin) integrated within LINE OA/LIFF. This lowered the barrier to technology adoption for field users while establishing the CRM as a Single Source of Truth for the entire business.",
     proc:[
       "Conducted deep Business Process Analysis and workshops with BA, PM, and stakeholders",
       "Identified the biggest gap as Data Fragmentation — no bird's-eye view for Admins, coordination overload for Salesmen",
-      "Designed the LINE LIFF merchant interface for radical simplicity and the Admin CMS for data clarity",
+      "Designed the LINE LIFF merchant interface for radical simplicity and the Admin CRM for data clarity",
       "Iterated based on BA feedback and stakeholder walkthroughs throughout the sprint"
     ],
     learn:'This project stretched my thinking from UX design into product strategy — understanding how a digital tool can reshape an entire business operation. Building for non-tech-savvy field users reinforced the value of radical simplicity above all else.',
-    images:[{src:'images/Tonson-01.png',label:'Tonson LINE OA + CMS — Screen 1'},{src:'images/Tonson-02.png',label:'Tonson LINE OA + CMS — Screen 2'}]
+    images:[{src:'images/Tonson-01.png',label:'Tonson LINE OA + CRM — Screen 1'},{src:'images/Tonson-02.png',label:'Tonson LINE OA + CRM — Screen 2'}]
   },
   {
     num:'04',name:'Sumeeper',cover:'images/Sumeeper-cover.png',
