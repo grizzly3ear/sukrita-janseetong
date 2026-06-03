@@ -4,13 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sukrita Janseetong — UX/UI Designer</title>
-<!-- Favicon -->
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%2309090E'/><text y='.9em' font-size='72' x='50%' dominant-baseline='middle' text-anchor='middle' fill='%23BEFF00' font-family='sans-serif' font-weight='900'>S</text></svg>">
 <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%2309090E'/><text y='.9em' font-size='72' x='50%' dominant-baseline='middle' text-anchor='middle' fill='%23BEFF00' font-family='sans-serif' font-weight='900'>S</text></svg>">
-<!-- Open Graph -->
 <meta property="og:title" content="Sukrita Janseetong — UX/UI Designer">
-<meta property="og:description" content="UX/UI Designer crafting intuitive experiences across FinTech, EdTech, and Gaming. 7 products shipped · 3 industries · 100% delivery rate.">
-<meta property="og:image" content="images/Principal-cover.png">
+<meta property="og:description" content="UX/UI Designer crafting intuitive experiences across FinTech, EdTech, and Gaming. 7 products shipped · 4 industries · 1.5+ years.">
+<meta property="og:image" content="images/cover-work/Principal-cover.png">
 <meta property="og:image:width" content="800">
 <meta property="og:image:height" content="450">
 <meta property="og:type" content="website">
@@ -18,19 +16,19 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Sukrita Janseetong — UX/UI Designer">
 <meta name="twitter:description" content="UX/UI Designer · FinTech · EdTech · Gaming · 7 products shipped">
-<meta name="twitter:image" content="images/Principal-cover.png">
+<meta name="twitter:image" content="images/cover-work/Principal-cover.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-:root {
-  --bg:#09090E; --bg-card:#15151F;
-  --lime:#BEFF00; --coral:#FF5C3E; --lavender:#9D8EFF;
-  --cream:#EFECE5; --muted:#68687E; --border:rgba(239,236,229,0.08);
-  --fd:'Syne',sans-serif; --fb:'DM Sans',sans-serif;
+:root{
+  --bg:#09090E;--bg-card:#15151F;
+  --lime:#BEFF00;--coral:#FF5C3E;--lavender:#9D8EFF;
+  --cream:#EFECE5;--muted:#bcbcd3;--border:rgba(239,236,229,0.08);
+  --fd:'Syne',sans-serif;--fb:'DM Sans',sans-serif;
 }
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
-body{background:var(--bg);color:var(--cream);font-family:var(--fb);line-height:1.7;overflow-x:hidden;cursor:none;}
+body{background:var(--bg);color:var(--cream);font-family:var(--fb);font-size:16px;line-height:1.7;overflow-x:hidden;cursor:none;}
 a,button{cursor:none;}
 
 /* ── CURSOR ── */
@@ -45,30 +43,8 @@ body.cursor-hover #cursor-dot{background:#fff;}
 @keyframes cosmosFloat{0%{transform:translateY(0) scale(1);}50%{transform:translateY(-30px) scale(1.04);}100%{transform:translateY(0) scale(1);}}
 
 /* ── NAV ── */
-nav{
-  position:fixed;top:0;left:0;right:0;z-index:300;
-  display:flex;align-items:center;justify-content:space-between;
-  padding:1.2rem 4rem;
-  background:rgba(9,9,14,.88);
-  backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);
-  border-bottom:1px solid var(--border);
-  transition:all .4s cubic-bezier(.25,.46,.45,.94);
-}
-/* Scrolled: shrink to centered glass pill */
-nav.scrolled{
-  top:14px;
-  left:50%;right:auto;
-  transform:translateX(-50%);
-  width:max-content;
-  padding:.65rem 2rem;
-  gap:2rem;
-  border-radius:50px;
-  background:rgba(21,21,31,.78);
-  backdrop-filter:blur(28px);-webkit-backdrop-filter:blur(28px);
-  border:1px solid rgba(239,236,229,.1);
-  box-shadow:0 8px 32px rgba(0,0,0,.45),0 0 0 1px rgba(190,255,0,.04);
-  white-space:nowrap;
-}
+nav{position:fixed;top:0;left:0;right:0;z-index:300;display:flex;align-items:center;justify-content:space-between;padding:1.2rem 4rem;background:rgba(9,9,14,.88);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);border-bottom:1px solid var(--border);transition:all .4s cubic-bezier(.25,.46,.45,.94);}
+nav.scrolled{top:14px;left:50%;right:auto;transform:translateX(-50%);width:max-content;padding:.65rem 2rem;gap:2rem;border-radius:50px;background:rgba(21,21,31,.78);backdrop-filter:blur(28px);-webkit-backdrop-filter:blur(28px);border:1px solid rgba(239,236,229,.1);box-shadow:0 8px 32px rgba(0,0,0,.45),0 0 0 1px rgba(190,255,0,.04);white-space:nowrap;}
 .nav-logo{font-family:var(--fd);font-weight:800;font-size:1.1rem;color:var(--cream);text-decoration:none;letter-spacing:-.02em;}
 .nav-logo span{color:var(--lime);}
 .nav-links{display:flex;gap:2rem;list-style:none;}
@@ -84,31 +60,13 @@ nav.scrolled{
 .mob-nav a:hover{color:var(--lime);}
 .mob-close{position:absolute;top:1.5rem;right:2rem;font-size:1.75rem;background:none;border:none;color:var(--cream);}
 
-
 /* ── HERO ── */
 .hero{min-height:100vh;display:grid;grid-template-columns:1.1fr 0.9fr;gap:5rem;align-items:center;padding:9rem 4rem 5rem;position:relative;z-index:1;overflow:hidden;}
 .hero::before{content:'';position:absolute;top:10%;right:-8%;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(190,255,0,.05) 0%,transparent 70%);pointer-events:none;}
 .hero::after{content:'';position:absolute;bottom:8%;left:5%;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(255,92,62,.04) 0%,transparent 70%);pointer-events:none;}
-
-/* 大 watermark wrapper */
 .hero-title-wrap{position:relative;}
-.hero-da{
-  position:absolute;
-  font-family:var(--fd);
-  font-size:clamp(9rem,22vw,18rem);
-  font-weight:800;
-  color:var(--lime);
-  opacity:.055;
-  line-height:1;
-  top:-.15em;
-  left:-.06em;
-  pointer-events:none;
-  user-select:none;
-  z-index:0;
-  letter-spacing:-.04em;
-}
+.hero-da{position:absolute;font-family:var(--fd);font-size:clamp(9rem,22vw,18rem);font-weight:800;color:var(--lime);opacity:.055;line-height:1;top:-.15em;left:-.06em;pointer-events:none;user-select:none;z-index:0;letter-spacing:-.04em;}
 .hero-title{position:relative;z-index:1;}
-
 .eyebrow{display:inline-flex;align-items:center;gap:.6rem;font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--lime);font-weight:500;margin-bottom:1.75rem;}
 .eyebrow::before{content:'';width:26px;height:1px;background:var(--lime);}
 h1.hero-title{font-family:var(--fd);font-size:clamp(2.6rem,6vw,5.4rem);font-weight:800;line-height:1.04;letter-spacing:-.035em;margin-bottom:1.5rem;}
@@ -134,7 +92,6 @@ h1.hero-title .coral{color:var(--coral);}
 @keyframes pop{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
 .bingo-msg{margin-top:.875rem;font-size:.78rem;color:var(--muted);min-height:1.4rem;}
 .bingo-msg.win{color:var(--lime);font-weight:500;}
-
 .scroll-hint{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:6px;color:var(--muted);font-size:.62rem;letter-spacing:.15em;text-transform:uppercase;animation:sbounce 2.4s ease-in-out infinite;}
 @keyframes sbounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(7px)}}
 
@@ -148,10 +105,20 @@ h1.hero-title .coral{color:var(--coral);}
 .stat-card{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:1.5rem;}
 .stat-n{font-family:var(--fd);font-size:2.4rem;font-weight:800;letter-spacing:-.04em;color:var(--lime);}
 .stat-l{font-size:.8rem;color:var(--muted);margin-top:.25rem;line-height:1.5;}
+.stat-ind-tags{display:flex;flex-wrap:wrap;gap:.3rem;margin-top:.75rem;}
+.stat-ind-tag{font-size:.65rem;padding:.2rem .55rem;border-radius:20px;background:rgba(239,236,229,.06);color:var(--muted);border:1px solid rgba(239,236,229,.1);}
+.tool-row{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:.625rem;}
+.tool-pill{font-size:.72rem;padding:.25rem .7rem;border-radius:20px;background:rgba(190,255,0,.1);color:var(--lime);border:1px solid rgba(190,255,0,.25);font-weight:500;}
 
-/* ── PROJECTS ── */
+/* ── FILTER CHIPS ── */
+.filter-chips{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:2.5rem;}
+.filter-chip{font-family:var(--fb);font-size:.8rem;padding:.45rem 1.1rem;border-radius:2rem;background:transparent;border:1px solid rgba(239,236,229,.15);color:var(--muted);cursor:pointer;transition:all .2s;}
+.filter-chip:hover{border-color:rgba(190,255,0,.4);color:var(--cream);}
+.filter-chip.active{background:rgba(190,255,0,.12);border-color:rgba(190,255,0,.4);color:var(--lime);}
+
+/* ── PROJECTS GRID ── */
 .proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;}
-.proj-card{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;overflow:hidden;transition:border-color .25s,transform .25s;}
+.proj-card{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;overflow:hidden;transition:border-color .25s,transform .25s;cursor:pointer;}
 .proj-card:hover{border-color:rgba(190,255,0,.32);transform:translateY(-5px);}
 .proj-thumb{height:155px;display:flex;align-items:center;justify-content:center;font-family:var(--fd);font-size:1.5rem;font-weight:800;position:relative;overflow:hidden;}
 .proj-hover-label{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0);color:transparent;font-family:var(--fb);font-size:.8rem;font-weight:500;letter-spacing:.05em;transition:background .25s,color .25s;}
@@ -163,28 +130,105 @@ h1.hero-title .coral{color:var(--coral);}
 .proj-impact{font-size:.72rem;color:var(--lime);font-weight:500;line-height:1.5;margin-bottom:.75rem;}
 .proj-tags{display:flex;flex-wrap:wrap;gap:.3rem;}
 .proj-tag{font-size:.62rem;padding:.2rem .55rem;border-radius:20px;background:rgba(239,236,229,.05);color:var(--muted);border:1px solid var(--border);}
+.proj-tap{display:none;font-size:.68rem;color:var(--muted);margin-top:.375rem;letter-spacing:.03em;}
+@media(max-width:960px){.proj-tap{display:block;}}
 
-/* ── MODAL ── */
-.modal-bg{display:none;position:fixed;inset:0;background:rgba(0,0,0,.87);z-index:500;overflow-y:auto;padding:2rem 1.5rem;align-items:flex-start;justify-content:center;}
-.modal-bg.open{display:flex;}
-.modal-box{background:var(--bg-card);border:1px solid rgba(239,236,229,.13);border-radius:18px;width:100%;max-width:700px;padding:2.5rem;position:relative;margin:auto;}
-.modal-x{position:absolute;top:1.25rem;right:1.25rem;width:36px;height:36px;border-radius:50%;border:none;background:rgba(239,236,229,.08);color:var(--cream);font-size:1rem;display:flex;align-items:center;justify-content:center;transition:background .2s;}
-.modal-x:hover{background:rgba(239,236,229,.16);}
-.m-num{font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem;}
-.m-title{font-family:var(--fd);font-size:1.75rem;font-weight:800;letter-spacing:-.025em;margin-bottom:1rem;}
-.m-tags{display:flex;flex-wrap:wrap;gap:.375rem;margin-bottom:1.5rem;}
-.m-tag{font-size:.68rem;padding:.25rem .7rem;border-radius:20px;background:rgba(190,255,0,.08);color:var(--lime);border:1px solid rgba(190,255,0,.2);}
-.m-meta{display:flex;gap:2rem;flex-wrap:wrap;margin-bottom:1.75rem;}
-.m-meta-item label{display:block;font-size:.62rem;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin-bottom:.2rem;}
-.m-meta-item span{font-size:.85rem;}
-.m-hr{border:none;border-top:1px solid var(--border);margin:1.5rem 0;}
-.m-section{margin-bottom:1.5rem;}
-.m-section h4{font-family:var(--fd);font-size:.8rem;font-weight:700;color:var(--lime);text-transform:uppercase;letter-spacing:.05em;margin-bottom:.5rem;}
-/* ── modal text lighter for readability ── */
-.m-section p{font-size:.875rem;color:#9191aa;line-height:1.8;}
-.m-section ul{padding-left:1.2rem;}
-.m-section ul li{font-size:.875rem;color:#9191aa;line-height:1.8;margin-bottom:.25rem;}
-.m-award-badge{display:inline-block;margin-top:.5rem;font-size:.75rem;color:var(--lime);border:1px solid rgba(190,255,0,.3);border-radius:4px;padding:.25rem .75rem;margin-right:.5rem;margin-bottom:.375rem;}
+/* ── PROJECT PAGE ── */
+.proj-page{
+  position:fixed;inset:0;background:var(--bg);z-index:600;
+  overflow-y:auto;-webkit-overflow-scrolling:touch;
+  transform:translateX(100%);
+  transition:transform .45s cubic-bezier(.25,.46,.45,.94);
+}
+.proj-page.open{transform:translateX(0);}
+.pp-topbar{
+  position:sticky;top:0;z-index:10;
+  background:rgba(9,9,14,.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border);
+  display:flex;align-items:center;gap:1rem;
+  padding:.875rem 2rem;
+}
+.pp-back{
+  display:flex;align-items:center;gap:.375rem;
+  background:none;border:1px solid rgba(239,236,229,.15);
+  color:var(--cream);font-family:var(--fb);font-size:.8rem;
+  padding:.4rem .9rem;border-radius:2rem;
+  transition:border-color .2s,color .2s;white-space:nowrap;flex-shrink:0;
+}
+.pp-back:hover{border-color:rgba(190,255,0,.4);color:var(--lime);}
+.pp-topbar-title{font-family:var(--fd);font-size:.88rem;font-weight:700;flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--cream);}
+.pp-nav-arrows{display:flex;gap:.4rem;flex-shrink:0;}
+.pp-nav-arrow{
+  width:32px;height:32px;border-radius:50%;
+  background:rgba(239,236,229,.06);border:1px solid rgba(239,236,229,.12);
+  color:var(--cream);font-size:.9rem;
+  display:flex;align-items:center;justify-content:center;
+  transition:background .2s,border-color .2s;
+}
+.pp-nav-arrow:hover{background:rgba(239,236,229,.12);border-color:rgba(190,255,0,.3);}
+
+/* PP Cover */
+.pp-cover-wrap{width:100%;height:clamp(220px,40vh,480px);overflow:hidden;position:relative;}
+.pp-cover-img{width:100%;height:100%;object-fit:cover;display:block;}
+
+/* PP Container */
+.pp-container{max-width:860px;margin:0 auto;padding:3rem 2rem 5rem;}
+
+/* PP Header */
+.pp-num-label{font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);}
+.pp-title{font-family:var(--fd);font-size:clamp(1.75rem,4vw,3rem);font-weight:800;letter-spacing:-.03em;line-height:1.05;margin:.4rem 0 1.25rem;}
+.pp-meta{display:flex;flex-wrap:wrap;gap:1.25rem 2.5rem;margin-bottom:1rem;}
+.pp-meta-item{display:flex;flex-direction:column;gap:.15rem;}
+.pp-meta-label{font-size:.6rem;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);}
+.pp-meta-value{font-size:.88rem;color:var(--cream);}
+.pp-achievement{margin-top:.75rem;}
+.pp-achievement-badge{display:inline-block;font-size:.78rem;font-weight:600;color:var(--lime);border:1px solid rgba(190,255,0,.3);border-radius:6px;padding:.3rem .875rem;background:rgba(190,255,0,.06);}
+.pp-tags{display:flex;flex-wrap:wrap;gap:.375rem;margin-top:1.25rem;}
+.pp-tag{font-size:.68rem;padding:.25rem .7rem;border-radius:20px;background:rgba(190,255,0,.08);color:var(--lime);border:1px solid rgba(190,255,0,.2);}
+
+/* PP Overview Flow */
+.pp-overview-section{margin-top:3rem;padding-top:2.5rem;border-top:1px solid var(--border);}
+.pp-section-label{font-size:.65rem;text-transform:uppercase;letter-spacing:.16em;color:var(--lime);font-weight:700;margin-bottom:1.25rem;}
+.pp-flow{display:flex;align-items:stretch;gap:.75rem;margin-top:.25rem;}
+.pp-flow-card{flex:1;padding:1.25rem;border-radius:12px;border:1px solid var(--border);}
+.pp-flow-card.pp-flow-why{border-color:rgba(255,92,62,.25);background:rgba(255,92,62,.05);}
+.pp-flow-card.pp-flow-how{border-color:rgba(190,255,0,.22);background:rgba(190,255,0,.04);}
+.pp-flow-card.pp-flow-help{border-color:rgba(157,142,255,.25);background:rgba(157,142,255,.05);}
+.pp-flow-pill{font-size:.6rem;text-transform:uppercase;letter-spacing:.12em;font-weight:700;margin-bottom:.5rem;}
+.pp-flow-why .pp-flow-pill{color:var(--coral);}
+.pp-flow-how .pp-flow-pill{color:var(--lime);}
+.pp-flow-help .pp-flow-pill{color:var(--lavender);}
+.pp-flow-text{font-size:.85rem;line-height:1.65;color:var(--cream);}
+.pp-flow-arrow{font-size:1.25rem;color:var(--muted);align-self:center;flex-shrink:0;}
+
+/* PP Sections */
+.pp-sections{margin-top:2.5rem;}
+.pp-section{margin-bottom:2.25rem;padding-bottom:2.25rem;border-bottom:1px solid var(--border);}
+.pp-section:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.pp-section-title{font-family:var(--fd);font-size:.78rem;font-weight:700;color:var(--lime);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.75rem;}
+.pp-section-text{font-size:.9rem;color:var(--muted);line-height:1.85;}
+.pp-process-list{padding-left:1.25rem;display:flex;flex-direction:column;gap:.5rem;}
+.pp-process-list li{font-size:.9rem;color:var(--muted);line-height:1.75;}
+.pp-award-badge{display:inline-block;margin:.25rem .375rem .25rem 0;font-size:.75rem;color:var(--lime);border:1px solid rgba(190,255,0,.3);border-radius:4px;padding:.25rem .75rem;background:rgba(190,255,0,.06);}
+
+/* PP Gallery */
+.pp-gallery-section{margin-top:3rem;padding-top:2.5rem;border-top:1px solid var(--border);}
+.pp-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:.875rem;margin-top:.5rem;}
+.pp-gallery-item{border-radius:10px;overflow:hidden;background:var(--bg-card);border:1px solid var(--border);cursor:pointer;transition:transform .2s,border-color .2s;}
+.pp-gallery-item:hover{transform:scale(1.02);border-color:rgba(190,255,0,.25);}
+.pp-gallery-item img{width:100%;height:180px;object-fit:cover;display:block;}
+
+/* PP Bottom Nav */
+.pp-bottom-nav{display:grid;grid-template-columns:1fr 2fr;gap:1.5rem;margin-top:4rem;padding-top:2.5rem;border-top:1px solid var(--border);}
+.pp-bn-label{font-size:.62rem;text-transform:uppercase;letter-spacing:.14em;color:var(--muted);margin-bottom:.625rem;}
+.pp-bn-cards{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;}
+.pp-bn-card{background:var(--bg-card);border:1px solid var(--border);border-radius:10px;overflow:hidden;cursor:pointer;transition:border-color .2s,transform .2s;}
+.pp-bn-card:hover{border-color:rgba(190,255,0,.3);transform:translateY(-3px);}
+.pp-bn-thumb{height:68px;overflow:hidden;}
+.pp-bn-thumb img{width:100%;height:100%;object-fit:cover;display:block;}
+.pp-bn-info{padding:.5rem .75rem;}
+.pp-bn-num{font-size:.58rem;color:var(--muted);margin-right:.25rem;}
+.pp-bn-name{font-family:var(--fd);font-size:.75rem;font-weight:700;}
 
 /* ── ABOUT ── */
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;}
@@ -196,8 +240,7 @@ h1.hero-title .coral{color:var(--coral);}
 .cta-green{font-size:.92rem;font-weight:500;color:var(--lime);margin-top:.5rem;}
 .chips{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:2rem;}
 .chip{padding:.35rem .875rem;border-radius:2rem;font-size:.75rem;border:1px solid var(--border);color:var(--muted);transition:border-color .2s,color .2s;}
-.chip:hover{border-color:var(--lime);color:var(--lime);}
-.chip.on{background:rgba(190,255,0,.08);border-color:rgba(190,255,0,.28);color:var(--lime);}
+.chip:hover{border-color:rgba(188,188,211,.3);color:var(--cream);}
 
 /* ── TIMELINE ── */
 .tl{display:flex;flex-direction:column;gap:2.5rem;border-left:1px solid var(--border);padding-left:2.5rem;}
@@ -214,10 +257,22 @@ h1.hero-title .coral{color:var(--coral);}
 .contact{text-align:center;padding:7.5rem 2rem;border-top:1px solid var(--border);position:relative;z-index:1;}
 .contact h2{font-family:var(--fd);font-size:clamp(2.4rem,6vw,4.5rem);font-weight:800;letter-spacing:-.035em;line-height:1.08;margin-bottom:1.25rem;}
 .contact h2 em{color:var(--lime);font-style:normal;}
-.contact p{color:var(--muted);max-width:48ch;margin:0 auto 2.5rem;font-weight:300;}
-.contact-links{display:flex;justify-content:center;gap:2rem;margin-top:3rem;flex-wrap:wrap;}
+.contact>p{color:var(--muted);max-width:48ch;margin:0 auto 2.5rem;font-weight:300;}
+.contact-form-wrap{max-width:640px;margin:0 auto 3rem;text-align:left;}
+.contact-form{background:rgba(239,236,229,.03);border:1px solid rgba(239,236,229,.1);border-radius:16px;padding:2rem;display:flex;flex-direction:column;gap:1rem;}
+.form-row-2{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+.form-input{background:rgba(239,236,229,.05);border:1px solid rgba(239,236,229,.12);border-radius:10px;padding:.825rem 1rem;font-family:var(--fb);font-size:.9rem;color:var(--cream);width:100%;transition:border-color .2s;outline:none;}
+.form-input:focus{border-color:rgba(190,255,0,.4);}
+.form-input::placeholder{color:var(--muted);}
+.form-textarea{resize:vertical;min-height:120px;}
+.form-btn{background:var(--lime);color:#09090E;border:none;border-radius:2rem;padding:.825rem 2rem;font-family:var(--fb);font-size:.9rem;font-weight:600;cursor:pointer;transition:transform .2s,box-shadow .2s;align-self:flex-start;}
+.form-btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(190,255,0,.3);}
+.form-btn:disabled{opacity:.6;cursor:not-allowed;transform:none;}
+.contact-links{display:flex;justify-content:center;gap:2rem;flex-wrap:wrap;}
 .contact-links a{color:var(--muted);text-decoration:none;font-size:.875rem;transition:color .2s;}
 .contact-links a:hover{color:var(--lime);}
+.email-copy-link{color:var(--muted);cursor:pointer;font-size:.875rem;transition:color .2s;border-bottom:1px dashed rgba(188,188,211,.3);padding-bottom:1px;}
+.email-copy-link:hover{color:var(--lime);border-bottom-color:var(--lime);}
 
 /* ── FOOTER ── */
 footer{padding:2rem 4rem;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;position:relative;z-index:1;}
@@ -227,41 +282,11 @@ footer{padding:2rem 4rem;border-top:1px solid var(--border);display:flex;justify
 .foot-r a{color:var(--muted);text-decoration:none;transition:color .2s;}
 .foot-r a:hover{color:var(--lime);}
 
-/* ── IMAGE GALLERY in modal ── */
-.m-gallery-wrap{margin-top:1.5rem;}
-.m-gallery-wrap h4{font-family:var(--fd);font-size:.8rem;font-weight:700;color:var(--lime);text-transform:uppercase;letter-spacing:.05em;margin-bottom:.875rem;}
-.m-gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;}
-.m-gallery-item{
-  aspect-ratio:4/3;border-radius:8px;overflow:hidden;
-  cursor:pointer;position:relative;
-  background:rgba(239,236,229,.04);border:1px solid var(--border);
-  transition:transform .2s,border-color .2s;
-}
-.m-gallery-item:hover{transform:scale(1.02);border-color:rgba(190,255,0,.25);}
-.m-gallery-item img{width:100%;height:100%;object-fit:cover;display:block;}
-.m-gallery-item .m-img-placeholder{
-  width:100%;height:100%;display:flex;align-items:center;justify-content:center;
-  font-size:.7rem;color:var(--muted);text-align:center;padding:.5rem;line-height:1.4;
-}
-/* Lightbox */
-#imgLb{
-  display:none;position:fixed;inset:0;z-index:999;
-  background:rgba(0,0,0,.93);
-  align-items:center;justify-content:center;
-  padding:2rem;
-}
+/* ── LIGHTBOX ── */
+#imgLb{display:none;position:fixed;inset:0;z-index:999;background:rgba(0,0,0,.93);align-items:center;justify-content:center;padding:2rem;}
 #imgLb.open{display:flex;}
-.lb-wrap{position:relative;max-width:820px;width:100%;text-align:center;}
-#lbImg{
-  max-width:100%;max-height:80vh;border-radius:10px;
-  object-fit:contain;display:block;margin:0 auto;
-}
-.lb-placeholder{
-  width:100%;height:360px;border-radius:10px;
-  background:var(--bg-card);border:1px solid var(--border);
-  display:flex;align-items:center;justify-content:center;
-  color:var(--muted);font-size:.85rem;
-}
+.lb-wrap{position:relative;max-width:860px;width:100%;text-align:center;}
+#lbImg{max-width:100%;max-height:82vh;border-radius:10px;object-fit:contain;display:block;margin:0 auto;}
 .lb-nav{display:flex;justify-content:space-between;align-items:center;margin-top:1rem;}
 .lb-btn{background:rgba(239,236,229,.1);border:none;color:var(--cream);padding:.5rem 1.25rem;border-radius:20px;font-size:.82rem;cursor:pointer;transition:background .2s;}
 .lb-btn:hover{background:rgba(239,236,229,.18);}
@@ -269,15 +294,12 @@ footer{padding:2rem 4rem;border-top:1px solid var(--border);display:flex;justify
 .lb-close{position:absolute;top:-2.5rem;right:0;background:none;border:none;color:var(--muted);font-size:1.4rem;cursor:pointer;transition:color .2s;}
 .lb-close:hover{color:var(--cream);}
 
-/* Bingo refresh button */
+/* ── BINGO EXTRAS ── */
 .bingo-footer{display:flex;align-items:center;justify-content:space-between;margin-top:.625rem;gap:.5rem;}
-.bingo-refresh{
-  display:inline-flex;align-items:center;gap:.375rem;flex-shrink:0;
-  background:none;border:1px solid var(--border);
-  color:var(--muted);font-size:.7rem;padding:.3rem .75rem;
-  border-radius:20px;cursor:pointer;transition:all .2s;font-family:var(--fb);
-}
+.bingo-refresh{display:inline-flex;align-items:center;gap:.375rem;flex-shrink:0;background:none;border:1px solid var(--border);color:var(--muted);font-size:.7rem;padding:.3rem .75rem;border-radius:20px;cursor:pointer;transition:all .2s;font-family:var(--fb);}
 .bingo-refresh:hover{border-color:var(--lime);color:var(--lime);}
+
+/* ── ANIMATIONS ── */
 .fade{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease;}
 .fade.in{opacity:1;transform:none;}
 @keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
@@ -287,104 +309,42 @@ footer{padding:2rem 4rem;border-top:1px solid var(--border);display:flex;justify
 .a4{opacity:0;animation:fadeUp .65s .5s ease forwards;}
 
 /* ── AVAILABLE BADGE ── */
-.avail-badge{
-  display:inline-flex;align-items:center;gap:.45rem;
-  font-size:.68rem;font-weight:500;letter-spacing:.04em;
-  color:#09090E;background:var(--lime);
-  padding:.3rem .75rem .3rem .5rem;border-radius:2rem;
-  margin-bottom:1.25rem;
-}
-.avail-badge::before{
-  content:'';width:7px;height:7px;border-radius:50%;background:#09090E;opacity:.5;
-  animation:availPulse 2s ease-in-out infinite;
-}
+.avail-badge{display:inline-flex;align-items:center;gap:.45rem;font-size:.68rem;font-weight:500;letter-spacing:.04em;color:#09090E;background:var(--lime);padding:.3rem .75rem .3rem .5rem;border-radius:2rem;margin-bottom:1.25rem;}
+.avail-badge::before{content:'';width:7px;height:7px;border-radius:50%;background:#09090E;opacity:.5;animation:availPulse 2s ease-in-out infinite;}
 @keyframes availPulse{0%,100%{box-shadow:0 0 0 0 rgba(9,9,14,.5)}50%{box-shadow:0 0 0 4px rgba(9,9,14,0)}}
 
-/* ── TL;DR in modal ── */
-.m-tldr{
-  background:rgba(190,255,0,.06);border:1px solid rgba(190,255,0,.18);
-  border-radius:10px;padding:.875rem 1.1rem;margin-bottom:1.5rem;
-}
-.m-tldr-label{font-size:.6rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--lime);margin-bottom:.3rem;}
-.m-tldr-text{font-size:.875rem;color:var(--cream);line-height:1.7;font-weight:400;}
-
-/* ── TAP LABEL (mobile cards) ── */
-.proj-tap{display:none;font-size:.68rem;color:var(--muted);margin-top:.375rem;letter-spacing:.03em;}
-@media(max-width:960px){.proj-tap{display:block;}}
-
-/* ── MODAL SCROLL INDICATOR ── */
-.modal-scroll-track{
-  position:fixed;
-  /* ชิดขอบขวาใน modal-box (max-width 700px, padding modal-bg 1.5rem) */
-  right:max(calc(1.5rem + 5px), calc(50vw - 346px));
-  top:2.5rem;bottom:2.5rem;
-  width:3px;border-radius:3px;background:rgba(239,236,229,.07);
-  pointer-events:none;overflow:hidden;
-  opacity:0;transition:opacity .3s;z-index:510;
-}
-#modalScrollTrack.visible{opacity:1;}
-.modal-scroll-thumb{
-  position:absolute;top:0;left:0;width:100%;
-  background:var(--lime);border-radius:3px;
-  opacity:.7;min-height:28px;
-}
-@media(max-width:600px){
-  .modal-scroll-track{right:calc(1.5rem - 2px);}
-}
-
-/* ── GALLERY CTA ── */
-.m-gallery-cta{
-  display:block;text-align:center;margin-top:1.5rem;
-  padding:.8rem 1.5rem;border-radius:2rem;
-  background:var(--lime);color:#09090E;
-  font-size:.85rem;font-weight:600;text-decoration:none;
-  transition:transform .2s,box-shadow .2s;cursor:pointer;border:none;
-  font-family:var(--fb);width:100%;
-}
-.m-gallery-cta:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(190,255,0,.3);}
+/* ── TOAST ── */
+.copy-toast{position:fixed;bottom:2rem;left:50%;transform:translateX(-50%) translateY(.5rem);background:var(--lime);color:#09090E;padding:.55rem 1.2rem;border-radius:2rem;font-size:.82rem;font-weight:600;opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;z-index:9000;white-space:nowrap;}
+.copy-toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
 
 /* ── MOBILE FAB ── */
-.mob-fab{
-  display:none;
-  position:fixed;bottom:1.75rem;right:1.75rem;z-index:280;
-  background:var(--lime);color:#09090E;
-  padding:.875rem 1.25rem;border-radius:50px;
-  font-family:var(--fb);font-size:.82rem;font-weight:600;
-  text-decoration:none;letter-spacing:.01em;
-  box-shadow:0 8px 28px rgba(190,255,0,.38),0 2px 8px rgba(0,0,0,.4);
-  transition:transform .2s,box-shadow .2s;
-  white-space:nowrap;align-items:center;gap:.5rem;
-}
+.mob-fab{display:none;position:fixed;bottom:1.75rem;right:1.75rem;z-index:280;background:var(--lime);color:#09090E;padding:.875rem 1.25rem;border-radius:50px;font-family:var(--fb);font-size:.82rem;font-weight:600;text-decoration:none;letter-spacing:.01em;box-shadow:0 8px 28px rgba(190,255,0,.38),0 2px 8px rgba(0,0,0,.4);transition:transform .2s,box-shadow .2s;white-space:nowrap;align-items:center;gap:.5rem;}
 .mob-fab:hover{transform:scale(1.06) translateY(-2px);box-shadow:0 14px 36px rgba(190,255,0,.45);}
 
 /* ── BACK TO TOP ── */
-.back-to-top{
-  position:fixed;bottom:1.75rem;right:1.75rem;z-index:279;
-  width:42px;height:42px;border-radius:50%;
-  background:rgba(21,21,31,.92);border:1.5px solid rgba(190,255,0,.35);
-  display:flex;align-items:center;justify-content:center;
-  opacity:0;pointer-events:none;
-  transition:opacity .3s,transform .2s,border-color .2s,box-shadow .2s;
-  cursor:pointer;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
-  box-shadow:0 4px 16px rgba(0,0,0,.4);
-}
+.back-to-top{position:fixed;bottom:1.75rem;right:1.75rem;z-index:279;width:42px;height:42px;border-radius:50%;background:rgba(21,21,31,.92);border:1.5px solid rgba(190,255,0,.35);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s,transform .2s,border-color .2s,box-shadow .2s;cursor:pointer;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 4px 16px rgba(0,0,0,.4);}
 .back-to-top.visible{opacity:1;pointer-events:auto;}
 .back-to-top:hover{transform:scale(1.12) translateY(-2px);border-color:rgba(190,255,0,.75);box-shadow:0 6px 22px rgba(190,255,0,.22);}
-@media(max-width:960px){
-  .back-to-top{bottom:5.75rem;}
-}
 
 /* ── RESPONSIVE ── */
 @media(max-width:960px){
-  nav{padding:1rem 2rem;} .nav-links{display:none;} .burger{display:flex;}
-  .nav-cta{display:none;}
+  nav{padding:1rem 2rem;} .nav-links{display:none;} .burger{display:flex;} .nav-cta{display:none;}
   .mob-fab{display:flex;}
+  .back-to-top{bottom:5.75rem;}
   .hero{grid-template-columns:1fr;gap:3rem;padding:8rem 2rem 5rem;}
   .proj-grid{grid-template-columns:repeat(2,1fr);}
   .stats-row{grid-template-columns:repeat(2,1fr);}
   .stats-row .stat-card:last-child{grid-column:1/-1;}
   .about-grid{grid-template-columns:1fr;gap:3rem;} .about-sticky{position:static;}
   .sec{padding:5rem 2rem;} footer{padding:1.5rem 2rem;}
+  .pp-gallery{grid-template-columns:repeat(2,1fr);}
+  .pp-bottom-nav{grid-template-columns:1fr;}
+  .pp-bn-cards{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:768px){
+  .pp-flow{flex-direction:column;}
+  .pp-flow-arrow{transform:rotate(90deg);text-align:center;align-self:center;}
+  .form-row-2{grid-template-columns:1fr;}
 }
 @media(max-width:600px){
   nav{padding:1rem 1.25rem;}
@@ -392,9 +352,12 @@ footer{padding:2rem 4rem;border-top:1px solid var(--border);display:flex;justify
   .proj-grid{grid-template-columns:1fr;} .stats-row{grid-template-columns:1fr;}
   .contact{padding:5rem 1.25rem;} .contact-links{gap:1.25rem;}
   footer{flex-direction:column;align-items:flex-start;gap:.75rem;}
-  .modal-box{padding:1.75rem;}
   body{cursor:auto;} #cursor-ring,#cursor-dot{display:none;}
   nav.scrolled{min-width:calc(100vw - 2.5rem);top:10px;}
+  .pp-gallery{grid-template-columns:1fr;}
+  .pp-container{padding:2rem 1.25rem 4rem;}
+  .pp-topbar{padding:.75rem 1.25rem;}
+  .pp-bn-cards{grid-template-columns:1fr;}
 }
 </style>
 </head>
@@ -403,13 +366,11 @@ footer{padding:2rem 4rem;border-top:1px solid var(--border);display:flex;justify
 <div id="cursor-ring"></div>
 <div id="cursor-dot"></div>
 
-<!-- COSMOS -->
 <div class="cosmos" aria-hidden="true">
   <div class="cosmos-orb" style="width:500px;height:500px;top:-80px;right:-100px;background:radial-gradient(circle,rgba(190,255,0,.07) 0%,transparent 70%);animation-duration:18s;"></div>
   <div class="cosmos-orb" style="width:380px;height:380px;top:35%;left:-80px;background:radial-gradient(circle,rgba(255,92,62,.05) 0%,transparent 70%);animation-duration:22s;animation-delay:-8s;"></div>
   <div class="cosmos-orb" style="width:420px;height:420px;bottom:5%;right:8%;background:radial-gradient(circle,rgba(157,142,255,.06) 0%,transparent 70%);animation-duration:26s;animation-delay:-4s;"></div>
   <div class="cosmos-orb" style="width:280px;height:280px;top:60%;left:40%;background:radial-gradient(circle,rgba(0,229,204,.035) 0%,transparent 70%);animation-duration:30s;animation-delay:-14s;"></div>
-  <div class="cosmos-orb" style="width:240px;height:240px;bottom:20%;left:15%;background:radial-gradient(circle,rgba(255,78,205,.03) 0%,transparent 70%);animation-duration:20s;animation-delay:-10s;"></div>
 </div>
 
 <!-- NAV -->
@@ -417,10 +378,10 @@ footer{padding:2rem 4rem;border-top:1px solid var(--border);display:flex;justify
   <a class="nav-logo" href="#home">Sukrita<span>.</span></a>
   <ul class="nav-links">
     <li><a href="#home">Home</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#about">About</a></li>
+    <li><a href="#works">Works</a></li>
+    <li><a href="#about">About me</a></li>
   </ul>
-  <a class="nav-cta" href="#contact">Let's work together ↗</a>
+  <a class="nav-cta" href="#contact">Contact me ↗</a>
   <button class="burger" id="burgerBtn" aria-label="Open menu">
     <span></span><span></span><span></span>
   </button>
@@ -428,10 +389,10 @@ footer{padding:2rem 4rem;border-top:1px solid var(--border);display:flex;justify
 
 <div class="mob-nav" id="mobNav">
   <button class="mob-close" id="mobClose">✕</button>
-  <a href="#home"     onclick="closeMob()">Home</a>
-  <a href="#projects" onclick="closeMob()">Projects</a>
-  <a href="#about"    onclick="closeMob()">About</a>
-  <a href="#contact"  onclick="closeMob()" style="color:var(--lime)">Let's Talk ↗</a>
+  <a href="#home"    onclick="closeMob()">Home</a>
+  <a href="#works"   onclick="closeMob()">Works</a>
+  <a href="#about"   onclick="closeMob()">About me</a>
+  <a href="#contact" onclick="closeMob()" style="color:var(--lime)">Contact me ↗</a>
 </div>
 
 <!-- MOBILE FAB -->
@@ -445,6 +406,12 @@ footer{padding:2rem 4rem;border-top:1px solid var(--border);display:flex;justify
   <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 12V2M2 7l5-5 5 5" stroke="#BEFF00" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
 </button>
 
+<!-- COPY TOAST -->
+<div class="copy-toast" id="copyToast">Copied to clipboard! ✓</div>
+
+<!-- ══ MAIN CONTENT ══ -->
+<div id="mainContent">
+
 <!-- HERO -->
 <section class="hero" id="home">
   <div>
@@ -452,37 +419,28 @@ footer{padding:2rem 4rem;border-top:1px solid var(--border);display:flex;justify
     <div class="eyebrow a1">UX/UI Designer &nbsp;·&nbsp; FinTech &nbsp;·&nbsp; EdTech &nbsp;·&nbsp; Gaming</div>
     <div class="hero-title-wrap">
       <div class="hero-da" aria-hidden="true">大</div>
-      <h1 class="hero-title a2">
-        Every Screen Is<br>a <span class="lime">Destination.</span>
-      </h1>
+      <h1 class="hero-title a2">Every Screen Is<br>a <span class="lime">Destination.</span></h1>
     </div>
     <p class="hero-desc a3">Hi, I'm Sukrita — I craft intuitive, data-driven experiences that people actually enjoy using. My work spans financial platforms, learning products, and gaming interfaces across Thailand's leading companies.</p>
     <div class="hero-btns a4">
-      <a class="btn-p" href="#projects">See My Work →</a>
+      <a class="btn-p" href="#works">See My Work →</a>
       <a class="btn-g" href="#about">About Me</a>
     </div>
   </div>
-
   <div class="bingo-wrap a3">
     <div class="bingo-label">SKILL <em>BINGO</em><br>Find the skills we bring together.</div>
     <div class="bingo-board" id="bingoBoard"></div>
     <div class="bingo-footer">
       <p class="bingo-msg" id="bingoMsg">Click the skills that matter to you ↑</p>
       <button class="bingo-refresh" id="bingoRefresh">
-        <svg width="11" height="11" viewBox="0 0 11 11" fill="none">
-          <path d="M9.5 5.5A4 4 0 1 1 5.5 1.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
-          <path d="M9.5 1.5v4h-4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
+        <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M9.5 5.5A4 4 0 1 1 5.5 1.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><path d="M9.5 1.5v4h-4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
         Refresh
       </button>
     </div>
   </div>
-
   <div class="scroll-hint">
     <span>Scroll</span>
-    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-      <path d="M7 2v10M3 8l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 2v10M3 8l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
   </div>
 </section>
 
@@ -490,25 +448,41 @@ footer{padding:2rem 4rem;border-top:1px solid var(--border);display:flex;justify
 <section class="sec" style="padding-top:4.5rem;padding-bottom:4.5rem;">
   <div class="stats-row fade">
     <div class="stat-card">
-      <div class="stat-n">7</div>
-      <div class="stat-l">End-to-end products shipped across 3 industries</div>
+      <div class="stat-n">4</div>
+      <div class="stat-l">Industries covered across all 7 projects</div>
+      <div class="stat-ind-tags">
+        <span class="stat-ind-tag">Fintech</span>
+        <span class="stat-ind-tag">Edu</span>
+        <span class="stat-ind-tag">Game</span>
+        <span class="stat-ind-tag">Commercial Products</span>
+      </div>
     </div>
     <div class="stat-card">
-      <div class="stat-n">100%</div>
-      <div class="stat-l">Project delivery rate — every brief taken from discovery to final launch</div>
+      <div class="tool-row">
+        <span class="tool-pill">Figma</span>
+        <span class="tool-pill">AI Tools</span>
+        <span class="tool-pill">Adobe AI</span>
+      </div>
+      <div class="stat-l">Primary design tools — across every project from ideation to handoff</div>
     </div>
     <div class="stat-card">
-      <div class="stat-n">1+</div>
+      <div class="stat-n">1.5+</div>
       <div class="stat-l">Year as sole designer with PM, Dev, BA &amp; QA</div>
     </div>
   </div>
 </section>
 
-<!-- PROJECTS -->
-<section class="sec" id="projects">
-  <p class="sec-eye fade">Selected Work</p>
-  <h2 class="sec-title fade">7 Projects.<br>3 Industries. 1 Through-Line.</h2>
-  <div class="proj-grid fade" id="projGrid"></div>
+<!-- WORKS -->
+<section class="sec" id="works">
+  <h2 class="sec-title fade">Works</h2>
+  <div class="filter-chips fade" id="filterChips">
+    <button class="filter-chip active" data-filter="all"        onclick="filterProjects('all')">All</button>
+    <button class="filter-chip"        data-filter="fintech"    onclick="filterProjects('fintech')">Fintech</button>
+    <button class="filter-chip"        data-filter="edu"        onclick="filterProjects('edu')">Edu</button>
+    <button class="filter-chip"        data-filter="game"       onclick="filterProjects('game')">Game</button>
+    <button class="filter-chip"        data-filter="commercial" onclick="filterProjects('commercial')">Commercial Products</button>
+  </div>
+  <div class="proj-grid" id="projGrid"></div>
 </section>
 
 <!-- ABOUT -->
@@ -519,15 +493,23 @@ footer{padding:2rem 4rem;border-top:1px solid var(--border);display:flex;justify
       <h2 class="about-head">The Designer<br>Behind the Work.</h2>
       <p class="about-p">I'm <strong>Sukrita Janseetong</strong>, a UX/UI Designer with over a year of experience turning complex problems into seamless digital experiences. I thrive at the intersection of research and creativity — grounded in data, moved by empathy, and always chasing that quiet 'aha' moment when design just clicks.</p>
       <p class="about-p">My work spans FinTech platforms, EdTech products, and gaming interfaces. As the sole designer collaborating with PMs, Developers, BAs, and QA teams, I've built the habit of asking the right questions early so solutions hold up long after handoff.</p>
-      <p class="cta-green">→ Ready to create something new and make it remarkable.</p>
+      <p class="cta-green">Ready to create something new and make it remarkable.</p>
       <div class="chips">
-        <span class="chip on">User Research</span><span class="chip on">Figma</span>
-        <span class="chip on">Design Systems</span><span class="chip">Wireframing</span>
-        <span class="chip">Prototyping</span><span class="chip">Usability Testing</span>
-        <span class="chip">Information Architecture</span><span class="chip">UI Animation</span>
-        <span class="chip">Responsive Design</span><span class="chip">HTML · CSS</span>
-        <span class="chip">FinTech</span><span class="chip">EdTech</span>
-        <span class="chip">Gaming UX</span><span class="chip on">AI</span>
+        <span class="chip">User Research</span>
+        <span class="chip">Wireframing</span>
+        <span class="chip">Prototyping</span>
+        <span class="chip">Usability Testing</span>
+        <span class="chip">Information Architecture</span>
+        <span class="chip">Figma</span>
+        <span class="chip">Design Systems</span>
+        <span class="chip">UI Animation</span>
+        <span class="chip">Responsive Design</span>
+        <span class="chip">Visual Design</span>
+        <span class="chip">HTML · CSS</span>
+        <span class="chip">FinTech</span>
+        <span class="chip">EdTech</span>
+        <span class="chip">Gaming UX</span>
+        <span class="chip">AI Tools</span>
       </div>
     </div>
 
@@ -556,7 +538,7 @@ footer{padding:2rem 4rem;border-top:1px solid var(--border);display:flex;justify
         </div>
         <div class="tl-item">
           <div class="tl-date">Feb 2025 – Present</div>
-          <div class="tl-role">UX/UI Designer</div>
+          <div class="tl-role">Game UX/UI Designer</div>
           <div class="tl-co">Sumeeper — MeDream Studio</div>
           <ul class="tl-li">
             <li>Designed HUD, menus, and interaction flows to improve player onboarding</li>
@@ -595,9 +577,20 @@ footer{padding:2rem 4rem;border-top:1px solid var(--border);display:flex;justify
 <div class="contact" id="contact">
   <h2 class="fade">Let's Build<br>Something <em>Great.</em></h2>
   <p class="fade">Got a product that deserves better design? A challenge worth solving together? I'm open to opportunities, freelance projects, and creative collaborations — let's talk.</p>
-  <a class="btn-p fade" href="mailto:sukrita.iam@gmail.com" style="font-size:1rem;padding:1rem 2.5rem;">Say Hello ↗</a>
+
+  <div class="contact-form-wrap fade">
+    <form class="contact-form" id="contactForm" onsubmit="submitContactForm(event)">
+      <div class="form-row-2">
+        <input type="text"  name="name"    placeholder="Your Name"      required class="form-input">
+        <input type="email" name="email"   placeholder="Email Address"  required class="form-input">
+      </div>
+      <textarea name="message" placeholder="Tell me about your project or idea..." rows="5" required class="form-input form-textarea"></textarea>
+      <button type="submit" class="form-btn" id="formBtn">Send Message →</button>
+    </form>
+  </div>
+
   <div class="contact-links fade">
-    <a href="mailto:sukrita.iam@gmail.com">sukrita.iam@gmail.com</a>
+    <span class="email-copy-link" onclick="copyEmail()" title="Click to copy">sukrita.iam@gmail.com</span>
     <a href="tel:+66814567580">081-456-7580</a>
     <a href="https://www.linkedin.com/in/sukrita-janseetong-5bb515286/" target="_blank" rel="noopener">LinkedIn ↗</a>
     <a href="https://drive.google.com/file/d/1sUyWNSTIYyQpJWOD4EZ8wrMdxdjwItbg/view?usp=sharing" target="_blank" rel="noopener">View Resume ↗</a>
@@ -609,48 +602,66 @@ footer{padding:2rem 4rem;border-top:1px solid var(--border);display:flex;justify
   <div class="foot-r">
     <a href="mailto:sukrita.iam@gmail.com">sukrita.iam@gmail.com</a>
     <a href="tel:+66814567580">081-456-7580</a>
-    <span style="color:rgba(104,104,126,.4)">© 2026 Sukrita Janseetong</span>
+    <span style="color:rgba(188,188,211,.35)">© 2026 Sukrita Janseetong</span>
   </div>
 </footer>
 
-<!-- MODAL -->
-<!-- Scroll indicator (fixed, outside modal-box so it doesn't scroll with content) -->
-<div class="modal-scroll-track" id="modalScrollTrack"><div class="modal-scroll-thumb" id="modalScrollThumb"></div></div>
-<div class="modal-bg" id="modalBg">
-  <div class="modal-box">
-    <button class="modal-x" id="modalX">✕</button>
-    <div class="m-num"   id="mNum"></div>
-    <div class="m-title" id="mTitle"></div>
-    <div class="m-tags"  id="mTags"></div>
-    <div class="m-meta"  id="mMeta"></div>
-    <!-- TL;DR -->
-    <div class="m-tldr" id="mTldrWrap">
-      <div class="m-tldr-label">Project Overview</div>
-      <div class="m-tldr-text" id="mTldr"></div>
+</div><!-- /#mainContent -->
+
+<!-- ══ PROJECT PAGE ══ -->
+<div id="projPage" class="proj-page">
+  <div class="pp-topbar">
+    <button class="pp-back" onclick="closeProjPage()">← Works</button>
+    <div class="pp-topbar-title" id="ppNavTitle"></div>
+    <div class="pp-nav-arrows">
+      <button class="pp-nav-arrow" id="ppPrevBtn" title="Previous project">←</button>
+      <button class="pp-nav-arrow" id="ppNextBtn" title="Next project">→</button>
     </div>
-    <hr class="m-hr">
-    <div class="m-section"><h4>About the Project</h4><p id="mAbout"></p></div>
-    <div class="m-section"><h4>The Problem</h4><p id="mProb"></p></div>
-    <div class="m-section"><h4>How I Solved It</h4><p id="mSol"></p></div>
-    <div class="m-section"><h4>Process</h4><ul id="mProc"></ul></div>
-    <div class="m-section"><h4>What I Learned</h4><p id="mLearn"></p></div>
-    <div class="m-section" id="mAwardsWrap" style="display:none">
-      <h4>Recognition &amp; Awards</h4>
-      <div id="mAwards"></div>
+  </div>
+
+  <div class="pp-cover-wrap">
+    <img class="pp-cover-img" id="ppCoverImg" src="" alt="">
+  </div>
+
+  <div class="pp-container">
+    <span class="pp-num-label" id="ppNumLabel"></span>
+    <h1 class="pp-title" id="ppTitle"></h1>
+    <div class="pp-meta" id="ppMeta"></div>
+    <div class="pp-achievement" id="ppAchievement" style="display:none"></div>
+    <div class="pp-tags" id="ppTags"></div>
+
+    <!-- Overview flow -->
+    <div class="pp-overview-section">
+      <div class="pp-section-label">Project Overview</div>
+      <div class="pp-flow">
+        <div class="pp-flow-card pp-flow-why">
+          <div class="pp-flow-pill">Why</div>
+          <div class="pp-flow-text" id="ppWhy"></div>
+        </div>
+        <div class="pp-flow-arrow">→</div>
+        <div class="pp-flow-card pp-flow-how">
+          <div class="pp-flow-pill">How</div>
+          <div class="pp-flow-text" id="ppHow"></div>
+        </div>
+        <div class="pp-flow-arrow">→</div>
+        <div class="pp-flow-card pp-flow-help">
+          <div class="pp-flow-pill">Impact</div>
+          <div class="pp-flow-text" id="ppHelp"></div>
+        </div>
+      </div>
     </div>
-    <div class="m-section" id="mFutureWrap" style="display:none">
-      <h4>Future Opportunities for Improvement</h4>
-      <p id="mFuture"></p>
+
+    <!-- Detail sections -->
+    <div class="pp-sections" id="ppSections"></div>
+
+    <!-- Gallery -->
+    <div class="pp-gallery-section" id="ppGallerySection">
+      <div class="pp-section-label">Gallery</div>
+      <div class="pp-gallery" id="ppGallery"></div>
     </div>
-    <!-- Image Gallery -->
-    <div class="m-gallery-wrap" id="mGalleryWrap" style="display:none">
-      <h4>Project Gallery</h4>
-      <div class="m-gallery" id="mGallery"></div>
-    </div>
-    <!-- Gallery CTA -->
-    <button class="m-gallery-cta" id="mContactCta" onclick="closeModal();setTimeout(()=>document.getElementById('contact').scrollIntoView({behavior:'smooth'}),120);">
-      Like what you see? Let's work together →
-    </button>
+
+    <!-- Bottom nav -->
+    <div class="pp-bottom-nav" id="ppBottomNav"></div>
   </div>
 </div>
 
@@ -658,8 +669,7 @@ footer{padding:2rem 4rem;border-top:1px solid var(--border);display:flex;justify
 <div id="imgLb">
   <div class="lb-wrap">
     <button class="lb-close" id="lbClose">✕</button>
-    <img id="lbImg" src="" alt="" style="display:none">
-    <div class="lb-placeholder" id="lbPlaceholder" style="display:none">Image placeholder — replace src with real image path</div>
+    <img id="lbImg" src="" alt="">
     <div class="lb-nav">
       <button class="lb-btn" id="lbPrev">← Prev</button>
       <span id="lbCounter"></span>
@@ -674,19 +684,15 @@ const ring=document.getElementById('cursor-ring'),dot=document.getElementById('c
 let mx=0,my=0,rx=0,ry=0;
 document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;dot.style.left=mx+'px';dot.style.top=my+'px';});
 (function animRing(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(animRing);})();
-document.querySelectorAll('a,button,.proj-card,.bc').forEach(el=>{
-  el.addEventListener('mouseenter',()=>document.body.classList.add('cursor-hover'));
-  el.addEventListener('mouseleave',()=>document.body.classList.remove('cursor-hover'));
-});
+function addHover(el){el.addEventListener('mouseenter',()=>document.body.classList.add('cursor-hover'));el.addEventListener('mouseleave',()=>document.body.classList.remove('cursor-hover'));}
+document.querySelectorAll('a,button,.proj-card,.bc').forEach(addHover);
 
-/* ── SCROLL NAV ── */
+/* ── SCROLL / NAV ── */
 const navEl=document.querySelector('nav');
 const bttBtn=document.getElementById('backToTop');
 window.addEventListener('scroll',()=>{
-  if(window.scrollY>80){navEl.classList.add('scrolled');}
-  else{navEl.classList.remove('scrolled');}
-  if(window.scrollY>300){bttBtn.classList.add('visible');}
-  else{bttBtn.classList.remove('visible');}
+  navEl.classList.toggle('scrolled',window.scrollY>80);
+  bttBtn.classList.toggle('visible',window.scrollY>300);
 },{passive:true});
 
 /* ── MOBILE NAV ── */
@@ -695,27 +701,16 @@ document.getElementById('mobClose').onclick=closeMob;
 function closeMob(){document.getElementById('mobNav').classList.remove('open');}
 
 /* ── BINGO ── */
-const SKILLS=[
-  'User Research','Figma','Design Systems','Prototyping','FinTech',
-  'Wireframing','UI Animation','Usability Testing','EdTech','A/B Testing',
-  'User Flows','Visual Design','★ FREE ★','Gaming UX','AI',
-  'Info. Arch.','Responsive','Data Analysis','Interaction','Typography',
-  'Persona','Journey Map','Card Sorting','Heuristics','Accessibility'
-];
+const SKILLS=['User Research','Figma','Design Systems','Prototyping','FinTech','Wireframing','UI Animation','Usability Testing','EdTech','A/B Testing','User Flows','Visual Design','★ FREE ★','Gaming UX','AI','Info. Arch.','Responsive','Data Analysis','Interaction','Typography','Persona','Journey Map','Card Sorting','Heuristics','Accessibility'];
 const FREE_IDX=12;
 const LINES=[[0,1,2,3,4],[5,6,7,8,9],[10,11,12,13,14],[15,16,17,18,19],[20,21,22,23,24],[0,5,10,15,20],[1,6,11,16,21],[2,7,12,17,22],[3,8,13,18,23],[4,9,14,19,24],[0,6,12,18,24],[4,8,12,16,20]];
-const bState=Array(25).fill(false);
-bState[FREE_IDX]=true;
+const bState=Array(25).fill(false);bState[FREE_IDX]=true;
 function winLines(){return LINES.filter(l=>l.every(i=>bState[i]));}
 function buildBingo(){
-  const board=document.getElementById('bingoBoard');
-  board.innerHTML='';
-  const wins=winLines();
-  const winSet=new Set(wins.flatMap(l=>l));
+  const board=document.getElementById('bingoBoard');board.innerHTML='';
+  const wins=winLines();const winSet=new Set(wins.flatMap(l=>l));
   SKILLS.forEach((s,i)=>{
-    const cell=document.createElement('div');
-    cell.className='bc';
-    cell.textContent=s;
+    const cell=document.createElement('div');cell.className='bc';cell.textContent=s;
     if(i===FREE_IDX){cell.classList.add('free');}
     else{
       if(bState[i]&&winSet.has(i))cell.classList.add('win-row');
@@ -724,50 +719,29 @@ function buildBingo(){
         bState[i]=!bState[i];
         const count=bState.filter(Boolean).length-1;
         const msg=document.getElementById('bingoMsg');
-        if(winLines().length){msg.textContent="🎉 BINGO! We've got what you need.";msg.className='bingo-msg win';}
+        if(winLines().length){msg.textContent='🎉 BINGO! We\'ve got what you need.';msg.className='bingo-msg win';}
         else{msg.textContent=count>0?count+' skill'+(count>1?'s':'')+' matched — keep going!':'Click the skills that matter to you ↑';msg.className='bingo-msg';}
         buildBingo();
       });
     }
-    board.appendChild(cell);
+    board.appendChild(cell);addHover(cell);
   });
 }
 buildBingo();
-
-/* Bingo refresh */
 document.getElementById('bingoRefresh').addEventListener('click',()=>{
-  bState.fill(false);
-  bState[FREE_IDX]=true;
-  const msg=document.getElementById('bingoMsg');
-  msg.textContent='Click the skills that matter to you ↑';
-  msg.className='bingo-msg';
-  buildBingo();
+  bState.fill(false);bState[FREE_IDX]=true;
+  document.getElementById('bingoMsg').textContent='Click the skills that matter to you ↑';
+  document.getElementById('bingoMsg').className='bingo-msg';buildBingo();
 });
 
 /* ── LIGHTBOX ── */
 let lbImages=[],lbIdx=0;
-function openLb(imgs,idx){
-  lbImages=imgs;lbIdx=idx;
-  renderLb();
-  document.getElementById('imgLb').classList.add('open');
-  document.body.style.overflow='hidden';
-}
-function closeLb(){
-  document.getElementById('imgLb').classList.remove('open');
-  document.body.style.overflow='';
-}
+function openLb(imgs,idx){lbImages=imgs;lbIdx=idx;renderLb();document.getElementById('imgLb').classList.add('open');}
+function closeLb(){document.getElementById('imgLb').classList.remove('open');}
 function renderLb(){
   const img=lbImages[lbIdx];
   const el=document.getElementById('lbImg');
-  const ph=document.getElementById('lbPlaceholder');
-  if(img.src){
-    el.src=img.src;el.alt=img.label||'';
-    el.style.display='block';ph.style.display='none';
-  } else {
-    el.style.display='none';
-    ph.style.display='flex';
-    ph.textContent=img.label+' — Add image: images/'+img.file;
-  }
+  el.src=img.src;el.alt=img.label||'';
   document.getElementById('lbCounter').textContent=(lbIdx+1)+' / '+lbImages.length;
 }
 document.getElementById('lbClose').onclick=closeLb;
@@ -779,17 +753,24 @@ document.addEventListener('keydown',e=>{
     if(e.key==='Escape')closeLb();
     if(e.key==='ArrowLeft'){lbIdx=(lbIdx-1+lbImages.length)%lbImages.length;renderLb();}
     if(e.key==='ArrowRight'){lbIdx=(lbIdx+1)%lbImages.length;renderLb();}
+  } else if(e.key==='Escape'&&document.getElementById('projPage').classList.contains('open')){
+    closeProjPage();
   }
 });
 
 /* ── PROJECT DATA ── */
 const PROJECTS=[
   {
-    num:'01',name:'Principal TH',cover:'images/Principal-cover.png',
-    tldr:'Revamped the Principal TH application with a modernization-first approach and a specialized focus on the Auto-Approve feature. By integrating real-time OCR feedback, the system enables investors to instantly verify their identity and open mutual fund accounts digitally, bypassing traditional manual bottlenecks. This transformation bridges the gap from "waiting days" to "investing in 5 minutes," supported by a comprehensive design ecosystem including user manuals and strategic promotional banners.',
+    num:'01',name:'Principal TH',cover:'images/cover-work/Principal-cover.png',
+    category:'fintech',role:'UX/UI Designer',platform:'Mobile App (iOS · Android)',
+    overview:{
+      why:"New investors hit a 'frozen state' — waiting days for manual KYC approval with no feedback, no progress.",
+      how:"OCR-powered Auto-Approve provides real-time photo quality feedback, replacing the manual review step entirely.",
+      help:"Users go from submission to investing in under 5 minutes. CS workload dropped. Transaction rates rose."
+    },
+    tags:['Mobile App','FinTech','e-KYC'],
     blurb:"Redesigned Auto-Approval & PinCode flows for a provident fund app — eliminating the frozen state where users couldn't invest pending manual KYC.",
     impact:'Higher initial transaction rates · Reduced CS manual workload',
-    tags:['FinTech','Mobile App','OCR Integration','Design System'],
     bg:'#0D2744',fg:'#4A9EFF',duration:'Nov 2024 – Nov 2025',tools:'Figma',
     about:'Principal Asset Management (partnered with CIMB Bank in Thailand) is a leading global investment firm. The project focused on redesigning the mobile provident fund app — specifically the Auto Approve and PinCode flows to enhance security and user autonomy during financial transactions.',
     prob:"Users were left in a 'frozen state' — unable to invest until a human agent manually approved their account. The bottleneck was e-KYC: users frequently uploaded blurry ID photos the system couldn't verify automatically, forcing CS to call every single user to request new documents.",
@@ -802,14 +783,28 @@ const PROJECTS=[
       'Collaborated with QA to ensure every error state had clear, empathetic visual cues'
     ],
     learn:'Working across PM, Dev, QA, and client teams on a live FinTech product taught me that great design isn\'t just what\'s on screen — it\'s knowing when to raise a flag, who to raise it to, and how fast. Proactive communication at the right moment prevents late-stage rework more than any revision cycle ever could.',
-    images:[{src:'images/Principal-01.png',label:'Principal TH — Screen 1'},{src:'images/Principal-02.png',label:'Principal TH — Screen 2'}]
+    detailImages:[
+      {src:'images/Detail-work/Principal-01.png',label:'Principal TH — Key Screens'},
+      {src:'images/Detail-work/Principal-02.png',label:'Principal TH — UI Revamp'},
+      {src:'images/Detail-work/Principal-Detail-Process.png',label:'Design Process'},
+      {src:'images/Detail-work/Principal-Detail-Auto Approve-User flow.png',label:'Auto Approve User Flow'},
+      {src:'images/Detail-work/Principal-Detail-Flow-Auto Approve.png',label:'Auto Approve Flow'},
+      {src:'images/Detail-work/Principal-Detail-Flow-PIN Code overview.png',label:'PIN Code Overview'},
+      {src:'images/Detail-work/Principal-Detail-Revamp-1.png',label:'UI Revamp — Step 1'},
+      {src:'images/Detail-work/Principal-Detail-Revamp-2.png',label:'UI Revamp — Step 2'},
+    ]
   },
   {
-    num:'02',name:'Eastspring M Choice TH',cover:'images/Eastspring-cover.png',
-    tldr:'Digitized the "Membership Termination" flow for employees, employers, and fund committees, effectively replacing manual paperwork with a 100% online system. The redesign utilizes Dynamic Step-by-Step Logic to reduce cognitive load by surfacing only relevant data fields for each specific user role. This cross-platform solution (PC and Mobile) ensures high data integrity, instant legal verification, and a seamless collaborative approval process.',
+    num:'02',name:'Eastspring M Choice TH',cover:'images/cover-work/Eastspring-cover.png',
+    category:'fintech',role:'UX/UI Designer',platform:'Web + Mobile (Hybrid)',
+    overview:{
+      why:"A multi-role fund termination process was 100% paper-based — manual, error-prone, and invisible to all parties.",
+      how:"Digitized with step-by-step conditional logic, e-Signature, and purpose-built interfaces for each role.",
+      help:"Real-time status for all roles. Zero data-entry errors. What once took days now happens in minutes."
+    },
+    tags:['Web + Mobile','FinTech','Multi-role'],
     blurb:'Designed the digital Membership Termination flow for a corporate provident fund platform — replacing multi-day paper workflows with a guided, e-Signature system for 3 user roles.',
     impact:'Entire fund termination process digitized · Zero manual data entry errors',
-    tags:['FinTech','Web + Mobile','3 User Roles'],
     bg:'#1C1A00',fg:'#D4B800',duration:'Jan – May 2025',tools:'Figma',
     about:"Eastspring Investments (part of the Prudential group) offers the M Choice platform for corporate provident funds. I designed the 'Membership Termination' flow — a collaborative digital process replacing manual paperwork with a real-time system for Employees, Employers, and Fund Committees.",
     prob:'Manual paper forms led to missing information and illegible handwriting, causing frequent data entry errors. Users had to print and physically deliver documents, meaning updates were never real-time. Physical filing made it nearly impossible to track the current status of a request.',
@@ -821,14 +816,30 @@ const PROJECTS=[
       'Built high-fidelity Interactive Prototypes and User Flows as shared maps for developers and clients'
     ],
     learn:"Shifted my perspective from designing individual screens to architecting a cohesive multi-role ecosystem. Learned that delivery above design perfection — letting go of the 'ideal' solution to ship and iterate was often the right call.",
-    images:[{src:'images/Eastspring-01.png',label:'Eastspring M Choice TH — Screen 1'},{src:'images/Eastspring-02.png',label:'Eastspring M Choice TH — Screen 2'}]
+    detailImages:[
+      {src:'images/Detail-work/Eastspring-01.png',label:'Eastspring M Choice — Key Screens'},
+      {src:'images/Detail-work/Eastspring-02.png',label:'Eastspring M Choice — Mobile View'},
+      {src:'images/Detail-work/Eastspring-Detail-Flow-Over view.png',label:'Process Overview'},
+      {src:'images/Detail-work/Eastspring-Detail-Flow-Employee-01.png',label:'Employee Flow — Part 1'},
+      {src:'images/Detail-work/Eastspring-Detail-Flow-Employee-02.png',label:'Employee Flow — Part 2'},
+      {src:'images/Detail-work/Eastspring-Detail-Flow-Employer.png',label:'Employer Flow'},
+      {src:'images/Detail-work/Eastspring-Detail-Flow Employee_tran.png',label:'Employee Transition Flow'},
+      {src:'images/Detail-work/Eastspring-Detail-Flow Employer_tran.png',label:'Employer Transition Flow'},
+      {src:'images/Detail-work/Eastspring-Detail-Flow-e_sign.png',label:'e-Signature Flow'},
+      {src:'images/Detail-work/Eastspring-Detail-Flow-FC.png',label:'Fund Committee Flow'},
+    ]
   },
   {
-    num:'03',name:'Tonson LINE OA + CRM',cover:'images/Tonson-cover.png',
-    tldr:'Architected a complete B2B digital ecosystem for Tonson Family, connecting Merchants, Salesmen, and Admins through a unified LINE OA + CRM platform. By migrating from fragmented paper records to a 100% digital workflow, the project established a "Single Source of Truth" for nationwide sales. The interface was specifically optimized for high-speed field usage on mobile, enabling real-time order tracking and reducing operational coordination overhead.',
+    num:'03',name:'Tonson LINE OA + CRM',cover:'images/cover-work/Tonson-cover.png',
+    category:'commercial',role:'UX/UI Designer',platform:'LINE LIFF (Mobile) + Web (Admin CRM)',
+    overview:{
+      why:"20+ stores managed via paper records and personal LINE chats — data fragmented, no centralized oversight.",
+      how:"Built a B2B ecosystem on LINE LIFF + Web CRM connecting Merchants, Salesmen, and Admins in real-time.",
+      help:"Single source of truth for all roles. Manual coordination overhead slashed. UAT-signed and deployed."
+    },
+    tags:['LINE LIFF','Web CRM','B2B'],
     blurb:'Built a B2B digital ecosystem from scratch — connecting Merchants (LINE LIFF), Salesmen, and Admins into one real-time order tracking and sales management platform.',
     impact:'100% manual → unified digital · Single source of truth for 20+ stores',
-    tags:['B2B','LINE OA/LIFF','CRM','Product Design'],
     bg:'#2A0A00',fg:'#FF7A50',duration:'Oct – Nov 2025',tools:'Figma, LINE Business',
     about:"Tonson Family is a premium vermicelli brand under Sithinnan Co., Ltd. I built their B2B digital ecosystem from scratch — designing seamless interfaces for Merchants (LINE LIFF), Salesmen, and Admins to ensure transparent, real-time sales tracking nationwide.",
     prob:"The existing process was 100% manual workflows impacting three groups: Merchants could only order via Salesmen with no order tracking; Salesmen were managing 20+ stores via paper and personal chats, causing payment confusion and data loss; Admins had no CRM for sales analysis, resulting in slow, inefficient decision-making.",
@@ -840,89 +851,146 @@ const PROJECTS=[
       "Iterated based on BA feedback and stakeholder walkthroughs throughout the sprint"
     ],
     learn:'This project stretched my thinking from UX design into product strategy — understanding how a digital tool can reshape an entire business operation. Building for non-tech-savvy field users reinforced the value of radical simplicity above all else.',
-    images:[{src:'images/Tonson-01.png',label:'Tonson LINE OA + CRM — Screen 1'},{src:'images/Tonson-02.png',label:'Tonson LINE OA + CRM — Screen 2'}]
+    detailImages:[
+      {src:'images/Detail-work/Tonson-01.png',label:'Tonson — Key Screens'},
+      {src:'images/Detail-work/Tonson-02.png',label:'Tonson — Admin View'},
+      {src:'images/Detail-work/Tonson-Detail-Flow-Merchant_Order.png',label:'Merchant Order Flow'},
+      {src:'images/Detail-work/Tonson-Detail-Flow-Order_history.png',label:'Order History Flow'},
+      {src:'images/Detail-work/Tonson-Detail-Flow-Salesman-manage_order.png',label:'Salesman Order Management'},
+      {src:'images/Detail-work/Tonson-Detail-Lineliff.png',label:'LINE LIFF Interface'},
+      {src:'images/Detail-work/Tonson-Detail-UI-Admin.png',label:'Admin CRM UI'},
+      {src:'images/Detail-work/Tonson-Detail-User_flow-01.png',label:'User Flow — Part 1'},
+      {src:'images/Detail-work/Tonson-Detail-User_flow-02.png',label:'User Flow — Part 2'},
+    ]
   },
   {
-    num:'04',name:'Sumeeper',cover:'images/Sumeeper-cover.png',
-    tldr:'Transformed the classic "Instant Game Over" frustration of Minesweeper into an engaging Roguelike experience by introducing a strategic monster battle system. The project\'s technical excellence was recognized with the Best Technical Award at the DEPA Game Accelerator 2026.',
+    num:'04',name:'Sumeeper',cover:'images/cover-work/Sumeeper-cover.png',
+    category:'game',role:'Game UX/UI Designer',platform:'Mobile + PC',
+    achievement:'🏆 Best Technical Award — DEPA Game Accelerator 2026',
+    overview:{
+      why:"Minesweeper's 'one wrong click = game over' was the #1 reason players quit and never came back.",
+      how:"Redesigned with an RPG battle system, Safe Points mechanic, and 3 rounds of live booth testing.",
+      help:"Players engage longer, progress deeper. Awarded Best Technical Award at DEPA Game Accelerator 2026."
+    },
+    tags:['Mobile + PC','Roguelike','Game UX'],
     blurb:'Redesigned the UX of a Minesweeper-inspired game — transforming instant-failure frustration into an engaging roguelike battle experience.',
     impact:'Real-player usability testing at live events · Feedback-driven iteration',
-    tags:['Gaming','Mobile','Game UX','Roguelike'],
     bg:'#0A2A1C',fg:'#2FD48A',duration:'Feb 2025 – Present',tools:'Figma',
     about:'Sumeeper is a game developed by MeDream Studio. I serve as the UX/UI Designer responsible for the full player-facing interface — from onboarding flows and HUD design to menu architecture and interaction feedback.',
-    prob:"Sumeeper was born from a shared frustration between friends. One of us loved Minesweeper — another refused to play it. The reason was simple: one misclick and the game ends instantly. That unforgiving mechanic left players feeling cheated rather than challenged, turning a potentially fun experience into something to avoid. We wanted to change that.",
-    sol:"We reimagined the Minesweeper formula into something more forgiving and engaging. Instead of instant death when hitting a bomb, players enter a battle against a monster — blending classic grid-deduction mechanics with roguelike progression elements. My role was to design the complete game UX: player flows, HUD architecture, menu systems, and onboarding — ensuring that even first-time players could jump in without friction.",
+    prob:"Sumeeper was born from a shared frustration between friends. One misclick and the original Minesweeper ends instantly — that unforgiving mechanic left players feeling cheated rather than challenged. Since Sumeeper uses a completely new rule set (tile numbers represent monster level sums, not mine counts), every player needs to learn from scratch. The primary challenge: teach new rules fast enough to reach the fun.",
+    sol:"Reimagined the Minesweeper formula with an RPG battle system — HP bar, ATK/DEF/SPD stats, monster harvesting, and a cooking system. Added Safe Points so new players have a guaranteed safe entry tile. Redesigned the HUD to group stats in the bottom-left corner, keeping the central gameplay board in focus. Expanded to dual-platform (Mobile + PC) based on real player feedback from the depa training program.",
     proc:[
       'Mapped the full player journey from first launch to first successful game session',
       'Redesigned HUD hierarchy to reduce visual noise and surface only critical in-game information',
       'Applied progressive disclosure for secondary mechanics — keeping the first experience clean',
       'Created interactive Figma prototypes to test menu flows and onboarding before development',
-      'Attended live game events, observed real player behavior, and iterated directly from on-the-ground feedback'
+      'Attended 3 live game events, observed real player behavior, and iterated directly from on-the-ground feedback',
+      'Expanded to Mobile + PC dual-platform following depa Game Accelerator feedback'
     ],
     learn:'Watching real players struggle with something I designed was the most humbling and valuable feedback loop I have experienced. No internal review replaces five minutes of watching an actual user play — it changed how I approach every design decision since.',
-    images:[{src:'images/Sumeeper-01.png',label:'Sumeeper — Gameplay Screenshot'},{src:'images/Sumeeper-02.png',label:'Sumeeper — Live Event'}]
+    awards:`<span class="pp-award-badge">🏆 Best Technical Award — DEPA Game Accelerator 2026</span><br><br>Sumeeper received the Best Technical Award at the DEPA Game Accelerator Program 2026, validating the technical innovation behind the game's unique RPG-Minesweeper fusion mechanic and its dual-platform (Mobile + PC) expansion.`,
+    detailImages:[
+      {src:'images/Detail-work/Sumeeper-01.png',label:'Sumeeper — Gameplay Screenshot'},
+      {src:'images/Detail-work/Sumeeper-02.png',label:'Sumeeper — Live Event'},
+    ]
   },
   {
-    num:'05',name:'OpenEdu',cover:'images/OpenEdu-cover.png',
-    tldr:'Replaced a chaotic shared Google Sheet with a centralized back-office system — covering interview slots, candidate scoring, and full lifecycle tracking for volunteer applicants.',
+    num:'05',name:'OpenEdu',cover:'images/cover-work/OpenEdu-cover.png',
+    category:'edu',role:'UX/UI Designer (Volunteer)',platform:'Web Platform',
+    overview:{
+      why:"The HR team was drowning in shared-spreadsheet chaos — data overlaps, no version control, hours on manual emails.",
+      how:"Designed a centralized back-office from scratch with automated interview scheduling and candidate tracking.",
+      help:"Tasks that took hours now take clicks. Data integrity restored. Spreadsheet chaos eliminated."
+    },
+    tags:['Web Platform','EdTech','Back-office'],
     blurb:'Volunteer UX/UI for an open-source education platform. Identified a data inconsistency crisis in HR workflows and designed a centralized back-office management system from scratch.',
     impact:'Eliminated shared Google Sheet chaos · Centralized candidate lifecycle management',
-    tags:['EdTech','Platform','User Interviews','Back-office System'],
     bg:'#15002A',fg:'#B87FFF',duration:'Nov 2024 – Apr 2025',tools:'Figma',
     about:"Saturday School is a volunteer-run organization providing free education. I volunteered as UX/UI Designer for the OpenEdu Platform — designing interfaces that support teachers and volunteers in delivering accessible education at scale.",
-    prob:"The HR team was struggling with Data Inconsistency. Working together on a single Google Sheet caused frequent data overlaps, missing records, and a lack of version control — making it nearly impossible to manage the growing pool of volunteer applicants reliably.",
-    sol:"I conducted direct interviews with the HR team to map their exact pain points and daily workflow. Based on these insights, I designed a dedicated back-office management system — built from scratch, as none existed before. The system centralized the entire candidate lifecycle in one place: creating interview slots, sending invitation emails, scoring applicants, and tracking each stage of the selection process — eliminating the chaos of a shared Google Sheet.",
+    prob:"The HR team was struggling with Data Inconsistency. Working together on a single Google Sheet caused frequent data overlaps, missing records, and a lack of version control — making it nearly impossible to manage the growing pool of volunteer applicants reliably. Switching between multiple tabs and typing individual emails one by one consumed hours that could be spent on meaningful work.",
+    sol:"Conducted direct interviews with the HR team to map their exact pain points. Designed a dedicated back-office management system from scratch — centralizing the entire candidate lifecycle: interview slot creation, automated bulk email rounds, candidate scoring, and status tracking. Added system-locked entries to prevent accidental overwriting when multiple HR members work simultaneously.",
     proc:[
-      'Conducted direct interviews with the HR team to identify pain points in their volunteer screening workflow',
+      'Conducted direct semi-structured interviews with the HR team to identify pain points',
       'Mapped the existing process and pinpointed key friction points around data overlap and version control',
-      'Facilitated ideation sessions with the cross-functional team to define system requirements',
-      'Designed wireframes and prototypes for the back-office management system',
-      'Validated designs with actual HR users through usability testing sessions',
+      'Designed a 3-round automated email system (screening → invitation → result)',
+      'Built smart timeslot management logic with real-time availability indicators',
+      'Validated designs with actual HR users through two rounds of usability testing',
       'Iterated based on user feedback before handing off to the development team'
     ],
-    learn:"Volunteering opened doors to working with an entirely new team of people I had never met before — yet we shared a single purpose: building something that genuinely helps users. Despite the non-commercial nature of the project, the commitment was the same as any professional engagement. Listening to users' feelings about the design provided deep insights that no assumption could replace, and continuously refining the experience based on their feedback allowed us to meaningfully elevate the product before launch.",
-    images:[{src:'images/OpenEdu-01.png',label:'OpenEdu — Screen 1'},{src:'images/OpenEdu-02.png',label:'OpenEdu — Screen 2'}]
+    learn:"Volunteering opened doors to working with an entirely new team — yet we shared a single purpose. Listening to users' feelings about the design provided deep insights that no assumption could replace. Continuously refining the experience based on their feedback allowed us to meaningfully elevate the product before launch.",
+    detailImages:[
+      {src:'images/Detail-work/OpenEdu-01.png',label:'OpenEdu — Dashboard'},
+      {src:'images/Detail-work/OpenEdu-02.png',label:'OpenEdu — Candidate View'},
+      {src:'images/Detail-work/OpenEdu-Detail-Figjam.png',label:'FigJam Research'},
+      {src:'images/Detail-work/OpenEdu-Detail-PainPoint.png',label:'Pain Point Analysis'},
+      {src:'images/Detail-work/OpenEdu-Detail-Question.png',label:'Research Questions'},
+      {src:'images/Detail-work/OpenEdu-Detail-UI Flow.png',label:'UI Flow'},
+      {src:'images/Detail-work/OpenEdu-Detail-User_Interview.png',label:'User Interview'},
+    ]
   },
   {
-    num:'06',name:'Jumsup',cover:'images/Jumsup-cover.png',
-    tldr:'Gamified English learning app with virtual pet + social feed — selected by DEPA Digital Startup Fund 2025 and Hatch Incubation Program #Gen9.',
+    num:'06',name:'Jumsup',cover:'images/cover-work/Jumsup-cover.png',
+    category:'game',role:'UX/UI Designer',platform:'Mobile App',
+    achievement:'🏆 DEPA Digital Startup Fund 2025 · 🏅 Hatch Incubation #Gen9',
+    overview:{
+      why:"Thai students avoid speaking English due to fear of judgment — existing apps felt too much like homework.",
+      how:"Built a gamified app with a dragon mascot evolution system, social feed, and 1–2 min nano-learning sessions.",
+      help:"Selected by DEPA Digital Startup Fund 2025 and Hatch Incubation #Gen9, validating market viability."
+    },
+    tags:['Mobile App','EdTech','Gamification'],
     blurb:'Designed UX/UI and a high-fidelity prototype for a gamified English learning app — awarded by DEPA Digital Startup Fund 2025 and Hatch Incubation Program #Gen9.',
     impact:'DEPA Digital Startup Fund 2025 · Hatch Incubation #Gen9',
-    tags:['EdTech','Mobile','Gamification','DEPA Program'],
     bg:'#1A001A',fg:'#FF6DC8',duration:'Jan 2025 – Mar 2026',tools:'Figma',
     about:"Jumsup is a gamified English learning app developed under the DEPA program by MeDream Studio. The goal was to make English learning engaging and accessible through game mechanics and social features for Thai learners.",
-    prob:'Existing English learning apps felt like homework — low engagement, no sense of progression, and high abandonment rates. Thai learners needed an experience that felt rewarding and social, not academic and isolating.',
-    sol:"Designed a gamified learning system with streak mechanics, level progression, and bite-sized lesson cards. What sets Jumsup apart is its combination of game-based learning with a virtual pet system and a social feed — creating multiple engagement loops that motivate learners to return daily, not just to study, but to connect, care for their pet, and share progress with friends.",
+    prob:'Existing English learning apps felt like homework — low engagement, no sense of progression, and high abandonment rates. Thai learners needed an experience that felt rewarding and social, not academic and isolating. Most apps required 20–40 minute sessions; attention spans demanded something much shorter.',
+    sol:"Designed a gamified learning system combining nano-learning (1–2 min sessions), a dragon mascot that evolves with the user's XP level, a social feed format for familiar scrolling behavior, and a Daily Speak feature for private voice practice. Multi-modal learning engine: Flashcards → Multiple Choice → Dictation → Voice-over for deeper retention.",
     proc:[
       'Defined user personas based on Thai learner behavior patterns and motivations',
+      'Conducted competitive analysis of Duolingo, Praktica, DuoCards, and other learning methods',
       'Mapped the core learning loop — lesson → reward → pet growth → social sharing',
       'Designed mobile-first UI with high contrast, large tap targets, and clear visual feedback',
       'Built high-fidelity interactive prototype in Figma for DEPA pitch presentation',
-      'Presented product concept to DEPA panel — focused on accessibility, engagement, and retention'
+      'Presented product concept to DEPA government panel — focused on accessibility, engagement, and retention'
     ],
     learn:"Pitching to a government panel taught me how to translate UX rationale into business value — connecting design decisions directly to engagement metrics and policy goals. A great prototype communicates the vision even when you can't be in the room to explain it.",
-    awards:`<span class="m-award-badge">🏆 DEPA Digital Startup Fund 2025</span><span class="m-award-badge">🏅 Hatch Incubation Program #Gen9</span><br><br>Jumsup was selected for the DEPA (Digital Economy Promotion Agency) Digital Startup Fund 2025 — a national program supporting high-potential digital startups in Thailand. The project was also recognized with the Hatch Incubation Program Award #Gen9, validating the product's potential for real market impact.`,
-    images:[{src:'images/Jumsup-01.png',label:'Jumsup — Screen 1'},{src:'images/Jumsup-02.png',label:'Jumsup — Screen 2'}]
+    awards:`<span class="pp-award-badge">🏆 DEPA Digital Startup Fund 2025</span><span class="pp-award-badge">🏅 Hatch Incubation Program #Gen9</span><br><br>Jumsup was selected for the DEPA (Digital Economy Promotion Agency) Digital Startup Fund 2025 — a national program supporting high-potential digital startups in Thailand. Also recognized by the Hatch Incubation Program #Gen9, validating both user desirability and business viability.`,
+    detailImages:[
+      {src:'images/Detail-work/Jumsup-01.png',label:'Jumsup — Key Screens'},
+      {src:'images/Detail-work/Jumsup-02.png',label:'Jumsup — Mascot System'},
+      {src:'images/Detail-work/Jumsup-Detail-Competitive.png',label:'Competitive Analysis'},
+      {src:'images/Detail-work/Jumsup-Detail-Flow-Flashcard.png',label:'Flashcard Learning Flow'},
+      {src:'images/Detail-work/Jumsup-Detail-Flow-Library.png',label:'Library Flow'},
+      {src:'images/Detail-work/Jumsup-Detail-Flow-Voice.png',label:'Daily Speak Flow'},
+    ]
   },
   {
-    num:'07',name:'Fluidra',cover:'images/Fluidra-cover.png',
-    tldr:'Redesigned the Thai branch website from a text-heavy catalog into a platform that reflects a Premium Global Brand image. By unifying the Portfolio and Brand Grid, I enhanced B2B user confidence, minimized friction from external redirects, and optimized the inquiry flow across all touchpoints.',
+    num:'07',name:'Fluidra',cover:'images/cover-work/Fluidra-cover.png',
+    category:'commercial',role:'UX/UI Designer',platform:'Website (B2B)',
+    overview:{
+      why:"Fluidra Thailand's site had no product images, no project references — B2B clients lost trust and left.",
+      how:"Redesigned with visual-first project gallery, consolidated brand CI, and lead-gen CTAs at decision points.",
+      help:"Premium platform reflecting global standards. B2B clients stay on-site and convert with confidence."
+    },
+    tags:['Website','B2B','Brand Redesign'],
     blurb:"Redesigned Fluidra Thailand's website — transforming an outdated catalog into a high-trust, premium B2B platform that reflects global standards.",
     impact:'Outdated catalog → premium B2B platform · Aligned with global brand CI',
-    tags:['Website','B2C / B2B','Brand Design'],
-    bg:'#001A2A',fg:'#00C8FF',duration:'Aug 2025 – Nov 2025',tools:'Figma',
+    bg:'#001A2A',fg:'#00C8FF',duration:'Aug – Nov 2025',tools:'Figma',
     about:"Fluidra is a Spanish multinational and global leader in pool and spa equipment. I redesigned their Thailand website, transforming an outdated, text-only catalog into a high-trust, premium platform that reflects global standards and effectively showcases project references to B2B clients.",
-    prob:"The existing website felt misaligned with Fluidra's premium global positioning. Product information was hard to navigate, the visual language was inconsistent with the international brand, and the user journey from awareness to inquiry was unclear — failing to build trust with B2B clients.",
-    sol:"Redesigned the site with a clean, modern visual system that reflects Fluidra's premium quality and meets the brand's specific requirements. Restructured the information architecture to guide B2B clients from product discovery to inquiry with minimal friction — ensuring every design decision served both the user's needs and the brand's global identity standards.",
+    prob:"The existing website listed products without images or context — appearing dated and untrustworthy. Users had to click away to third-party brand websites to view product details, creating high drop-off and losing brand authority. No project references meant B2B clients couldn't assess Fluidra's capabilities at a glance.",
+    sol:"Redesigned the site with a visual-first approach: replaced text-only lists with a structured 'Brands & Projects' grid showcasing real-world results as social proof. Consolidated all brand and product information within the Fluidra ecosystem — eliminating external redirects. Positioned contact CTAs precisely at key B2B decision moments to reduce inquiry friction.",
     proc:[
       'Reviewed the existing site against Fluidra global brand guidelines and competitor benchmarks',
+      'Analyzed the B2B buyer journey for high-consideration purchase decisions',
       'Restructured information architecture to improve product discovery and showcase project references',
       'Designed a new visual language fully aligned with Fluidra global brand CI standards',
       'Built high-fidelity page designs and interactive states in Figma',
-      'Delivered in close collaboration with the development team, PM, and the client\'s marketing team — aligning technical implementation with brand and business goals'
+      'Delivered through weekly feedback loops with client stakeholders as proxy users'
     ],
-    learn:"With no dedicated user testing group available, I facilitated weekly iterative feedback loops with both the internal team and clients — treating stakeholders as 'Proxy Users' during review sessions. This ensured every design iteration was validated against technical requirements and met the client's visual expectations. Working within a Global CI framework taught me how to wield color, space, and typography to project 'International Standard' and build brand trust at a glance. The most impactful lesson: in UX, the biggest wins often come from turning invisible data into visible value.",
-    images:[{src:'images/Fluidra-01.png',label:'Fluidra — Screen 1'},{src:'images/Fluidra-02.png',label:'Fluidra — Screen 2'}]
+    learn:"With no dedicated user testing group available, I facilitated weekly iterative feedback loops with internal team and clients — treating stakeholders as 'Proxy Users.' Working within a Global CI framework taught me how to wield color, space, and typography to project 'International Standard' and build brand trust at a glance.",
+    detailImages:[
+      {src:'images/Detail-work/Fluidra-01.png',label:'Fluidra — Homepage Redesign'},
+      {src:'images/Detail-work/Fluidra-02.png',label:'Fluidra — Brand Grid'},
+    ]
   }
 ];
 
@@ -931,10 +999,11 @@ const grid=document.getElementById('projGrid');
 PROJECTS.forEach((p,i)=>{
   const card=document.createElement('div');
   card.className='proj-card';
+  card.dataset.category=p.category;
   card.innerHTML=`
     <div class="proj-thumb" style="background:${p.bg};">
       <img src="${p.cover}" alt="${p.name}" style="width:100%;height:100%;object-fit:cover;display:block;">
-      <div class="proj-hover-label">View Case Study</div>
+      <div class="proj-hover-label">View Work →</div>
     </div>
     <div class="proj-body">
       <div class="proj-num">${p.num} /</div>
@@ -944,95 +1013,186 @@ PROJECTS.forEach((p,i)=>{
       <div class="proj-tap">Tap to view →</div>
       <div class="proj-tags">${p.tags.map(t=>`<span class="proj-tag">${t}</span>`).join('')}</div>
     </div>`;
-  card.addEventListener('click',()=>openModal(i));
+  card.addEventListener('click',()=>openProjPage(i));
   grid.appendChild(card);
+  addHover(card);
 });
 
-/* ── MODAL ── */
-function openModal(i){
-  const p=PROJECTS[i];
-  document.getElementById('mNum').textContent=p.num+' /';
-  document.getElementById('mTitle').textContent=p.name;
-  document.getElementById('mTags').innerHTML=p.tags.map(t=>`<span class="m-tag">${t}</span>`).join('');
-  document.getElementById('mMeta').innerHTML=`
-    <div class="m-meta-item"><label>Duration</label><span>${p.duration}</span></div>
-    <div class="m-meta-item"><label>Tools</label><span>${p.tools}</span></div>
-    <div class="m-meta-item"><label>Role</label><span>UX/UI Designer</span></div>`;
-  document.getElementById('mTldr').textContent=p.tldr||'';
-  document.getElementById('mAbout').textContent=p.about;
-  document.getElementById('mProb').textContent=p.prob;
-  document.getElementById('mSol').textContent=p.sol;
-  document.getElementById('mProc').innerHTML=p.proc.map(s=>`<li>${s}</li>`).join('');
-  document.getElementById('mLearn').textContent=p.learn;
+/* ── FILTER ── */
+function filterProjects(cat){
+  document.querySelectorAll('.filter-chip').forEach(c=>c.classList.toggle('active',c.dataset.filter===cat));
+  document.querySelectorAll('.proj-card').forEach(c=>{
+    c.style.display=(cat==='all'||c.dataset.category===cat)?'':'none';
+  });
+}
 
-  const awardsWrap=document.getElementById('mAwardsWrap');
-  if(p.awards){awardsWrap.style.display='block';document.getElementById('mAwards').innerHTML=p.awards;}
-  else{awardsWrap.style.display='none';}
+/* ── PROJECT PAGE ── */
+let currentProjIdx=0;
+function openProjPage(idx){
+  currentProjIdx=idx;
+  const p=PROJECTS[idx];
+  const page=document.getElementById('projPage');
 
-  const futureWrap=document.getElementById('mFutureWrap');
-  if(p.future){futureWrap.style.display='block';document.getElementById('mFuture').textContent=p.future;}
-  else{futureWrap.style.display='none';}
+  // Scroll to top of project page
+  page.scrollTop=0;
 
-  /* Gallery */
-  const gWrap=document.getElementById('mGalleryWrap');
-  const gGrid=document.getElementById('mGallery');
-  const imgs=p.images||[];
+  // Topbar
+  document.getElementById('ppNavTitle').textContent=p.name;
+
+  // Cover
+  const coverImg=document.getElementById('ppCoverImg');
+  coverImg.src=p.cover;coverImg.alt=p.name;
+  coverImg.style.background=p.bg;
+
+  // Header
+  document.getElementById('ppNumLabel').textContent=p.num+' /';
+  document.getElementById('ppTitle').textContent=p.name;
+  document.getElementById('ppMeta').innerHTML=`
+    <div class="pp-meta-item"><span class="pp-meta-label">Role</span><span class="pp-meta-value">${p.role}</span></div>
+    <div class="pp-meta-item"><span class="pp-meta-label">Duration</span><span class="pp-meta-value">${p.duration}</span></div>
+    <div class="pp-meta-item"><span class="pp-meta-label">Tools</span><span class="pp-meta-value">${p.tools}</span></div>
+    <div class="pp-meta-item"><span class="pp-meta-label">Platform</span><span class="pp-meta-value">${p.platform}</span></div>`;
+
+  // Achievement
+  const achEl=document.getElementById('ppAchievement');
+  if(p.achievement){achEl.innerHTML=`<div class="pp-achievement-badge">${p.achievement}</div>`;achEl.style.display='';}
+  else{achEl.style.display='none';}
+
+  // Tags
+  document.getElementById('ppTags').innerHTML=p.tags.map(t=>`<span class="pp-tag">${t}</span>`).join('');
+
+  // Overview
+  document.getElementById('ppWhy').textContent=p.overview.why;
+  document.getElementById('ppHow').textContent=p.overview.how;
+  document.getElementById('ppHelp').textContent=p.overview.help;
+
+  // Sections
+  let html=`
+    <div class="pp-section"><h3 class="pp-section-title">About the Project</h3><p class="pp-section-text">${p.about}</p></div>
+    <div class="pp-section"><h3 class="pp-section-title">The Problem</h3><p class="pp-section-text">${p.prob}</p></div>
+    <div class="pp-section"><h3 class="pp-section-title">How I Solved It</h3><p class="pp-section-text">${p.sol}</p></div>
+    <div class="pp-section"><h3 class="pp-section-title">My Process</h3><ol class="pp-process-list">${p.proc.map(s=>`<li>${s}</li>`).join('')}</ol></div>
+    <div class="pp-section"><h3 class="pp-section-title">What I Learned</h3><p class="pp-section-text">${p.learn}</p></div>`;
+  if(p.awards)html+=`<div class="pp-section"><h3 class="pp-section-title">Recognition &amp; Awards</h3><div class="pp-section-text">${p.awards}</div></div>`;
+  document.getElementById('ppSections').innerHTML=html;
+
+  // Gallery
+  const gallerySection=document.getElementById('ppGallerySection');
+  const imgs=p.detailImages||[];
   if(imgs.length){
-    gWrap.style.display='block';
-    gGrid.innerHTML='';
-    imgs.forEach((img,idx)=>{
-      const item=document.createElement('div');
-      item.className='m-gallery-item';
-      if(img.src){
-        item.innerHTML=`<img src="${img.src}" alt="${img.label||''}">`;
-      } else {
-        item.innerHTML=`<div class="m-img-placeholder">📷 ${img.label||'Image '+(idx+1)}<br><span style="font-size:.62rem;opacity:.6">${img.file||''}</span></div>`;
-      }
-      item.addEventListener('click',()=>openLb(imgs,idx));
-      gGrid.appendChild(item);
+    gallerySection.style.display='';
+    const gal=document.getElementById('ppGallery');gal.innerHTML='';
+    imgs.forEach((img,gi)=>{
+      const item=document.createElement('div');item.className='pp-gallery-item';
+      item.innerHTML=`<img src="${img.src}" alt="${img.label}" loading="lazy">`;
+      item.addEventListener('click',()=>openLb(imgs,gi));
+      gal.appendChild(item);addHover(item);
     });
-  } else {
-    gWrap.style.display='none';
-  }
+  } else {gallerySection.style.display='none';}
 
-  /* scroll modal to top + reset scroll indicator */
-  const modalBg=document.getElementById('modalBg');
-  modalBg.scrollTop=0;
-  modalBg.classList.add('open');
-  document.getElementById('modalScrollTrack').classList.add('visible');
+  // Bottom nav
+  const n=PROJECTS.length;
+  const prev=PROJECTS[(idx-1+n)%n];
+  const next1=PROJECTS[(idx+1)%n];
+  const next2=PROJECTS[(idx+2)%n];
+  const pI=(idx-1+n)%n,n1I=(idx+1)%n,n2I=(idx+2)%n;
+  document.getElementById('ppBottomNav').innerHTML=`
+    <div>
+      <div class="pp-bn-label">← Previous</div>
+      <div class="pp-bn-card" onclick="openProjPage(${pI})">
+        <div class="pp-bn-thumb" style="background:${prev.bg}"><img src="${prev.cover}" alt="${prev.name}" loading="lazy"></div>
+        <div class="pp-bn-info"><span class="pp-bn-num">${prev.num} /</span><span class="pp-bn-name">${prev.name}</span></div>
+      </div>
+    </div>
+    <div>
+      <div class="pp-bn-label">Next →</div>
+      <div class="pp-bn-cards">
+        <div class="pp-bn-card" onclick="openProjPage(${n1I})">
+          <div class="pp-bn-thumb" style="background:${next1.bg}"><img src="${next1.cover}" alt="${next1.name}" loading="lazy"></div>
+          <div class="pp-bn-info"><span class="pp-bn-num">${next1.num} /</span><span class="pp-bn-name">${next1.name}</span></div>
+        </div>
+        <div class="pp-bn-card" onclick="openProjPage(${n2I})">
+          <div class="pp-bn-thumb" style="background:${next2.bg}"><img src="${next2.cover}" alt="${next2.name}" loading="lazy"></div>
+          <div class="pp-bn-info"><span class="pp-bn-num">${next2.num} /</span><span class="pp-bn-name">${next2.name}</span></div>
+        </div>
+      </div>
+    </div>`;
+
+  // Prev/Next topbar arrows
+  document.getElementById('ppPrevBtn').onclick=()=>openProjPage((idx-1+n)%n);
+  document.getElementById('ppNextBtn').onclick=()=>openProjPage((idx+1)%n);
+
+  // Show page
+  page.classList.add('open');
+  bttBtn.classList.remove('visible');
+  bttBtn.style.display='none';
+  document.querySelector('.mob-fab').style.display='none';
   document.body.style.overflow='hidden';
-  setTimeout(updateScrollThumb,50);
+  history.pushState({proj:idx},'','#work/'+p.num);
 }
-function closeModal(){
-  document.getElementById('modalBg').classList.remove('open');
-  document.getElementById('modalScrollTrack').classList.remove('visible');
+
+function closeProjPage(){
+  document.getElementById('projPage').classList.remove('open');
+  bttBtn.style.display='';
+  document.querySelector('.mob-fab').style.display='';
   document.body.style.overflow='';
+  history.pushState(null,'','#works');
 }
-document.getElementById('modalX').onclick=closeModal;
-document.getElementById('modalBg').addEventListener('click',e=>{if(e.target.id==='modalBg')closeModal();});
-document.addEventListener('keydown',e=>{
-  if(e.key==='Escape'){
-    if(document.getElementById('imgLb').classList.contains('open'))closeLb();
-    else closeModal();
-  }
+
+window.addEventListener('popstate',e=>{
+  if(document.getElementById('projPage').classList.contains('open'))closeProjPage();
 });
 
-/* ── MODAL SCROLL INDICATOR ── */
-function updateScrollThumb(){
-  const bg=document.getElementById('modalBg');
-  const track=document.getElementById('modalScrollTrack');
-  const thumb=document.getElementById('modalScrollThumb');
-  if(!bg||!track||!thumb)return;
-  const scrollable=bg.scrollHeight-bg.clientHeight;
-  if(scrollable<=0){thumb.style.height='100%';thumb.style.top='0';return;}
-  const trackH=track.clientHeight;
-  const thumbH=Math.max(28,bg.clientHeight/bg.scrollHeight*trackH);
-  const thumbTop=(bg.scrollTop/scrollable)*(trackH-thumbH);
-  thumb.style.height=thumbH+'px';
-  thumb.style.top=thumbTop+'px';
+/* ── COPY EMAIL ── */
+function copyEmail(){
+  navigator.clipboard.writeText('sukrita.iam@gmail.com').then(()=>{
+    const t=document.getElementById('copyToast');
+    t.classList.add('show');
+    setTimeout(()=>t.classList.remove('show'),2500);
+  }).catch(()=>{
+    // Fallback for browsers without clipboard API
+    const ta=document.createElement('textarea');
+    ta.value='sukrita.iam@gmail.com';ta.style.position='fixed';ta.style.opacity='0';
+    document.body.appendChild(ta);ta.select();document.execCommand('copy');
+    document.body.removeChild(ta);
+    const t=document.getElementById('copyToast');
+    t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2500);
+  });
 }
-const modalBgEl=document.getElementById('modalBg');
-modalBgEl.addEventListener('scroll',updateScrollThumb,{passive:true});
+
+/* ── CONTACT FORM ──
+   To receive emails: sign up free at formspree.io → create a form → replace YOUR_FORM_ID below */
+const FORMSPREE_ID='YOUR_FORM_ID';
+async function submitContactForm(e){
+  e.preventDefault();
+  const form=e.target;
+  const btn=document.getElementById('formBtn');
+  const orig=btn.textContent;
+  btn.textContent='Sending...';btn.disabled=true;
+  const name=form.name.value,email=form.email.value,message=form.message.value;
+  if(FORMSPREE_ID==='YOUR_FORM_ID'){
+    // Fallback: open default mail client
+    const body=encodeURIComponent(message+'\n\nFrom: '+name+'\nEmail: '+email);
+    window.open('mailto:sukrita.iam@gmail.com?subject=Portfolio Contact from '+encodeURIComponent(name)+'&body='+body);
+    btn.textContent=orig;btn.disabled=false;
+    return;
+  }
+  try{
+    const res=await fetch('https://formspree.io/f/'+FORMSPREE_ID,{
+      method:'POST',
+      body:JSON.stringify({name,email,message}),
+      headers:{'Accept':'application/json','Content-Type':'application/json'}
+    });
+    if(res.ok){
+      btn.textContent='✓ Sent!';form.reset();
+      setTimeout(()=>{btn.textContent=orig;btn.disabled=false;},3000);
+    }else throw new Error();
+  }catch{
+    const body=encodeURIComponent(message);
+    window.open('mailto:sukrita.iam@gmail.com?subject=Portfolio Contact from '+encodeURIComponent(name)+'&body='+body);
+    btn.textContent=orig;btn.disabled=false;
+  }
+}
 
 /* ── SCROLL FADE ── */
 const obs=new IntersectionObserver(entries=>{
