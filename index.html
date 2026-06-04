@@ -61,7 +61,8 @@ nav.scrolled{top:14px;left:50%;right:auto;transform:translateX(-50%);width:max-c
 .mob-close{position:absolute;top:1.5rem;right:2rem;font-size:1.75rem;background:none;border:none;color:var(--cream);}
 
 /* ── HERO ── */
-.hero{min-height:100vh;display:grid;grid-template-columns:1.1fr 0.9fr;gap:5rem;align-items:center;padding:9rem 4rem 5rem;position:relative;z-index:1;overflow:hidden;}
+.hero{min-height:100vh;display:flex;align-items:center;padding:9rem 4rem 5rem;position:relative;z-index:1;overflow:hidden;}
+.hero>div:first-child{max-width:680px;}
 .hero::before{content:'';position:absolute;top:10%;right:-8%;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(190,255,0,.05) 0%,transparent 70%);pointer-events:none;}
 .hero::after{content:'';position:absolute;bottom:8%;left:5%;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(255,92,62,.04) 0%,transparent 70%);pointer-events:none;}
 .hero-title-wrap{position:relative;}
@@ -79,10 +80,38 @@ h1.hero-title .coral{color:var(--coral);}
 .btn-g{color:var(--cream);padding:.85rem 1.875rem;border-radius:2rem;font-size:.88rem;text-decoration:none;border:1px solid rgba(239,236,229,.15);transition:border-color .2s;display:inline-block;}
 .btn-g:hover{border-color:var(--muted);}
 
-/* ── BINGO ── */
-.bingo-wrap{padding-top:1rem;}
-.bingo-label{font-family:var(--fd);font-size:1rem;font-weight:700;line-height:1.35;margin-bottom:1.25rem;color:var(--cream);}
-.bingo-label em{color:var(--coral);font-style:normal;}
+/* ── BINGO TRIGGER ── */
+.bingo-trigger{
+  position:absolute;bottom:2.5rem;right:4rem;
+  display:inline-flex;align-items:center;gap:.5rem;
+  background:rgba(21,21,31,.88);border:1px solid rgba(190,255,0,.32);
+  color:var(--cream);font-family:var(--fb);font-size:.82rem;font-weight:500;
+  padding:.5rem .9rem .5rem .625rem;border-radius:2rem;
+  cursor:pointer;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  transition:border-color .2s,color .2s,box-shadow .2s;
+  box-shadow:0 4px 16px rgba(0,0,0,.35);
+}
+.bingo-trigger:hover{border-color:rgba(190,255,0,.7);color:var(--lime);box-shadow:0 6px 20px rgba(0,0,0,.4);}
+.bingo-trigger-badge{font-size:.58rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#09090E;background:var(--lime);padding:.2rem .5rem;border-radius:20px;}
+
+/* ── BINGO POPUP ── */
+.bingo-popup{display:none;position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:800;align-items:center;justify-content:center;padding:1.5rem;}
+.bingo-popup.open{display:flex;}
+.bingo-popup-box{
+  background:var(--bg-card);border:1px solid rgba(239,236,229,.13);border-radius:18px;
+  padding:1.75rem 2rem;max-width:500px;width:100%;position:relative;
+  animation:bingoPop .25s cubic-bezier(.34,1.56,.64,1);
+}
+@keyframes bingoPop{from{opacity:0;transform:scale(.9) translateY(14px)}to{opacity:1;transform:scale(1) translateY(0)}}
+.bingo-popup-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:.375rem;}
+.bingo-popup-title{font-family:var(--fd);font-size:1.1rem;font-weight:800;}
+.bingo-popup-title em{color:var(--coral);font-style:normal;}
+.bingo-popup-close{width:32px;height:32px;border-radius:50%;border:none;background:rgba(239,236,229,.08);color:var(--cream);font-size:.9rem;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s;flex-shrink:0;}
+.bingo-popup-close:hover{background:rgba(239,236,229,.18);}
+.bingo-popup-sub{font-size:.78rem;color:var(--muted);margin-bottom:1.25rem;}
+
+/* ── BINGO (shared board styles) ── */
+.bingo-board{display:grid;grid-template-columns:repeat(5,1fr);gap:5px;max-width:420px;}
 .bingo-board{display:grid;grid-template-columns:repeat(5,1fr);gap:5px;max-width:420px;}
 .bc{aspect-ratio:1;display:flex;align-items:center;justify-content:center;text-align:center;padding:4px;font-size:.58rem;font-weight:500;line-height:1.25;color:var(--muted);background:var(--bg-card);border:1px solid var(--border);border-radius:7px;transition:all .18s;user-select:none;}
 .bc:not(.free):hover{border-color:var(--lime);color:var(--cream);transform:scale(1.06);}
@@ -349,7 +378,8 @@ footer{padding:2rem 4rem;border-top:1px solid var(--border);display:flex;justify
   nav{padding:1rem 2rem;} .nav-links{display:none;} .burger{display:flex;} .nav-cta{display:none;}
   .mob-fab{display:flex;}
   .back-to-top{bottom:5.75rem;}
-  .hero{grid-template-columns:1fr;gap:3rem;padding:8rem 2rem 5rem;}
+  .hero{padding:8rem 2rem 5rem;}
+  .bingo-trigger{right:2rem;bottom:2rem;}
   .proj-grid{grid-template-columns:repeat(2,1fr);}
   .stats-row{grid-template-columns:repeat(2,1fr);}
   .stats-row .stat-card:last-child{grid-column:1/-1;}
@@ -437,7 +467,7 @@ footer{padding:2rem 4rem;border-top:1px solid var(--border);display:flex;justify
     <div class="eyebrow a1">UX/UI Designer &nbsp;·&nbsp; FinTech &nbsp;·&nbsp; EdTech &nbsp;·&nbsp; Gaming</div>
     <div class="hero-title-wrap">
       <div class="hero-da" aria-hidden="true">大</div>
-      <h1 class="hero-title a2">Every Screen Is<br>a <span class="lime">Destination.</span></h1>
+      <h1 class="hero-title a2">Sukrita<br><span class="lime">Janseetong.</span></h1>
     </div>
     <p class="hero-desc a3">Hi, I'm Sukrita — I craft intuitive, data-driven experiences that people actually enjoy using. My work spans financial platforms, learning products, and gaming interfaces across Thailand's leading companies.</p>
     <div class="hero-btns a4">
@@ -445,8 +475,36 @@ footer{padding:2rem 4rem;border-top:1px solid var(--border);display:flex;justify
       <a class="btn-g" href="#about">About Me</a>
     </div>
   </div>
-  <div class="bingo-wrap a3">
-    <div class="bingo-label">SKILL <em>BINGO</em><br>Find the skills we bring together.</div>
+  <!-- Bingo trigger button -->
+  <button class="bingo-trigger a4" onclick="openBingo()">
+    <span class="bingo-trigger-badge">Play</span>
+    Bingo TA!
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+      <rect x="1" y="1" width="3.5" height="3.5" rx=".8" fill="currentColor" opacity=".9"/>
+      <rect x="5.25" y="1" width="3.5" height="3.5" rx=".8" fill="currentColor" opacity=".5"/>
+      <rect x="9.5" y="1" width="3.5" height="3.5" rx=".8" fill="currentColor" opacity=".9"/>
+      <rect x="1" y="5.25" width="3.5" height="3.5" rx=".8" fill="currentColor" opacity=".5"/>
+      <rect x="5.25" y="5.25" width="3.5" height="3.5" rx=".8" fill="currentColor"/>
+      <rect x="9.5" y="5.25" width="3.5" height="3.5" rx=".8" fill="currentColor" opacity=".5"/>
+      <rect x="1" y="9.5" width="3.5" height="3.5" rx=".8" fill="currentColor" opacity=".9"/>
+      <rect x="5.25" y="9.5" width="3.5" height="3.5" rx=".8" fill="currentColor" opacity=".5"/>
+      <rect x="9.5" y="9.5" width="3.5" height="3.5" rx=".8" fill="currentColor" opacity=".9"/>
+    </svg>
+  </button>
+  <div class="scroll-hint">
+    <span>Scroll</span>
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 2v10M3 8l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </div>
+</section>
+
+<!-- BINGO POPUP -->
+<div class="bingo-popup" id="bingoPopup">
+  <div class="bingo-popup-box">
+    <div class="bingo-popup-header">
+      <div class="bingo-popup-title">SKILL <em>BINGO</em></div>
+      <button class="bingo-popup-close" id="bingoPopupClose" aria-label="Close">✕</button>
+    </div>
+    <p class="bingo-popup-sub">Find the skills we bring together.</p>
     <div class="bingo-board" id="bingoBoard"></div>
     <div class="bingo-footer">
       <p class="bingo-msg" id="bingoMsg">Click the skills that matter to you ↑</p>
@@ -456,11 +514,7 @@ footer{padding:2rem 4rem;border-top:1px solid var(--border);display:flex;justify
       </button>
     </div>
   </div>
-  <div class="scroll-hint">
-    <span>Scroll</span>
-    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 2v10M3 8l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-  </div>
-</section>
+</div>
 
 <!-- STATS -->
 <section class="sec" style="padding-top:4.5rem;padding-bottom:4.5rem;">
@@ -738,6 +792,18 @@ document.getElementById('burgerBtn').onclick=()=>document.getElementById('mobNav
 document.getElementById('mobClose').onclick=closeMob;
 function closeMob(){document.getElementById('mobNav').classList.remove('open');}
 
+/* ── BINGO POPUP ── */
+function openBingo(){
+  document.getElementById('bingoPopup').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeBingo(){
+  document.getElementById('bingoPopup').classList.remove('open');
+  document.body.style.overflow='';
+}
+document.getElementById('bingoPopupClose').onclick=closeBingo;
+document.getElementById('bingoPopup').addEventListener('click',e=>{if(e.target.id==='bingoPopup')closeBingo();});
+
 /* ── BINGO ── */
 const SKILLS=['User Research','Figma','Design Systems','Prototyping','FinTech','Wireframing','UI Animation','Usability Testing','EdTech','A/B Testing','User Flows','Visual Design','★ FREE ★','Gaming UX','AI','Info. Arch.','Responsive','Data Analysis','Interaction','Typography','Persona','Journey Map','Card Sorting','Heuristics','Accessibility'];
 const FREE_IDX=12;
@@ -787,12 +853,15 @@ document.getElementById('lbPrev').onclick=()=>{lbIdx=(lbIdx-1+lbImages.length)%l
 document.getElementById('lbNext').onclick=()=>{lbIdx=(lbIdx+1)%lbImages.length;renderLb();};
 document.getElementById('imgLb').addEventListener('click',e=>{if(e.target.id==='imgLb')closeLb();});
 document.addEventListener('keydown',e=>{
+  if(e.key!=='Escape'&&e.key!=='ArrowLeft'&&e.key!=='ArrowRight')return;
   if(document.getElementById('imgLb').classList.contains('open')){
     if(e.key==='Escape')closeLb();
     if(e.key==='ArrowLeft'){lbIdx=(lbIdx-1+lbImages.length)%lbImages.length;renderLb();}
     if(e.key==='ArrowRight'){lbIdx=(lbIdx+1)%lbImages.length;renderLb();}
   } else if(e.key==='Escape'&&document.getElementById('projPage').classList.contains('open')){
     closeProjPage();
+  } else if(e.key==='Escape'&&document.getElementById('bingoPopup').classList.contains('open')){
+    closeBingo();
   }
 });
 
