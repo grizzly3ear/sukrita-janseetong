@@ -132,12 +132,16 @@ h1.hero-title .white{color:#fff;}
 
 /* ── STATS ── */
 .stats-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;}
-.stat-card{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:1.5rem;}
-.stat-n{font-family:var(--fd);font-size:2.4rem;font-weight:800;letter-spacing:-.04em;color:var(--lime);}
-.stat-l{font-size:.8rem;color:var(--muted);margin-top:.25rem;line-height:1.5;}
+.stat-card{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:1.5rem;display:flex;flex-direction:column;}
+.stat-n{font-family:var(--fd);font-size:2.4rem;font-weight:800;letter-spacing:-.04em;color:var(--lime);line-height:1;}
+.stat-n .stat-unit{font-size:1.4rem;letter-spacing:-.02em;}
+.stat-div{border:none;border-top:1px solid rgba(239,236,229,.12);margin:.75rem 0;}
+.stat-l{font-size:.8rem;color:var(--muted);line-height:1.5;}
+.stat-eye{font-size:.7rem;color:var(--muted);letter-spacing:.04em;margin-bottom:.3rem;}
+.stat-platforms{font-family:var(--fb);font-size:.95rem;font-weight:700;color:var(--cream);line-height:1.55;margin-bottom:.1rem;}
 .stat-ind-tags{display:flex;flex-wrap:wrap;gap:.3rem;margin-top:.75rem;}
 .stat-ind-tag{font-size:.65rem;padding:.2rem .55rem;border-radius:20px;background:rgba(239,236,229,.06);color:var(--muted);border:1px solid rgba(239,236,229,.1);}
-.tool-row{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:.625rem;}
+.tool-row{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.75rem;}
 .tool-pill{font-size:.72rem;padding:.25rem .7rem;border-radius:20px;background:rgba(190,255,0,.1);color:var(--lime);border:1px solid rgba(190,255,0,.25);font-weight:500;}
 
 /* ── FILTER CHIPS ── */
@@ -554,26 +558,32 @@ footer{padding:2rem 4rem;border-top:1px solid var(--border);display:flex;justify
 <section class="sec" style="padding-top:4.5rem;padding-bottom:4.5rem;">
   <div class="stats-row fade">
     <div class="stat-card">
-      <div class="stat-n">4</div>
-      <div class="stat-l">Industries covered across all 7 projects</div>
+      <div class="stat-n">7</div>
+      <hr class="stat-div">
+      <div class="stat-l">End-to-end case studies — from discovery to dev handoff</div>
       <div class="stat-ind-tags">
-        <span class="stat-ind-tag">Fintech</span>
-        <span class="stat-ind-tag">Edu</span>
+        <span class="stat-ind-tag">FinTech</span>
+        <span class="stat-ind-tag">EdTech</span>
         <span class="stat-ind-tag">Game</span>
-        <span class="stat-ind-tag">Commercial Products</span>
+        <span class="stat-ind-tag">B2B SaaS</span>
+        <span class="stat-ind-tag">Commercial</span>
       </div>
     </div>
     <div class="stat-card">
+      <div class="stat-n">1.5+ <span class="stat-unit">yr</span></div>
+      <hr class="stat-div">
+      <div class="stat-l">Sole designer — embedded with PM, Dev, BA &amp; QA on live products</div>
       <div class="tool-row">
         <span class="tool-pill">Figma</span>
         <span class="tool-pill">AI Tools</span>
         <span class="tool-pill">Adobe AI</span>
       </div>
-      <div class="stat-l">Primary design tools — across every project from ideation to handoff</div>
     </div>
     <div class="stat-card">
-      <div class="stat-n">1.5+</div>
-      <div class="stat-l">Year as sole designer with PM, Dev, BA &amp; QA</div>
+      <div class="stat-eye">Designed for</div>
+      <div class="stat-platforms">Mobile · Web · LINE LIFF<br>Hybrid · Game UI</div>
+      <hr class="stat-div">
+      <div class="stat-l">Multi-platform, always user-first</div>
     </div>
   </div>
 </section>
