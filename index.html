@@ -890,7 +890,13 @@ function renderLb(){
   const img=lbImages[lbIdx];
   const el=document.getElementById('lbImg');
   el.src=img.src;el.alt=img.label||'';
-  document.getElementById('lbCounter').textContent=(lbIdx+1)+' / '+lbImages.length;
+  const nav=document.querySelector('.lb-nav');
+  if(lbImages.length<=1){
+    nav.style.display='none';
+  } else {
+    nav.style.display='';
+    document.getElementById('lbCounter').textContent=(lbIdx+1)+' / '+lbImages.length;
+  }
 }
 document.getElementById('lbClose').onclick=closeLb;
 document.getElementById('lbPrev').onclick=()=>{lbIdx=(lbIdx-1+lbImages.length)%lbImages.length;renderLb();};
@@ -1188,6 +1194,14 @@ function openProjPage(idx){
   });
   if(p.awards)html+=`<div class="pp-section"><h3 class="pp-section-title">Recognition &amp; Awards</h3><div class="pp-section-text">${p.awards}</div></div>`;
   document.getElementById('ppSections').innerHTML=html;
+
+  // Wire zoom on all section images — group per .pp-sec-imgs container
+  document.querySelectorAll('#ppSections .pp-sec-imgs').forEach(wrap=>{
+    const imgs=[...wrap.querySelectorAll('img')].map(img=>({src:img.src,label:img.alt||''}));
+    wrap.querySelectorAll('img').forEach((img,i)=>{
+      img.addEventListener('click',()=>openLb(imgs,i));
+    });
+  });
 
   // Gallery
   const gallerySection=document.getElementById('ppGallerySection');
