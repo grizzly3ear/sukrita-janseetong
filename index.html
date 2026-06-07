@@ -916,7 +916,7 @@ const LB_MIN=0.5,LB_MAX=5,LB_STEP=0.35;
 function lbApplyTransform(){
   const el=document.getElementById('lbImg');
   el.style.transform=`scale(${lbScale}) translate(${lbTx/lbScale}px,${lbTy/lbScale}px)`;
-  document.getElementById('lbZoomPct').textContent=Math.round(lbScale*100)+'%';
+  const pct=document.getElementById('lbZoomPct');if(pct)pct.textContent=Math.round(lbScale*100)+'%';
   el.style.cursor=lbScale>1?'grab':'default';
 }
 function lbResetZoom(){lbScale=1;lbTx=0;lbTy=0;lbApplyTransform();}
@@ -1314,14 +1314,6 @@ function openProjPage(idx){
   if(p.awards)html+=`<div class="pp-section"><h3 class="pp-section-title">Recognition &amp; Awards</h3><div class="pp-section-text">${p.awards}</div></div>`;
   document.getElementById('ppSections').innerHTML=html;
 
-  // Wire lightbox on all section images — group per .pp-sec-imgs container
-  document.querySelectorAll('#ppSections .pp-sec-imgs').forEach(wrap=>{
-    const imgs=[...wrap.querySelectorAll('img')].map(img=>({src:img.src,label:img.alt||''}));
-    wrap.querySelectorAll('img').forEach((img,i)=>{
-      img.style.cursor='pointer';
-      img.addEventListener('click',()=>openLb(imgs,i));
-    });
-  });
 
   // Gallery
   const gallerySection=document.getElementById('ppGallerySection');
@@ -1407,10 +1399,16 @@ function copyEmail(){
   });
 }
 
-/* ── ACCORDION ── */
+/* ── ACCORDION + SECTION IMAGE LIGHTBOX ── */
 document.addEventListener('click',e=>{
   const h=e.target.closest('.pp-acc-header');
-  if(h){h.closest('.pp-acc-item').classList.toggle('acc-open');}
+  if(h){h.closest('.pp-acc-item').classList.toggle('acc-open');return;}
+  const img=e.target.closest('#ppSections .pp-sec-imgs img');
+  if(img){
+    const wrap=img.closest('.pp-sec-imgs');
+    const all=[...wrap.querySelectorAll('img')];
+    openLb(all.map(im=>({src:im.src,label:im.alt||''})),all.indexOf(img));
+  }
 });
 
 /* ── SCROLL FADE ── */
